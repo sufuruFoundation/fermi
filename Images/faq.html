@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Residential, Commercial & Industrial</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f7f9fc;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Services Section */
+.services {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+
+.service-card {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: flex 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-card:hover {
+  flex: 2;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 2rem;
+  text-align: center;
+  border-radius: 12px;
+  max-width: 90%;
+  transition: all 0.4s ease;
+}
+
+.overlay h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.overlay p {
+  font-size: 1rem;
+  line-height: 1.6;
+  display: none;
+}
+
+.toggle-btn {
+  margin-top: 1rem;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: #ff6600;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background: #ff4400;
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .services {
+    flex-direction: column;
+  }
+
+  .service-card {
+    min-height: 50vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .overlay h2 {
+    font-size: 1.5rem;
+  }
+
+  .overlay p {
+    font-size: 0.9rem;
+  }
+
+  .toggle-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}
+
+    </style>
+    
+<body>
+
+    <section class="services">
+        <div class="service-card"
+            style="background-image: url('https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=1400&auto=format&fit=crop');">
+            <div class="overlay">
+                <h2>Residential</h2>
+                <p class="hidden-text">
+                    Comprehensive residential security system that includes physical barriers (automatic gates, electric
+                    fences), surveillance devices (CCTV, motion sensors, metal detectors), and access control &
+                    communication systems (intercoms, smart alarms, access control).
+                </p>
+                <button class="toggle-btn">+</button>
+            </div>
+        </div>
+
+        <div class="service-card"
+            style="background-image: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1400&auto=format&fit=crop');">
+            <div class="overlay">
+                <h2>Commercial</h2>
+                <p class="hidden-text">
+                    Professional commercial electrical services including WAN/LAN setup, wiring for offices and shops,
+                    and installations for elevators, escalators, AC, refrigeration, and water heaters, all designed to
+                    ensure safety.
+                </p>
+                <button class="toggle-btn">+</button>
+            </div>
+        </div>
+
+        <div class="service-card"
+            style="background-image: url('https://images.unsplash.com/photo-1581093588401-22a7d6a0f3da?q=80&w=1400&auto=format&fit=crop');">
+            <div class="overlay">
+                <h2>Industrial</h2>
+                <p class="hidden-text">
+                    We provide integrated industrial solutions that encompass electrical panel design & automation,
+                    comprehensive security systems (fire alarms, motion detectors), plus specialized offerings like POS
+                    systems, GPS vehicle trackers, fuel monitoring, and compliance.
+                </p>
+                <button class="toggle-btn">+</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const toggleButtons = document.querySelectorAll(".toggle-btn");
+
+            toggleButtons.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const text = btn.previousElementSibling;
+
+                    if (text.style.display === "block") {
+                        text.style.display = "none";
+                        btn.textContent = "+";
+                    } else {
+                        text.style.display = "block";
+                        btn.textContent = "-";
+                    }
+                });
+            });
+
+    </script>
+</body>
+
+</html>

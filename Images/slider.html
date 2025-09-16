@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Slider</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .carousel-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 33.33%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .carousel-item:not(:first-child) {
+            border-left: 1px solid #ddd;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-item {
+                min-width: 100%;
+            }
+
+            .carousel-item:not(:first-child) {
+                border-left: none;
+            }
+        }
+
+        .lightbulb {
+            width: 150px;
+            height: 200px;
+            margin: 0 auto 10px;
+            position: relative;
+        }
+
+        .bulb {
+            width: 100%;
+            height: 70%;
+            background: radial-gradient(circle, #aaa 0%, #666 100%);
+            border-radius: 50% / 60%;
+        }
+
+        .base {
+            width: 60%;
+            height: 30%;
+            background: #666;
+            margin: 0 auto;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .icon {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            color: #fff;
+        }
+
+        .separator {
+            width: 50px;
+            height: 5px;
+            background: #ff9900;
+            box-shadow: 0 5px 0 #ff9900;
+            margin: 10px auto;
+        }
+
+        h2 {
+            color: #666;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #888;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 14px;
+            background-color: #f0f0f0;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 18px;
+            z-index: 10;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="carousel-container">
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <div class="lightbulb">
+                    <div class="bulb"></div>
+                    <div class="base"></div>
+                    <div class="icon">🚪</div>
+                </div>
+                <div class="separator"></div>
+                <h2>Perimeter Security</h2>
+                <p>Our services ensure secure automatic gates and electric fences.</p>
+                <a href="#">More Info →</a>
+            </div>
+            <div class="carousel-item">
+                <div class="lightbulb">
+                    <div class="bulb"></div>
+                    <div class="base"></div>
+                    <div class="icon">📹</div>
+                </div>
+                <div class="separator"></div>
+                <h2>Surveillance Systems</h2>
+                <p>We provide CCTV cameras, motion sensors, and walk-through metal detectors for comprehensive
+                    surveillance.</p>
+                <a href="#">More Info →</a>
+            </div>
+            <div class="carousel-item">
+                <div class="lightbulb">
+                    <div class="bulb"></div>
+                    <div class="base"></div>
+                    <div class="icon">🔒</div>
+                </div>
+                <div class="separator"></div>
+                <h2>Access Control</h2>
+                <p>Intercoms, smart alarms, and access control systems for secure entry.</p>
+                <a href="#">More Info →</a>
+            </div>
+            <div class="carousel-item">
+                <div class="lightbulb">
+                    <div class="bulb"></div>
+                    <div class="base"></div>
+                    <div class="icon">🚨</div>
+                </div>
+                <div class="separator"></div>
+                <h2>Fire Detection</h2>
+                <p>Fire alarms and motion detectors to keep your property safe.</p>
+                <a href="#">More Info →</a>
+            </div>
+            <div class="carousel-item">
+                <div class="lightbulb">
+                    <div class="bulb"></div>
+                    <div class="base"></div>
+                    <div class="icon">📍</div>
+                </div>
+                <div class="separator"></div>
+                <h2>Specialized Systems</h2>
+                <p>Point of sale (POS) systems, GPS vehicle trackers, and fuel monitoring systems for advanced needs.
+                </p>
+                <a href="#">More Info →</a>
+            </div>
+        </div>
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const inner = document.querySelector('.carousel-inner');
+        const items = document.querySelectorAll('.carousel-item');
+        const totalItems = items.length;
+        const prev = document.querySelector('.prev');
+        const next = document.querySelector('.next');
+
+        function getVisibleItems() {
+            return window.innerWidth <= 768 ? 1 : 3;
+        }
+
+        function updateCarousel() {
+            const visibleItems = getVisibleItems();
+            const maxIndex = totalItems - visibleItems;
+            if (currentIndex > maxIndex) currentIndex = maxIndex;
+            if (currentIndex < 0) currentIndex = 0;
+            const itemWidth = 100 / visibleItems;
+            inner.style.transform = `translateX(${-currentIndex * itemWidth}%)`;
+        }
+
+        next.addEventListener('click', () => {
+            currentIndex++;
+            updateCarousel();
+        });
+
+        prev.addEventListener('click', () => {
+            currentIndex--;
+            updateCarousel();
+        });
+
+        window.addEventListener('resize', updateCarousel);
+
+        // Auto slide every 3 seconds
+        setInterval(() => {
+            currentIndex++;
+            updateCarousel();
+        }, 3000);
+
+        updateCarousel();
+    </script>
+
+</body>
+
+</html>
