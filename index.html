@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fermi Electrical & IT Solutions</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+      <!-- Font Awesome CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+        <link rel="stylesheet" href="style.css">
+        
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    body {
+       font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    
+
+    /* Hero */
+    .hero {
+      background: url('images/') no-repeat center center/cover;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-overlay {
+      background: rgba(1, 22, 44, 0.7);
+      padding: 2rem;
+      max-width: 700px;
+      border-radius: 12px;
+      color: white;
+    }
+
+    .badge {
+      background-color: #f1c40f;
+      color: #000;
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      margin-bottom: 1rem;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .highlight {
+      color: #f1c40f;
+    }
+
+    .subtext {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .primary {
+      background-color: #f1c40f;
+      color: #000;
+    }
+
+    .secondary {
+      border: 2px solid #fff;
+      color: #fff;
+    }
+
+    /* Typing Feature */
+    #typing-feature {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+    }
+
+    #typing-icon {
+      font-size: 4rem;
+      color:#ffb400;
+      margin-bottom: 1rem;
+    }
+
+    #typing-text {
+      font-size: 2rem;
+      font-weight: bold;
+      border-right: 3px solid #ffb400;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      animation: blinkCaret 1s steps(1) infinite;
+      color:#ffb400;
+    }
+
+    @keyframes blinkCaret {
+      0%, 50% { border-color: #ffb400; }
+      50.01%, 100% { border-color: transparent; }
+    }
+
+    .section-heading {
+      text-align: center;
+      font-size: 2rem;
+      margin: 2rem 0 1.5rem;
+      color: #003366;
+    }
+
+    .services-container {
+      min-height: 90vh;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 50px;
+      padding: 20px;
+      background:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url(Images/network-switch-with-cables.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+    }
+
+    .service-card {
+      position: relative;
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 8px;
+      padding: 20px 15px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease-in-out;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .fade-in-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .service-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-card i {
+      font-size: 30px;
+      color:#ffb400;
+      margin-bottom: 18px;
+    }
+
+    .service-card h2 {
+      font-size: 22px;
+      color: #002244;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      font-size: 16px;
+      color:#003366;
+      text-align: left;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 65px;
+        right: 5%;
+        background-color: #fff;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        display: none;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .service-card {
+        width: 90%;
+      }
+
+      #typing-icon {
+        font-size: 3.2rem;
+      }
+
+      #typing-text {
+        font-size: 1.5rem;
+      }
+    }
+
+   
+  /*country wide*/
+  
+.fermi-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: #e6def3;
+  background: white;
+
+}
+
+.fermi-content {
+  flex: 1 1 500px;
+  max-width: 600px;
+}
+
+.fermi-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #003366;
+}
+
+.fermi-icons {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 1.5rem;
+  color: #003366;
+}
+
+.fermi-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.fermi-button {
+  background-color: #a30057;
+  background-color:#ffb400;
+  color: white;
+  color: #a30057;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+
+}
+@media (max-width:599px) {
+  .fermi-button{
+    margin-top: 10%;
+  }
+}
+.fermi-button a{
+  text-decoration: none;
+  color: blue;
+   color:#003366;
+  font-weight: 600;
+}
+.fermi-button:hover {
+  background-color: #d10075;
+  transform: scale(1.05);
+}
+
+.fermi-image {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fermi-image img {
+  max-width: 250px;
+  width: 100%;
+  border-radius: 50%;
+  border: 5px solid black;
+  transition: transform 0.3s;
+}
+
+.fermi-image img:hover {
+  transform: rotate(5deg) scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .fermi-section {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .fermi-icons {
+    justify-content: center;
+  }
+}
+
+
+/*footer
+.fermi-footer {
+      background-color: #1a2639;
+      padding: 1.5rem 1rem;
+      color: #d1dae6;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+ 
+    .fermi-footer-bottom {
+      background-color: #111827;
+      color: #6b7280;
+      font-size: 0.8rem;
+      font-size: 1rem;
+      text-align: center;
+      padding: 0.5rem 1rem;
+      position: relative;
+       background-color: #1a2639;
+    }
+    #backToTopBtn {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      background-color: #facc15;
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      font-size: 1.25rem;
+      color: #1a2639;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    #backToTopBtn.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+   
+    
+    @media (max-width: 480px) {
+      .fermi-footer {
+        padding: 1rem 0.75rem;
+        font-size: 0.85rem;
+        font-size: 1rem;
+      }
+    }
+
+
+
+.fermi-footer {
+  background-color: #111; 
+  color: #fff; 
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+.fermi-footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  text-align: center;
+}
+
+.fermi-footer-bottom p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+
+#backToTopBtn {
+  background-color: #ffb400; 
+  color: #111;
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#backToTopBtn:hover {
+  background-color: #ffa500;
+  transform: translateY(-3px);
+}
+
+#backToTopBtn:focus {
+  outline: 2px solid #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .fermi-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #e6def3;
+  background: white;
+}
+
+.fermi-content {
+  flex: 1 1 200px;
+  max-width: 500px;
+}
+  .fermi-footer {
+    padding: 1rem;
+  }
+
+  #backToTopBtn {
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 1rem;
+  }
+}
+/*
+@media (max-width: 480px) {
+  .fermi-footer-bottom {
+    gap: 0.6rem;
+  }
+  
+  .fermi-footer-bottom p {
+    font-size: 0.85rem;
+  }
+}*/
+@media(max-width:599px){
+  .fermi-content {
+  flex: 1 1 400px;
+  max-width: 500px;
+}
+}
+
+        .navbar {
+            background-color: #003366;
+            color: white;
+            padding: 15px 0;
+            position: relative;
+            z-index: 1000;
+            background: linear-gradient(to right, white, rgb(199, 223, 232));
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: 60px;
+            object-fit: contain;
+        }
+
+        .logo span {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #003366;
+        }
+
+        #logo {
+            font-weight: 400;
+            font-size: 1rem;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #003366;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        .nav-links a:hover {
+            color: #003366;
+            background-color: rgba(0, 51, 102, 0.1);
+        }
+
+        .quote-btn {
+            background-color: #003366;
+            color: white !important;
+            padding: 10px 20px !important;
+            border-radius: 30px !important;
+        }
+
+        .quote-btn:hover {
+            background-color: #002244 !important;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #003366;
+            font-size: 1.8rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .menu-toggle i {
+            font-size: 1.8rem;
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 85%;
+            padding-top: 20%;
+            background-color: rgba(255, 255, 255, 0.95);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: translateY(-100%);
+            transition: transform 1s ease-in-out;
+        }
+
+        .mobile-menu.active {
+            transform: translateY(0);
+        }
+
+        .mobile-menu a {
+            color: #003366;
+            text-decoration: none;
+            font-size: .9rem;
+            font-weight: 500;
+            padding: 15px 0;
+            width: 80%;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 51, 102, 0.1);
+        }
+
+        .mobile-menu a.quote-btn {
+            margin-top: 20px;
+            background-color: #003366;
+            color: white !important;
+            padding: 12px 0 !important;
+            border-radius: 30px;
+            width: 30%;
+        }
+        
+       /* .fermi-footer { background-color:#1a2639; padding: 1.5rem 1rem; color:#d1dae6; font-size: 1rem; text-align:center; }
+    .fermi-footer-bottom p { margin: 0; font-size: 0.95rem; }
+    #backToTopBtn {
+      position: fixed; bottom: 1rem; right: 1rem;
+      background-color: #ffb400; color:#1a2639;
+      border: none; border-radius: 50%; width: 2.6rem; height: 2.6rem;
+      font-size: 1.2rem; cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      opacity: 0; pointer-events: none; transition: all 0.3s ease;
+    }
+    #backToTopBtn.show { opacity: 1; pointer-events: auto; }
+    #backToTopBtn:hover { background-color: #ffa500; transform: translateY(-3px); }
+        /* Responsive Styles */
+
+
+        @media (min-width: 992px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .logo span {
+                font-size: 1rem;
+            }
+
+            #logo {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo img {
+                height: 50px;
+                width: 50px;
+            }
+
+            .logo span {
+                font-size: 0.9rem;
+            }
+        }
+        @media(min-width:1024px){
+          .mobile-menu {
+            display: none;
+          }
+        }
+        @media (min-width: 600px) {
+          #smart{
+            object-fit: cover;
+           
+          }
+        }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <img src="images/logo2.jpg" alt="logo" />
+        <span style="font-weight: bold; font-size: 1.2rem;">Fermi <span id="logo">Electricals & IT Solutions</span></span>
+      </div>
+      <nav id="nav-links" class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+        <a href="quote.html" class="quote-btn">Get Quote</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+  
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+    <a href="quote.html" class="quote-btn">Get Quote</a>
+  </div>
+
+<section class="slideshow-section">
+    <!-- Slide 1 -->
+    <div class="slide active" style="background-image: url('Images/residential-district-valencia-spain.jpg');">
+        <div class="slide-content">
+            <h2>We are the current specialists!!</h2>
+            <p>Keeping You Wired</p>
+        </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide" style="background-image: url('Images/front-view-black-family-posing-studio.jpg');">
+        <div class="slide-content">
+            <h2>Best Services For Our Families</h2>
+            <p>Making our clients happier</p>
+        </div>
+    </div>
+
+    <!-- Slide 3 with background overlay -->
+    <div class="slide" style="background-image: url('Images/security-camera-monitoring-travel-place.jpg');">
+        <div class="slide-content">
+            <h2>Nothing Is Impossible For Us</h2>
+            <p>We can secure anything</p>
+
+        </div>
+    </div>
+
+    <!-- Slide indicators -->
+    <div class="slide-controls">
+        <button class="active"></button>
+        <button></button>
+        <button></button>
+    </div>
+</section>
+
+
+
+<section class="about-section">
+  <div class="about-img">
+    <img src="Images/design1.png" alt="Electrical services" class="main-img">
+  </div>
+
+  <div class="about-content">
+    <span>About Us</span>
+    <h2>Outstanding Residential,Commercial & Industrial Services</h2>
+    <p>
+      All of our services are backed by our 100% satisfaction guarantee. Our technicans can install anything
+      from new security lighting for your outdoors to a whole home network,security that will keep your appliances & property safe,
+      working.
+    </p>
+    <ul class="about-list">
+      <li><i class="fas fa-check"></i> Full-service WAN/LAN layout, design</li>
+      <li><i class="fas fa-check"></i> AC installation</li>
+      <li><i class="fas fa-check"></i> CCTV cameras installation</li>
+      <li><i class="fas fa-check"></i> Wiring and installation/upgrades</li>
+      <li><i class="fas fa-check"></i> Virtually any electrical needs you have – just ask!</li>
+    </ul>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Typing Section -->
+
+  <div id="typing-feature" role="region" aria-live="polite" aria-atomic="true">
+    <i id="typing-icon" class="fa-solid fa-star" aria-hidden="true" style="color:  #f1c40f;"></i>
+    <div id="typing-text" aria-label="Feature description" style="color:  #f1c40f;"></div>
+  </div>
+
+<h1 class="section-heading">What We Offer !</h1>
+    <div class="services-container">
+        <div class="service-card">
+        <i class="fas fa-house" style="color:  #f1c40f;"></i>
+        <h2>Residential</h2>
+    <p>comprehensive residential security system that includes physical barriers (automatic gates, electric fences),
+    surveillance and detection devices (CCTV cameras, motion sensors, walk-through metal detectors), and access control and
+    communication systems (intercoms, smart alarms, access control).</p></div>
+        <div class="service-card">
+        <i class="fas fa-city" style="color:  #f1c40f;"></i>
+        <h2>Commercial</h2>
+    <p>Professional commercial electrical services including WAN/LAN setup, wiring for offices and shops, and installations for elevators 
+    and escalators, air conditioning, refrigeration, and water heaters, all designed to
+    ensure the safety.</p>    </div>
+        <div class="service-card">
+        <i class="fas fa-industry" style="color:  #f1c40f;"></i>
+        <h2>Industrial</h2>
+        <p>We provide integrated industrial solutions that encompass electrical panel design and automation, comprehensive security
+        systems including fire alarms and motion detectors, alongside specialized offerings such as point of sale (POS) systems,
+        GPS vehicle trackers, fuel monitoring systems. compliance, and reliability of your facility</p>
+        </div>
+  </div>
+
+    <div class="slider-container-services">
+      <h2 style="text-align: center;color: #ffb400; font-size: 1.2rem;">24/7 Services – Safe and Efficient</h2>
+      <h1 style="text-align: center; color: #003366; font-size: 2rem; font-weight: bold; min-width: 400px; margin: 2rem 0;">We are a Full Service Electrical
+        Contractor</h1>
+        <div class="slider-track">
+            <div class="service-cards">
+                <div class="bulb"><img src="Images/autogate.png" alt="Automatic Gates"></div>
+                <h3 class="service-title">Automatic Gates & Electric Fences</h3>
+                <p class="service-text">Secure your premises with automatic gates and reliable electric fences.</p>
+                <a href="#" class="more-info">More info</a>
+            </div>
+            <div class="service-cards">
+                <div class="bulb"><img src="Images/cam.jpg" alt="CCTV"></div>
+                <h3 class="service-title">Surveillance & Detection</h3>
+                <p class="service-text">CCTV cameras, motion sensors, and walk-through metal detectors.</p>
+                <a href="#" class="more-info">More info</a>
+            </div>
+            <div class="service-cards">
+                <div class="bulb"><img src="Images/access.png" alt="Access Control"></div>
+                <h3 class="service-title">Access Control & Communication</h3>
+                <p class="service-text">Intercoms, smart alarms, and modern access control systems.</p>
+                <a href="#" class="more-info">More info</a>
+            </div>
+            <div class="service-cards">
+                <div class="bulb"><img src="Images/fire-alarm.png" alt="Fire Alarms"></div>
+                <h3 class="service-title">Fire Alarms & Motion Detectors</h3>
+                <p class="service-text">Protect lives with fire alarms and reliable detection devices.</p>
+                <a href="#" class="more-info">More info</a>
+            </div>
+            <div class="service-cards">
+                <div class="bulb"><img src="Images/pos.png" alt="POS Systems"></div>
+                <h3 class="service-title">POS & Tracking Solutions</h3>
+                <p class="service-text">Point of Sale systems, GPS trackers, and fuel monitoring systems.</p>
+                <a href="#" class="more-info">More info</a>
+            </div>
+            <div class="service-cards">
+                <div class="bulb"><img src="Images/wan.jpg" alt="Networking"></div>
+                <h3 class="service-title">WAN/LAN & Installations</h3>
+                <p class="service-text">Office/shop wiring, elevators, and escalator installations.</p>
+                <a href="#" class="more-info">More info</a>
+            </div>
+            <div class="service-cards">
+                <div class="bulb"><img src="Images/AC.png" alt="Air Conditioning"></div>
+                <h3 class="service-title">Air Conditioning</h3>
+                <p class="service-text">Professional installation of energy-efficient air conditioning systems.</p>
+                <a href="#" class="more-info">More info</a>
+            </div>
+            <div class="service-cards">
+                <div class="bulb"><img src="Images/refrigerator.png" alt="Refrigeration"></div>
+                <h3 class="service-title">Refrigeration & Water Heaters</h3>
+                <p class="service-text">Reliable refrigeration systems and modern water heating solutions.</p>
+                <a href="#" class="more-info">More info</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="dots"></div>
+
+
+
+
+
+<section id="why-us-section">
+  <h2 class="section-title">Why Choose Fermi?</h2>
+  <div class="why-us-cards">
+
+    <div class="why-us-card">
+      <div class="why-us-img-container">
+        <img src="images/ethnic-employee-gesturing-thumb-up.jpg" alt="Certified Electrician">
+        <div class="overlay"></div>
+        <button class="toggle-text-btn">+</button>
+        <div class="why-us-text">
+          <button class="close-text-btn">×</button>
+          <h3>Certified Professionals</h3>
+          <p>
+            Our team comprises licensed technicians experienced in all areas of technical and electric
+            work.
+            We strictly follow national safety standards and regulatory codes. <br><br>
+            From industrial installations to domestic repairs, we guarantee precision and safety at
+            every
+            step.
+            Your project is handled by experts committed to professionalism.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-us-card">
+      <div class="why-us-img-container">
+        <img src="images/customer.jpg" alt="Customer First Approach">
+        <div class="overlay"></div>
+        <button class="toggle-text-btn">+</button>
+        <div class="why-us-text">
+          <button class="close-text-btn">×</button>
+          <h3>Customer-Centric Approach</h3>
+          <p>
+            We take the time to understand your unique needs and provide tailored solutions.
+            Our process is built on transparent communication and trust. <br><br>
+            Every project begins and ends with client satisfaction in mind.
+            We don't just work for you — we work with you.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-us-card">
+      <div class="why-us-img-container">
+        <img src="images/price.jpg" alt="Transparent Pricing">
+        <div class="overlay"></div>
+        <button class="toggle-text-btn">+</button>
+        <div class="why-us-text">
+          <button class="close-text-btn">×</button>
+          <h3>Transparent Pricing</h3>
+          <p>
+            We offer honest, upfront pricing without hidden fees or surprise charges.
+            You'll always know what you're paying for. <br><br>
+            Fair pricing reflects our integrity and your value.
+            Trust and affordability go hand in hand at Fermi.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!--contet professionals
+<section id="why-us-section">
+  <h2 class="section-title">Why Choose Fermi?</h2>
+  <div class="why-us-cards">
+    <div class="why-us-card">
+      <div class="why-us-img-container">
+        <img src="images/technicians.jpg" alt="Certified Electrician" id="tech">
+      </div>
+      <h3 class="why-us-heading">Certified Professionals</h3>
+      <p class="why-us-text">
+        Our team comprises licensed technicians experienced in all areas of technical and electric work.
+        We strictly follow national safety standards and regulatory codes. <br><br>
+        From industrial installations to domestic repairs, we guarantee precision and safety at every step. 
+        Your project is handled by experts committed to professionalism.
+      </p>
+    </div>
+
+    <div class="why-us-card">
+      <div class="why-us-img-container">
+        <img src="images/customer-approach.jpg" alt="Customer First Approach">
+      </div>
+      <h3 class="why-us-heading">Customer-Centric Approach</h3>
+      <p class="why-us-text">
+        We take the time to understand your unique needs and provide tailored solutions. 
+        Our process is built on transparent communication and trust. <br><br>
+        Every project begins and ends with client satisfaction in mind. 
+        We don't just work for you — we work with you.
+      </p>
+    </div>
+
+    <div class="why-us-card">
+      <div class="why-us-img-container">
+        <img src="images/special-offer.jpg" alt="Transparent Pricing" style="object-fit: contain;">
+      </div>
+      <h3 class="why-us-heading">Transparent Pricing</h3>
+      <p class="why-us-text">
+        We offer honest, upfront pricing without hidden fees or surprise charges. 
+        You’ll always know what you’re paying for. <br><br>
+        Fair pricing reflects our integrity and your value. 
+        Trust and affordability go hand in hand at Fermi.
+      </p>
+    </div>
+  </div>
+</section>
+
+-->
+<!--CONTACT INFPORM-->
+<section class="Section">
+  <div class="content">
+    <h2>Do you <span>Need Help</span><br> With Electrical Maintenance?</h2>
+    <p>
+      Our electrical repair and service options are proudly offered to clients.
+      Give us a call today to schedule a free service estimate!
+    </p>
+    <div class="buttonss">
+      <button class="btnn call"><i class="fas fa-phone-alt"></i> Give Us a Call</button>
+      <button class="btnn estimate"><i class="fas fa-bolt"></i> Free Estimate</button>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="projects-section1">
+  <h3>@fermiSecuritySolutions</h3>
+  <h2>Our Projects</h2>
+
+  <!-- Tabs -->
+  <div class="project-tabss">
+    <a class="active" data-filter="all">All</a>
+    <a data-filter="residences">Residences</a>
+    <a data-filter="industrial">Industrial_objects</a>
+    <a data-filter="offices">Offices</a>
+  </div>
+
+  <!-- Projects Grid -->
+  <div class="projects-grid">
+    <!-- Add your 12 images like you already have -->
+    <div class="project-cards" data-category="residences">
+      <img src="Images/residental-pics.jpg" alt="Residence">
+      <div class="overlayy"><i class="fas fa-eye"></i></div>
+    </div>
+    <div class="project-cards" data-category="residences">
+      <img src="Images/fence-with-barbed-wire.jpg" alt="Residence">
+      <div class="overlayy"><i class="fas fa-eye"></i></div>
+    </div>
+    <div class="project-cards" data-category="residences">
+      <img src="Images/cctv-security-camera-ceiling.jpg" alt="Residence">
+      <div class="overlayy"><i class="fas fa-eye"></i></div>
+    </div>
+    <div class="project-cards" data-category="residences">
+      <img src="Images/Residental-ingerprint-access-control.jpg" alt="Residence">
+      <div class="overlayy"><i class="fas fa-eye"></i></div>
+    </div>
+    <div class="project-cards" data-category="residences">
+      <img src="Images/electric-fence.jpg" alt="Residence">
+      <div class="overlayy"><i class="fas fa-eye"></i></div>
+    </div>
+    <div class="project-cards" data-category="residences">
+      <img src="Images/fire-sensor.jpg" alt="Residence">
+      <div class="overlayy"><i class="fas fa-eye"></i></div>
+    </div>
+    <div class="project-cards" data-category="residences">
+      <img src="Images/security-camera-monitoring-travel-place.jpg" alt="Residence">
+      <div class="overlayy"><i class="fas fa-eye"></i></div>
+    </div>
+    <div class="project-cards" data-category="residences">
+      <img src="Images/solar-panel.jpg" alt="Residence">
+      <div class="overlayy"><i class="fas fa-eye"></i></div>
+    </div>
+
+
+
+
+    <!--INDUSTRIAL-->
+    <div class="project-cards" data-category="industrial">
+      <img src="Images/WaterHeater.jpg" alt="Residence">
+      <div class="overlayy"><i class="fas fa-eye"></i></div>
+    </div>
+    <div class="project-cards" data-category="industrial">
+      <img src="Images/escalator.jpg" alt="Residence">
+      <div class="overlayy"><i class="fas fa-eye"></i></div>
+    </div>
+    <div class="project-cards" data-category="industrial">
+      <img src="Images/fire-alarm-switch.jpg" alt="Residence">
+      <div class="overlayy"><i class="fas fa-eye"></i></div>
+    </div>
+    <div class="project-cards" data-category="industrial">
+      <img src="Images/network-switch-with-cables.jpg" alt="Residence">
+      <div class="overlayy"><i class="fas fa-eye"></i></div>
+    </div>
+    <div class="project-cards" data-category="industrial">
+      <img src="Images/network.jpg" alt="Residence">
+      <div class="overlayy"><i class="fas fa-eye"></i></div>
+    </div>
+    <div class="project-cards" data-category="industrial">
+      <img src="Images/cables-red-light-background.jpg" alt="Residence">
+      <div class="overlayy"><i class="fas fa-eye"></i></div>
+    </div>
+    <div class="project-cards" data-category="industrial">
+      <img src="Images/gps-system-smart-car.jpg" alt="Residence">
+      <div class="overlayy"><i class="fas fa-eye"></i></div>
+    </div>
+    <div class="project-cards" data-category="residences">
+      <img src="Images/technician-engineer-checks-maintenance-solar-cell-panels.jpg" alt="Residence">
+      <div class="overlayy"><i class="fas fa-eye"></i></div>
+    </div>
+    <!-- continue like your original code -->
+
+    <div class="project-cards" data-category="offices">
+      <img src="Images/modem-setup-troubleshooting-online-guides.jpg" alt="Residence">
+      <div class="overlayy"><i class="fas fa-eye"></i></div>
+    </div>
+    <div class="project-cards" data-category="offices">
+      <img src="Images/office-lights.png" alt="Residence">
+      <div class="overlayy"><i class="fas fa-eye"></i></div>
+    </div>
+    <div class="project-cards" data-category="offices">
+      <img src="Images/empty-escalator-stair.jpg" alt="Residence">
+      <div class="overlayy"><i class="fas fa-eye"></i></div>
+    </div>
+    <div class="project-cards" data-category="offices">
+      <img src="Images/air-conditioning-decoration-interior.jpg" alt="Residence">
+      <div class="overlayy"><i class="fas fa-eye"></i></div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal">
+  <span class="close">&times;</span>
+  <i class="fas fa-chevron-left arrow prev"></i>
+  <img src="" alt="Expanded Image">
+  <i class="fas fa-chevron-right arrow next"></i>
+</div>
+
+
+<!--prof end-->
+
+<section class="testimonials-section">
+    <!-- Left side text -->
+    <div class="testimonials-text">
+        <h3>TESTIMONIALS</h3>
+        <h2>What Our Client Say<br> About Easton.</h2>
+        <div class="controls">
+            <button onclick="prevSlide()">&#10094;</button>
+            <button onclick="nextSlide()">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- Right side slider -->
+    <div class="slider-container">
+        <div class="slider-track" id="slider-track">
+            <!-- Slide 1 -->
+            <div class="testimonial-card active">
+                <div class="quote">❝</div>
+                <p class="testimonial-text">“I’m really thankful I had the generator. It’s a blessing, They were
+                    very responsive and fast”</p>
+                <div class="testimonial-user">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+                    <div>
+                        <h4>Rafael Kevin</h4>
+                        <p>Shop Owner</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="testimonial-card">
+                <div class="quote">❝</div>
+                <p class="testimonial-text">“The service was excellent and professional. I’m impressed with how
+                    quick they worked!”</p>
+                <div class="testimonial-user">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+                    <div>
+                        <h4>Sophia Martinez</h4>
+                        <p>Business Woman</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="testimonial-card">
+                <div class="quote">❝</div>
+                <p class="testimonial-text">“They installed my CCTV cameras perfectly, and the support team was
+                    super helpful.”</p>
+                <div class="testimonial-user">
+                    <img src="https://randomuser.me/api/portraits/men/14.jpg" alt="">
+                    <div>
+                        <h4>John Smith</h4>
+                        <p>Manager</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <section class="stats-section">
+      <div class="stat-box">
+        <i class="fa-solid fa-lightbulb"></i>
+        <div class="stat-number" data-target="90">0</div>
+        <div class="stat-label">Successful Projects</div>
+      </div>
+    
+      <div class="stat-box">
+        <i class="fa-solid fa-users"></i>
+        <div class="stat-number" data-target="2600000">0</div>
+        <div class="stat-label">Satisfied Clients</div>
+      </div>
+    
+      <div class="stat-box">
+        <i class="fa-solid fa-user-gear"></i>
+        <div class="stat-number" data-target="35">0</div>
+        <div class="stat-label">Experienced Staff</div>
+      </div>
+    
+      <div class="stat-box">
+        <i class="fa-solid fa-medal"></i>
+        <div class="stat-number" data-target="41">0</div>
+        <div class="stat-label">Awards Won</div>
+      </div>
+    </section>
+  <!-- Stats Section 
+  <section class="stats-section">
+    <div class="stat-box">
+      <i class="fas fa-smile"></i>
+      <div class="stat-number" data-target="50">0</div>
+      <div class="stat-label">Satisfied Customers</div>
+    </div>
+    <div class="stat-box">
+      <i class="fas fa-clipboard-check"></i>
+      <div class="stat-number" data-target="90">0</div>
+      <div class="stat-label">Projects Completed</div>
+    </div>
+    <div class="stat-box">
+      <i class="fas fa-user-tie"></i>
+      <div class="stat-number" data-target="20">0</div>
+      <div class="stat-label">Professional Technicians</div>
+    </div>
+  </section>-->
+  
+  <!--footer-->
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-box">
+        <h3>About Us</h3>
+        <p>We provide top-notch Electrical & IT solutions with years of experience delivering reliable and
+          innovative services.</p>
+      </div>
+      <div class="footer-box">
+        <h3>Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-box">
+        <h3>Our Services</h3>
+        <ul>
+          <li><a href="#">Air Conditioning</a></li>
+          <li><a href="#">Automatic Gates & Electric Fences</a></li>
+          <li><a href="#">Fire Alarms & Motion Detectors</a></li>
+          <li><a href="#">Access Control</a></li>
+          <li><a href="#">POS & Tracking Solutions</a></li>
+        </ul>
+      </div>
+      <div class="footer-box contact-info">
+        <h3>Contact Us</h3>
+        <p><i class="fa-solid fa-phone"></i> +256760271098</p>
+        <p><i class="fa-solid fa-envelope"></i> fermielectrictechtech@gmail.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Fermi Electrical & IT Solutions. All Rights Reserved.
+    </div>
+  </footer>
+  
+  <!-- Back-to-Top Button -->
+  <button id="backToTop" title="Back to Top"><i class="fa-solid fa-bolt"></i></button>
+
+
+<script src="script.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const menuIcon = menuToggle.querySelector('i');
+
+      menuToggle.addEventListener('click', function () {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+        mobileMenu.classList.toggle('active');
+
+        // Change icon based on menu state
+        if (mobileMenu.classList.contains('active')) {
+          menuIcon.classList.replace('fa-bars', 'fa-times');
+        } else {
+          menuIcon.classList.replace('fa-times', 'fa-bars');
+        }
+
+        // Toggle body scroll when menu is open
+        document.body.style.overflow = isExpanded ? 'auto' : 'hidden';
+      });
+
+      // Close menu when clicking on a link
+      const menuLinks = mobileMenu.querySelectorAll('a');
+      menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuIcon.classList.replace('fa-times', 'fa-bars');
+          document.body.style.overflow = 'auto';
+        });
+      });
+    });    
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.service-card').forEach(card => observer.observe(card));
+
+    // Typing effect
+    (() => {
+      const features = [
+        { iconClass: 'fa-shield-halved', text: 'Insured' },
+        { iconClass: 'fa-clock', text: '24/7 Emergency Service' },
+        { iconClass: 'fa-star', text: '5-Star Customer Rating' },
+        { iconClass: 'fa-check', text: 'Quality Guaranteed' }
+      ];
+
+      const iconElem = document.getElementById('typing-icon');
+      const textElem = document.getElementById('typing-text');
+      const typingSpeed = 80;
+      const erasingSpeed = 50;
+      const displayTime = 3000;
+
+      let current = 0;
+      const wait = ms => new Promise(res => setTimeout(res, ms));
+
+      async function typeText(text) {
+        textElem.textContent = '';
+        for (let i = 0; i < text.length; i++) {
+          textElem.textContent += text.charAt(i);
+          await wait(typingSpeed);
+        }
+      }
+
+      async function eraseText() {
+        while (textElem.textContent.length > 0) {
+          textElem.textContent = textElem.textContent.slice(0, -1);
+          await wait(erasingSpeed);
+        }
+      }
+
+      async function cycle() {
+        while (true) {
+          const { iconClass, text } = features[current];
+          iconElem.className = 'fa-solid fa-fw ' + iconClass;
+          await typeText(text);
+          await wait(displayTime);
+          await eraseText();
+          await wait(500);
+          current = (current + 1) % features.length;
+        }
+      }
+
+      cycle();
+    })();
+
+    //why us
+      document.addEventListener("DOMContentLoaded", function () {
+  const cards = document.querySelectorAll(".why-us-card");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-in");
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  cards.forEach((card, index) => {
+    card.style.animationDelay = `${index * 0.2}s`;
+    observer.observe(card);
+  });
+});
+
+// Animation CSS injected
+const style = document.createElement("style");
+style.textContent = `
+  .animate-in {
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`;
+document.head.appendChild(style);
+
+ // Counter animation
+
+    //footer
+ const backToTopBtn = document.getElementById('backToTopBtn');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) backToTopBtn.classList.add('show');
+    else backToTopBtn.classList.remove('show');
+  });
+  backToTopBtn.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+
+
+
+  
+  
+  </script>
+
+</body>
+</html>
