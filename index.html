@@ -541,8 +541,18 @@
         transform: scale(1);
     }
     100% {
-        transform: scale(1.1);
+        transform: scale(1.2);
     }
+}
+.slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    
 }
 
 /* Background overlay for the last slide */
@@ -2111,7 +2121,7 @@ img {
 
 <section class="slideshow-section">
     <!-- Slide 1 -->
-    <div class="slide active" style="background-image: url('Images/residential-district-valencia-spain.jpg');">
+    <div class="slide active" style="background-image: url('Images/cables-red-light-background.jpg');">
         <div class="slide-content">
             <h2>We are the current specialists!!</h2>
             <p>Keeping You Wired</p>
@@ -2119,7 +2129,7 @@ img {
     </div>
 
     <!-- Slide 2 -->
-    <div class="slide" style="background-image: url('Images/front-view-black-family-posing-studio.jpg');">
+    <div class="slide" style="background-image: url('Images/happyClients1.jpg');">
         <div class="slide-content">
             <h2>Best Services For Our Families</h2>
             <p>Making our clients happier</p>
@@ -2127,7 +2137,7 @@ img {
     </div>
 
     <!-- Slide 3 with background overlay -->
-    <div class="slide" style="background-image: url('Images/security-camera-monitoring-travel-place.jpg');">
+    <div class="slide" style="background-image: url('Images/mainslide-01.jpg');">
         <div class="slide-content">
             <h2>Nothing Is Impossible For Us</h2>
             <p>We can secure anything</p>
