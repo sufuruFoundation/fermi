@@ -69,148 +69,7 @@
             }
         }
 
-        .section-heading {
-            text-align: center;
-            font-size: 2rem;
-            margin: 2rem 0 1.5rem;
-            color: #003366;
-        }
 
-        .services-container {
-            min-height: auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 50px;
-            padding: 20px;
-            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(Images/network-switch-with-cables.jpg);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-
-        }
-
-        .service-card {
-            position: relative;
-            backdrop-filter: blur(10px);
-            background-color: rgba(255, 255, 255, 0.486);
-            border-radius: 8px;
-            padding: 20px 15px;
-            width: 300px;
-            text-align: center;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease-in-out;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .fade-in-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .service-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-card i {
-            font-size: 30px;
-            color: #ff6600;
-            margin-bottom: 18px;
-        }
-
-        .service-card h2 {
-            font-size: 22px;
-            color: #002244;
-            margin-bottom: 12px;
-        }
-
-        .service-card p {
-            font-size: 16px;
-            color: #003366;
-            text-align: left;
-        }
-
-        .services-container {
-            min-height: auto;
-            display: flex;
-            gap: 30px;
-            padding: 20px;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url(Images/network-switch-with-cables.jpg);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            /* default for desktops */
-        }
-
-        /* Service Card */
-        .service-card {
-            position: relative;
-            backdrop-filter: blur(10px);
-            background-color: rgba(255, 255, 255, 0.5);
-            border-radius: 8px;
-            padding: 20px 15px;
-            width: 300px;
-            min-width: 280px;
-            text-align: center;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease-in-out;
-            opacity: 0;
-            transform: translateY(30px);
-            flex-shrink: 0;
-            /* ✅ important for horizontal scroll */
-        }
-
-        .fade-in-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .service-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Mobile & Tablet: horizontal scroll */
-        @media (max-width: 1024px) {
-            .services-container {
-                flex-wrap: nowrap;
-                /* ✅ stop wrapping */
-                overflow-x: auto;
-                /* ✅ allow scroll */
-                scroll-snap-type: x mandatory;
-                justify-content: flex-start;
-            }
-
-            .service-card {
-                width: 85%;
-                /* ✅ fill most of screen */
-                margin-right: 20px;
-                scroll-snap-align: center;
-                /* ✅ snap nicely */
-            }
-
-            .services-container::-webkit-scrollbar {
-                display: none;
-                /* ✅ hide scroll bar */
-            }
-        }
-
-        /* Desktop & larger: show 3 side by side */
-        @media (min-width: 1025px) {
-            .services-container {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .service-card {
-                width: 300px;
-            }
-        }
 
         /* Responsive */
         @media (max-width: 768px) {
@@ -1087,10 +946,13 @@
         .more-info {
             text-decoration: none;
             font-weight: 500;
-            color: #1a1a1a;
+            color: #fff;
             position: relative;
-            background-color: #f1c40f;
+            background-color: #ff6600;
             padding: .5rem .9rem;
+        }
+        .more-info a{
+            color: #fff;
         }
 
         .more-info::after {
@@ -1236,7 +1098,13 @@
 
         /*FOOTER SECTION*/
         footer {
-            background: #26282E;
+            background-image: 
+    linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .9)), /* gradient overlay */
+    url('Images/footer.jpg'); /* image */
+background-size: cover;      /* make image cover the container */
+background-position: center; /* center the image */
+background-repeat: no-repeat;
+
             color: #fff;
             padding: 50px 20px 20px;
         }
