@@ -1834,7 +1834,7 @@ background-repeat: no-repeat;
             font-size: 2.5rem;
             color: #fff;
             cursor: pointer;
-            user-select: none;
+            -webkit-user-select: none;
             transform: translateY(-50%);
             padding: 10px;
             transition: color 0.3s ease;
@@ -2480,10 +2480,170 @@ background-repeat: no-repeat;
             text-align: left;
         }
         }
+
+        /* Preloader Styles */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff; /* background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #f4631b; /* match your FAQ accent color */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+
+/*FAQS*/
+        .faq-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 50px 20px;
+            gap: 40px;
+        }
+
+        .faq-image {
+            position: relative;
+            flex: 1 1 350px;
+            max-width: 500px;
+        }
+
+        .faq-image img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            display: block;
+            border-radius: 10px;
+        }
+
+        /* Small overlay image */
+        .faq-image .overlay-img {
+            position: absolute;
+            bottom: -15px;
+            right: -15px;
+            width: 30%;
+            max-width: 120px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .faq-content {
+            flex: 1 1 350px;
+            min-width: 280px;
+        }
+
+        .faq-content h4 {
+            color: #ff6600;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .faq-content h2 {
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        .faq-content>p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        /* FAQ Accordion */
+        .faq-item {
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            background: #fff;
+            color: #333;
+            font-weight: bold;
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        /* Active Question */
+        .faq-item.active .faq-question {
+            background: #f4631b;
+            color: #fff;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            background: #fff;
+            padding: 0 20px;
+            color: #333;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 15px 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .faq-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .faq-image {
+                display: none;
+                /* hide both images on smaller screens */
+            }
+
+            .faq-content h2 {
+                font-size: 26px;
+            }
+
+            .faq-question {
+                text-align: left;
+            }
+        }
+
+
+
     </style>
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
     <header class="navbar">
         <div class="container">
             <div class="logo">
@@ -2544,7 +2704,7 @@ background-repeat: no-repeat;
         <!-- Slide indicators -->
         <div class="slide-controls">
             <button class="active"></button>
-            <button></button>
+            <button ></button>
             <button></button>
         </div>
     </section>
@@ -2913,12 +3073,140 @@ background-repeat: no-repeat;
     </section>
 
 
+    <!-- FQAS -->
+        <section class="faq-section">
+            <!-- Left side image -->
+            <div class="faq-image">
+                <img src="Images/Router.jpg" alt="Electrical Work">
+                <img class="overlay-img" src="Images/GPS-TRACKER.jpg" alt="Overlay">
+            </div>
+        
+            <!-- Right side content -->
+            <div class="faq-content">
+                <h4>FAQ’S</h4>
+                <h2>Frequently Asked Questions</h2>
+                <p>Some of the most asked questions here asked by our valuable Customers...</p>
+        
+                <!-- FAQ Items -->
+                <div class="faq-item">
+                    <div class="faq-question">Are your security systems compliant with data protection regulations?</div>
+                    <div class="faq-answer">
+                        Yes, all our security solutions are designed with privacy-by-design principles and comply with
+                        relevant data protection
+                        laws, including secure data storage and access controls.
+                    </div>
+                </div>
+        
+                <div class="faq-item">
+                    <div class="faq-question">Do you provide energy efficiency assessments with your electrical
+                        installations?</div>
+                    <div class="faq-answer">
+                        We include energy audits in all our electrical projects, recommending LED lighting, smart controls,
+                        and energy-efficient
+                        equipment that can reduce your power consumption by up to 40%.
+                    </div>
+                </div>
+        
+                <div class="faq-item">
+                    <div class="faq-question">How do you ensure cybersecurity in your network installations?</div>
+                    <div class="faq-answer">
+                        Our IT infrastructure includes enterprise-grade firewalls, encrypted connections,
+                        regular security patches, and employee training protocols to protect against cyber threats.
+                    </div>
+                </div>
+        
+                <div class="faq-item">
+                    <div class="faq-question">What types of security systems do you install?</div>
+                    <div class="faq-answer">
+                        We provide a wide range of solutions including CCTV cameras, alarm systems, biometric access
+                        controls, and perimeter
+                        security systems tailored to your needs.
+                    </div>
+                </div>
+        
+                <div class="faq-item">
+                    <div class="faq-question">Do you offer both residential and commercial electrical services?</div>
+                    <div class="faq-answer">
+                        Yes, we handle electrical installations, repairs, and maintenance for homes, offices, factories, and
+                        other commercial
+                        establishments.
+                    </div>
+                </div>
+        
+                <div class="faq-item">
+                    <div class="faq-question">What IT support services do you provide?</div>
+                    <div class="faq-answer">
+                        We offer network setup, server management, cybersecurity solutions, and ongoing technical
+                        support for businesses.
+                    </div>
+                </div>
+            </div>
+        </section>
 
+
+
+<!--prof end-->
+
+<section class="testimonials-section">
+    <!-- Left side text -->
+    <div class="testimonials-text">
+        <h3>TESTIMONIALS</h3>
+        <h2>What Our Client Say<br> About FERMI.</h2>
+    </div>
+
+    <!-- Right side slider -->
+    <div class="slider-container">
+        <div class="slider-track" id="slider-track">
+            <!-- Slide 1 -->
+            <div class="testimonial-card active">
+                <div class="quote">❝</div>
+                <p class="testimonial-text">“I’m really thankful. My office has been networked. It’s a blessing,
+                    They were
+                    very responsive and fast”</p>
+                <div class="testimonial-user">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+                    <div>
+                        <h4>Rafael Kevin</h4>
+                        <p>Shop Owner</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="testimonial-card">
+                <div class="quote">❝</div>
+                <p class="testimonial-text">“The service was excellent and professional. I’m impressed with how
+                    quick they worked!”</p>
+                <div class="testimonial-user">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+                    <div>
+                        <h4>Sophia Martinez</h4>
+                        <p>Business Woman</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="testimonial-card">
+                <div class="quote">❝</div>
+                <p class="testimonial-text">“They installed my CCTV cameras perfectly, and the support team was
+                    super helpful.”</p>
+                <div class="testimonial-user">
+                    <img src="https://randomuser.me/api/portraits/men/14.jpg" alt="">
+                    <div>
+                        <h4>John Smith</h4>
+                        <p>Manager</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
     <section class="projects-section1">
         <h3>@fermiSecuritySolutions</h3>
-        <h2>Our Projects</h2>
+        <h2>Our Projects Gallery</h2>
 
         <!-- Tabs -->
         <div class="project-tabss">
@@ -3031,63 +3319,8 @@ background-repeat: no-repeat;
     </div>
 
 
-    <!--prof end-->
 
-    <section class="testimonials-section">
-        <!-- Left side text -->
-        <div class="testimonials-text">
-            <h3>TESTIMONIALS</h3>
-            <h2>What Our Client Say<br> About FERMI.</h2>
-        </div>
 
-        <!-- Right side slider -->
-        <div class="slider-container">
-            <div class="slider-track" id="slider-track">
-                <!-- Slide 1 -->
-                <div class="testimonial-card active">
-                    <div class="quote">❝</div>
-                    <p class="testimonial-text">“I’m really thankful. My office has been networked. It’s a blessing,
-                        They were
-                        very responsive and fast”</p>
-                    <div class="testimonial-user">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
-                        <div>
-                            <h4>Rafael Kevin</h4>
-                            <p>Shop Owner</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 2 -->
-                <div class="testimonial-card">
-                    <div class="quote">❝</div>
-                    <p class="testimonial-text">“The service was excellent and professional. I’m impressed with how
-                        quick they worked!”</p>
-                    <div class="testimonial-user">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
-                        <div>
-                            <h4>Sophia Martinez</h4>
-                            <p>Business Woman</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 3 -->
-                <div class="testimonial-card">
-                    <div class="quote">❝</div>
-                    <p class="testimonial-text">“They installed my CCTV cameras perfectly, and the support team was
-                        super helpful.”</p>
-                    <div class="testimonial-user">
-                        <img src="https://randomuser.me/api/portraits/men/14.jpg" alt="">
-                        <div>
-                            <h4>John Smith</h4>
-                            <p>Manager</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <section class="stats-section">
         <div class="stat-box">
             <i class="fa-solid fa-lightbulb"></i>
@@ -3162,6 +3395,34 @@ background-repeat: no-repeat;
 
     <script src="script.js"></script>
     <script>
+
+        //PRELOADER
+        window.addEventListener("load", () => {
+                const preloader = document.getElementById("preloader");
+                preloader.style.opacity = "0";
+                setTimeout(() => {
+                    preloader.style.display = "none";
+                }, 500); // smooth fade-out
+            });
+
+
+//FAQS
+    const faqs = document.querySelectorAll(".faq-item");
+
+    faqs.forEach((faq) => {
+        faq.querySelector(".faq-question").addEventListener("click", () => {
+            // Close all
+            faqs.forEach(item => item.classList.remove("active"));
+            // Open clicked one
+            faq.classList.add("active");
+        });
+    });
+
+
+
+
+
+
         const tabs = document.querySelectorAll('.tab');
         const contents = document.querySelectorAll('.tab-content');
 
