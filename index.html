@@ -2482,42 +2482,123 @@ background-repeat: no-repeat;
         }
 
 /* Preloader full screen overlay */
-#preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    transition: opacity 0.6s ease, visibility 0.6s ease;
-}
-
-/* Loader animation (spinning circle) */
-.loader {
-    width: 60px;
-    height: 60px;
-    border: 6px solid #f3f3f3;
-    border-top: 6px solid #3498db;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-/* Keyframes for rotation */
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Hidden state */
-#preloader.hidden {
-    opacity: 0;
-    visibility: hidden;
-}
-
+        /* Preloader styles */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+        }
+        
+        #preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loader {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .loader:before, .loader:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 5px solid transparent;
+            border-top-color: #fff;
+            animation: spin 1.5s linear infinite;
+        }
+        
+        .loader:after {
+            border-top-color: #fdbb2d;
+            animation: spin 2s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .loading-text {
+            font-size: 1.2rem;
+            color: white;
+            margin-top: 20px;
+            letter-spacing: 2px;
+        }
+        
+        .loading-dots {
+            display: inline-block;
+            position: relative;
+            width: 40px;
+            height: 20px;
+        }
+        
+        .loading-dots span {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #fff;
+            animation: dots 1.5s infinite ease-in-out;
+        }
+        
+        .loading-dots span:nth-child(1) {
+            left: 0;
+            animation-delay: 0s;
+        }
+        
+        .loading-dots span:nth-child(2) {
+            left: 16px;
+            animation-delay: 0.2s;
+        }
+        
+        .loading-dots span:nth-child(3) {
+            left: 32px;
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes dots {
+            0%, 100% {
+                transform: scale(0.8);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+        }
+        
+        /* Content styles */
+        .contentt {
+            max-width: 800px;
+            padding: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .contentt.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
 
 
@@ -2651,6 +2732,14 @@ background-repeat: no-repeat;
     <!-- Preloader -->
     <div id="preloader">
         <div class="loader"></div>
+        <div class="loading-text">
+            Loading
+            <div class="loading-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </div>
 
     <header class="navbar">
@@ -3406,11 +3495,22 @@ background-repeat: no-repeat;
     <script>
 
         //PRELOADER
-       
-            window.addEventListener("load", function () {
-        const preloader = document.getElementById("preloader");
-            preloader.classList.add("hidden");
-    });
+       // Wait for the page to fully load
+        window.addEventListener("load", function () {
+            const preloader = document.getElementById("preloader");
+            const content = document.querySelector(".contentt");
+
+            // Add a small delay for better UX
+            setTimeout(function () {
+                preloader.classList.add("hidden");
+
+                // Show content after preloader hides
+                setTimeout(function () {
+                    content.classList.add("visible");
+                }, 300);
+            }, 1500); // Simulate loading time
+        });
+            
 
 
 
