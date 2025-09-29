@@ -2752,6 +2752,7 @@
             align-items: center;
             justify-content: center;
             padding: 2rem;
+             animation: changeBackground 18s infinite ease-in-out;
         }
 
         .ooverlay {
@@ -3192,7 +3193,60 @@
                 font-size: 1rem;
             }
         }
-        
+        /* Keyframes for 3 images */
+
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow: hidden; /* hide slides outside viewport */
+}
+
+/* Overlay */
+.ooverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+
+/* Slider container */
+.sliderr {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%; /* 3 slides */
+  height: 100%;
+  display: flex;
+  animation: slideShow 18s infinite;
+  z-index: 0;
+}
+
+/* Individual slides */
+.slidee {
+  flex: 0 0 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Keyframes for sliding */
+@keyframes slideShow {
+  0%   { transform: translateX(0%); }
+  30%  { transform: translateX(0%); }
+  
+  33%  { transform: translateX(-100%); }
+  63%  { transform: translateX(-100%); }
+  
+  66%  { transform: translateX(-200%); }
+  96%  { transform: translateX(-200%); }
+  
+  100% { transform: translateX(0%); }
+}
+
 
 
         
@@ -3276,6 +3330,14 @@
 
         <section class="hero">
             <div class="ooverlay"></div>
+
+              <!-- Background slider -->
+  <div class="sliderr">
+    <div class="slidee" style="background-image: url('Images/mainslide-01.jpg');"></div>
+    <div class="slidee" style="background-image: url('Images/happyClients1.jpg');"></div>
+    <div class="slidee" style="background-image: url('Images/mainslide-02.jpg');"></div>
+  </div>
+
             <div class="ccontent">
                 <div class="left-section">
                     <h1>
