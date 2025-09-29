@@ -300,21 +300,20 @@
 
             }
         }
+        
+        
 
-        /*HOMEPAGE SLIDESHOW*/
+        /*HOMEPAGE SLIDESHOW
         .slideshow-section {
             position: relative;
             width: 100%;
             height: 100vh;
-            /* Fallback */
             min-height: 500px;
-            /* Minimum height */
             max-height: 1200px;
-            /* Maximum height */
             overflow: hidden;
         }
 
-        /* Use mobile-first responsive units */
+       
         .slide {
             position: absolute;
             top: 0;
@@ -325,7 +324,7 @@
             transition: opacity 1.2s ease;
             background-size: cover;
             background-position: center;
-            /* Only enable zoom on larger screens where performance is better */
+           
             animation: zoomIn 5s linear infinite;
             display: flex;
             align-items: center;
@@ -340,16 +339,16 @@
 
         .slide-content {
             max-width: 90%;
-            /* More responsive than fixed width */
+            
             width: 900px;
-            /* Max width for larger screens */
+          
             padding: 2.5rem;
             border-radius: 12px;
             transform: translateY(100px);
             opacity: 0;
             transition: transform .7s ease, opacity 1s ease;
             margin: 0 20px;
-            /* Add margin for small screens */
+           
         }
 
         .slide.active .slide-content {
@@ -359,7 +358,7 @@
 
         .slide h2 {
             font-size: clamp(2rem, 8vw, 3rem);
-            /* Responsive font size */
+        
             margin-bottom: 1.2rem;
             color: #fff;
             font-weight: 700;
@@ -368,7 +367,7 @@
 
         .slide p {
             font-size: clamp(1rem, 4vw, 1.3rem);
-            /* Responsive font size */
+           
             margin-bottom: 2rem;
             line-height: 1.6;
         }
@@ -376,7 +375,7 @@
         .btn {
             display: inline-block;
             padding: clamp(12px, 4vw, 14px) clamp(25px, 8vw, 35px);
-            /* Responsive padding */
+           
             background: linear-gradient(135deg, #ff9d00, #ff6600);
             color: #fff;
             text-decoration: none;
@@ -387,7 +386,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             font-size: clamp(0.9rem, 3vw, 1rem);
-            /* Responsive font size */
+            
         }
 
         .btn:hover {
@@ -407,7 +406,7 @@
 
         .slide-controls button {
             width: clamp(14px, 4vw, 16px);
-            /* Responsive sizing */
+          
             height: clamp(14px, 4vw, 16px);
             border-radius: 50%;
             border: none;
@@ -446,7 +445,7 @@
 
         }
 
-        /* Background overlay for the last slide */
+        
         .slide:nth-child(3)::before {
             content: '';
             position: absolute;
@@ -463,7 +462,7 @@
             z-index: 2;
         }
 
-        /* Improved responsive design */
+       
         @media (max-width: 1200px) {
             .slideshow-section {
                 height: 80vh;
@@ -515,7 +514,7 @@
                 height: 12px;
             }
 
-            /* Reduce animation intensity on mobile */
+           
             .slide {
                 animation: zoomInMobile 5s linear infinite;
             }
@@ -527,10 +526,10 @@
 
                 100% {
                     transform: scale(1.05);
-                    /* Less zoom on mobile */
-                }
-            }
-        }
+                    
+    
+            
+        
 
         @media (max-width: 576px) {
             .slideshow-section {
@@ -558,24 +557,24 @@
                 height: 10px;
             }
 
-            /* Disable zoom animation on very small devices for performance */
+           
             .slide {
                 animation: none;
             }
         }
 
-        /* Orientation-based adjustments */
+        
         @media (max-height: 500px) and (orientation: landscape) {
             .slideshow-section {
                 height: 100vh;
-                /* Allow more height in landscape */
+               
                 min-height: 300px;
             }
 
             .slide-content {
                 padding: 1rem;
                 transform: translateY(50px);
-                /* Less movement for short screens */
+                
             }
 
             .slide h2 {
@@ -594,7 +593,7 @@
             }
         }
 
-        /* Tablet-specific adjustments */
+/
         @media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
             .slideshow-section {
                 height: 65vh;
@@ -605,14 +604,14 @@
             }
         }
 
-        /* Prevent excessive height on very large screens */
+       
         @media (min-width: 1600px) {
             .slideshow-section {
                 height: 80vh;
                 max-height: 1000px;
             }
         }
-
+*/
         /* REQUEST SERVICE */
 
         /*TESTIMONIAOLA*/
@@ -657,7 +656,7 @@
             animation: slideUp 1.2s ease-in-out;
         }
 
- 
+
 
         /* Slider */
         .slider-container {
@@ -928,7 +927,8 @@
             background-color: #ff6600;
             padding: .5rem .9rem;
         }
-        .more-info a{
+
+        .more-info a {
             color: #fff;
         }
 
@@ -1005,7 +1005,7 @@
             transition: transform 0.4s ease, box-shadow 0.4s ease;
             opacity: 0;
             transform: translateY(40px);
-            
+
         }
 
         /* Entrance animation */
@@ -1024,6 +1024,7 @@
                 transform: translateY(0);
             }
         }
+
         .stat-box i {
             font-size: 25px;
             color: #fff;
@@ -1051,31 +1052,33 @@
             .stat-box {
                 max-width: 100%;
             }
+
             .stats-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            flex-wrap: wrap;
-            padding: 20px;
-            background: #111827;
-        }
-        .stat-box i {
-            font-size: 20px;
-            color: #fff;
-            margin-bottom: 15px;
-        }
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+                flex-wrap: wrap;
+                padding: 20px;
+                background: #111827;
+            }
 
-        .stat-number {
-            font-size: 20px;
-            font-weight: bold;
-            color: #f97316;
-            margin-bottom: 5px;
-        }
+            .stat-box i {
+                font-size: 20px;
+                color: #fff;
+                margin-bottom: 15px;
+            }
 
-        .stat-label {
-            font-size: 1rem;
-            color: #fff;
-        }
+            .stat-number {
+                font-size: 20px;
+                font-weight: bold;
+                color: #f97316;
+                margin-bottom: 5px;
+            }
+
+            .stat-label {
+                font-size: 1rem;
+                color: #fff;
+            }
         }
 
         /* Responsive */
@@ -1088,18 +1091,22 @@
 
             .stat-box {
                 max-width: 100%;
-                
+
             }
         }
 
         /*FOOTER SECTION*/
         footer {
-            background-image: 
-    linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .9)), /* gradient overlay */
-    url('Images/footer.jpg'); /* image */
-background-size: cover;      /* make image cover the container */
-background-position: center; /* center the image */
-background-repeat: no-repeat;
+            background-image:
+                linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .9)),
+                /* gradient overlay */
+                url('Images/footer.jpg');
+            /* image */
+            background-size: cover;
+            /* make image cover the container */
+            background-position: center;
+            /* center the image */
+            background-repeat: no-repeat;
 
             color: #fff;
             padding: 50px 20px 20px;
@@ -2037,9 +2044,8 @@ background-repeat: no-repeat;
             padding-right: 15px;
             box-sizing: border-box;
         }
-        @media(min-width:1024px){
 
-        }
+        @media(min-width:1024px) {}
 
 
         /* Fix potential overflow issues */
@@ -2306,60 +2312,62 @@ background-repeat: no-repeat;
             .checklist {
                 grid-template-columns: 1fr;
             }
-        
-
-        .tab-content h2 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            word-wrap: break-word;
-        }
-        .tab {
-            flex: 1 1 33.33%;
-            /* flex grow/shrink naturally */
-            min-width: 150px;
-            /* don’t shrink below 200px */
-            max-width: 100%;
-            /* never overflow container */
-            text-align: left;
-            display: flex;
-            align-items: center;
-            /* center vertically */
-            justify-content: center;
-            /* center horizontally */
-            padding: 30px;
-            /* balanced padding */
-            cursor: pointer;
-            font-weight: bold;
-            color: #000;
-            transition: all 0.3s ease;
-            position: relative;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-        }
 
 
-        .tab:hover {
-            background: #f26a21;
-            color: #fff;
+            .tab-content h2 {
+                font-size: 28px;
+                margin-bottom: 15px;
+                word-wrap: break-word;
+            }
+
+            .tab {
+                flex: 1 1 33.33%;
+                /* flex grow/shrink naturally */
+                min-width: 150px;
+                /* don’t shrink below 200px */
+                max-width: 100%;
+                /* never overflow container */
+                text-align: left;
+                display: flex;
+                align-items: center;
+                /* center vertically */
+                justify-content: center;
+                /* center horizontally */
+                padding: 30px;
+                /* balanced padding */
+                cursor: pointer;
+                font-weight: bold;
+                color: #000;
+                transition: all 0.3s ease;
+                position: relative;
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            }
+
+
+            .tab:hover {
+                background: #f26a21;
+                color: #fff;
+            }
+
+            .tab.active {
+                background: #f26a21;
+                color: #fff;
+            }
+
+            .tab.active::after {
+                content: "";
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0;
+                height: 0;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-top: 10px solid #f26a21;
+            }
         }
 
-        .tab.active {
-            background: #f26a21;
-            color: #fff;
-        }
-
-        .tab.active::after {
-            content: "";
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-top: 10px solid #f26a21;
-        }
-    }
         @media (max-width: 576px) {
             .tab-content h2 {
                 font-size: 20px;
@@ -2371,117 +2379,122 @@ background-repeat: no-repeat;
                 line-height: 1.5;
                 text-align: left;
             }
-            .services-header{
+
+            .services-header {
                 font-size: 1.5rem;
             }
+
             .tab {
-            flex: 1 1 100%;
-            /* flex grow/shrink naturally */
-            min-width: 150px;
-            /* don’t shrink below 200px */
-            max-width: 100%;
-            /* never overflow container */
-            text-align: left;
-            display: flex;
-            align-items: center;
-            /* center vertically */
-            justify-content: center;
-            /* center horizontally */
-            padding: 30px;
-            /* balanced padding */
-            cursor: pointer;
-            font-weight: bold;
-            color: #000;
-            transition: all 0.3s ease;
-            position: relative;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-        }
-        
+                flex: 1 1 100%;
+                /* flex grow/shrink naturally */
+                min-width: 150px;
+                /* don’t shrink below 200px */
+                max-width: 100%;
+                /* never overflow container */
+                text-align: left;
+                display: flex;
+                align-items: center;
+                /* center vertically */
+                justify-content: center;
+                /* center horizontally */
+                padding: 30px;
+                /* balanced padding */
+                cursor: pointer;
+                font-weight: bold;
+                color: #000;
+                transition: all 0.3s ease;
+                position: relative;
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            }
 
 
-        .tab:hover {
-            background: #f26a21;
-            color: #fff;
-        }
 
-        .tab.active {
-            background: #f26a21;
-            color: #fff;
-        }
+            .tab:hover {
+                background: #f26a21;
+                color: #fff;
+            }
 
-        .tab.active::after {
-            content: "";
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-top: 10px solid #f26a21;
-        }
-        .feature-box {
-            background: #fafafa;
-            padding: 5px 0;
-            display: flex;
-            gap: 15px;
-            align-items: center;
-            transition: transform 0.3s;
-            min-width: 100%;
-            max-width: 100%;
-        }
-        .features-grid {
-                grid-template-columns: 1fr ;
+            .tab.active {
+                background: #f26a21;
+                color: #fff;
+            }
+
+            .tab.active::after {
+                content: "";
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0;
+                height: 0;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-top: 10px solid #f26a21;
+            }
+
+            .feature-box {
+                background: #fafafa;
+                padding: 5px 0;
+                display: flex;
+                gap: 15px;
+                align-items: center;
+                transition: transform 0.3s;
+                min-width: 100%;
+                max-width: 100%;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
                 padding: 5px;
                 min-width: 100%;
             }
 
             .features-grid {
-            gap: 30px;
-        }
-        .feature-box {
-            background: #fafafa;
-            padding: 10px;
-            display: flex;
-            gap: 17px;
-            align-items: center;
-            transition: transform 0.3s;
+                gap: 30px;
+            }
+
+            .feature-box {
+                background: #fafafa;
+                padding: 10px;
+                display: flex;
+                gap: 17px;
+                align-items: center;
+                transition: transform 0.3s;
+            }
+
+            .feature-icon {
+                width: 55px;
+                height: 55px;
+                background: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 25px;
+                color: #f26a21;
+                border-radius: 50%;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                flex-shrink: 0;
+            }
+
+            .feature-icon:hover {
+                background-color: #f26a21;
+                color: #fff;
+                transition: all 0.3s ease;
+            }
+
+            .feature-text h4 {
+                margin-bottom: 5px;
+                font-size: 15px;
+            }
+
+            .feature-text p {
+                font-size: 14px;
+                color: #555;
+                text-align: left;
+            }
         }
 
-        .feature-icon {
-            width: 55px;
-            height: 55px;
-            background: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 25px;
-            color: #f26a21;
-            border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            flex-shrink: 0;
-        }
-
-        .feature-icon:hover {
-            background-color: #f26a21;
-            color: #fff;
-            transition: all 0.3s ease;
-        }
-
-        .feature-text h4 {
-            margin-bottom: 5px;
-            font-size: 15px;
-        }
-
-        .feature-text p {
-            font-size: 14px;
-            color: #555;
-            text-align: left;
-        }
-        }
-
-/* Preloader full screen overlay */
+        /* Preloader full screen overlay */
         /* Preloader styles */
         #preloader {
             position: fixed;
@@ -2497,20 +2510,21 @@ background-repeat: no-repeat;
             z-index: 9999;
             transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
         }
-        
+
         #preloader.hidden {
             opacity: 0;
             visibility: hidden;
         }
-        
+
         .loader {
             width: 80px;
             height: 80px;
             position: relative;
             margin-bottom: 20px;
         }
-        
-        .loader:before, .loader:after {
+
+        .loader:before,
+        .loader:after {
             content: '';
             position: absolute;
             top: 0;
@@ -2522,35 +2536,36 @@ background-repeat: no-repeat;
             border-top-color: #fff;
             animation: spin 1.5s linear infinite;
         }
-        
+
         .loader:after {
             border-top-color: #fdbb2d;
             animation: spin 2s linear infinite;
         }
-        
+
         @keyframes spin {
             0% {
                 transform: rotate(0deg);
             }
+
             100% {
                 transform: rotate(360deg);
             }
         }
-        
+
         .loading-text {
             font-size: 1.2rem;
             color: white;
             margin-top: 20px;
             letter-spacing: 2px;
         }
-        
+
         .loading-dots {
             display: inline-block;
             position: relative;
             width: 40px;
             height: 20px;
         }
-        
+
         .loading-dots span {
             position: absolute;
             width: 8px;
@@ -2559,33 +2574,36 @@ background-repeat: no-repeat;
             background: #fff;
             animation: dots 1.5s infinite ease-in-out;
         }
-        
+
         .loading-dots span:nth-child(1) {
             left: 0;
             animation-delay: 0s;
         }
-        
+
         .loading-dots span:nth-child(2) {
             left: 16px;
             animation-delay: 0.2s;
         }
-        
+
         .loading-dots span:nth-child(3) {
             left: 32px;
             animation-delay: 0.4s;
         }
-        
+
         @keyframes dots {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(0.8);
                 opacity: 0.5;
             }
+
             50% {
                 transform: scale(1.2);
                 opacity: 1;
             }
         }
-        
+
         /* Content styles */
         .contentt {
             max-width: 800px;
@@ -2594,7 +2612,7 @@ background-repeat: no-repeat;
             transform: translateY(20px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
-        
+
         .contentt.visible {
             opacity: 1;
             transform: translateY(0);
@@ -2602,7 +2620,7 @@ background-repeat: no-repeat;
 
 
 
-/*FAQS*/
+        /*FAQS*/
         .faq-section {
             display: flex;
             flex-wrap: wrap;
@@ -2723,13 +2741,466 @@ background-repeat: no-repeat;
             }
         }
 
+        /*HOMEPAGE*/
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.5),
+                    rgba(0, 0, 0, 0.5)),
+                url('Images/cables-red-light-background.jpg') no-repeat center center/cover;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .ooverlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 0;
+        }
+
+        .ccontent {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            width: 100%;
+            max-width: 1200px;
+            z-index: 1;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .left-section {
+            color: white;
+            flex: 1 1 50%;
+            min-width: 300px;
+            text-align: left;
+        }
+
+        .left-section h1 {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .left-section p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 90%;
+        }
+
+        .ccta-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            background-color: #ff6600;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .button:hover {
+            background-color: #e55c00;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 102, 0, 0.3);
+        }
+
+        .button i {
+            transition: transform 0.3s ease;
+        }
+
+        .button:hover i {
+            transform: translateX(3px);
+        }
+
+        .phone {
+            display: flex;
+            align-items: center;
+            color: white;
+            gap: 0.8rem;
+        }
+
+        .phone-icon {
+            font-size: 1.6rem;
+            color: #ff6600;
+        }
+
+        .phone-text p {
+            margin-bottom: 0.2rem;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .phone-text strong {
+            font-size: 1.2rem;
+        }
+
+        .form-section {
+            background: white;
+            padding: 2rem;
+            flex: 1 1 40%;
+            min-width: 280px;
+            max-width: 450px;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .appointment-form h2 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .appointment-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #444;
+        }
+
+        .appointment-form span {
+            color: #ff6600;
+        }
+
+        .appointment-form input {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            transition: border 0.3s ease;
+        }
+
+        .appointment-form input:focus {
+            outline: none;
+            border-color: #ff6600;
+            box-shadow: 0 0 0 2px rgba(255, 102, 0, 0.2);
+        }
+
+        .submit-button {
+            background-color: #ff6600;
+            color: white;
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .submit-button:hover {
+            background-color: #e55c00;
+        }
+
+        .typingg-static {
+            font-weight: bold;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            color: #ff6600;
+        }
+
+        .typing-text-animation {
+            font-weight: 600;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            color: #ffffff;
+            border-right: 2px solid #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: middle;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: #fff;
+            }
+        }
+
+       
+        @media screen and (max-width: 768px) {
+            .ccontent {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .appointment-form {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .left-section {
+                flex: 1 1 100%;
+            }
+
+            .left-section h1 {
+                font-size: 2rem;
+            }
+
+            .left-section p {
+                max-width: 100%;
+            }
+
+            .ccta-group {
+                justify-content: center;
+                display: flex;
+                flex-direction: column;
 
 
+            }
+
+            .phone {
+                justify-content: flex-start;
+            }
+
+            .form-section {
+                width: 100%;
+            }
+        }
+
+
+/* Tablet (768px - 992px) */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .ccontent {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        text-align: left;
+        flex-wrap: nowrap; /* prevent stacking */
+        gap: 2rem;
+    }
+
+    .left-section {
+        flex: 0 0 50%;
+        text-align: left;
+        margin: 30px 0;
+        padding-left: 15px;
+    }
+
+    .form-section {
+        flex: 0 0 50%;
+        max-width: 400px;
+        margin-left: auto; /* keep it aligned right */
+    }
+
+    .ccta-group {
+        justify-content: flex-start;
+    }
+    .hero {
+        padding: 1.2rem 15px;
+    }
+
+    .form-section {
+            background: white;
+            padding: 1.5rem ;
+            flex: 1 1 100%;
+            min-width: 280px;
+            max-width: 450px;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .appointment-form h2 {
+            margin-bottom: 1.2rem;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .appointment-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+            color: #444;
+        }
+
+        .appointment-form span {
+            color: #ff6600;
+        }
+
+        .appointment-form input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            transition: border 0.3s ease;
+        }
+
+        .appointment-form input:focus {
+            outline: none;
+            border-color: #ff6600;
+            box-shadow: 0 0 0 2px rgba(255, 102, 0, 0.2);
+        }
+
+        .submit-button {
+            background-color: #ff6600;
+            color: white;
+            width: 100%;
+            padding: .7rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 400;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .submit-button:hover {
+            background-color: #e55c00;
+        }
+}
+
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 1rem;
+            }
+
+            .form-section {
+                background: white;
+                padding: 1rem;
+                flex: 1 1 100%;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                border-radius: 3px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            }
+
+            .appointment-form {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .appointment-form h2 {
+                margin-bottom: 1.2rem;
+                font-size: 1rem;
+                color: #333;
+            }
+
+            .appointment-form label {
+                display: block;
+                margin-bottom: 0.5rem;
+                font-weight: 300;
+                color: #444;
+                text-align: left;
+            }
+
+            .appointment-form span {
+                color: #ff6600;
+            }
+
+            .appointment-form input {
+                width: 100%;
+                padding: 0.5rem;
+                margin-bottom: .5rem;
+                border: 1px solid #ddd;
+                border-radius: none;
+                font-family: 'Poppins', sans-serif;
+                transition: border 0.3s ease;
+            }
+
+            .appointment-form input:focus {
+                outline: none;
+                border-color: #ff6600;
+                box-shadow: 0 0 0 2px rgba(255, 102, 0, 0.2);
+            }
+
+            .submit-button{
+                background-color: #ff6600;
+                color: white;
+                width: 100%;
+                padding: .7rem;
+                border: none;
+                border-radius: 5px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background 0.3s ease;
+                font-size: 1rem;
+                font-family: 'Poppins', sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+                margin-top: .5rem;
+            }
+
+            .submit-button:hover {
+                background-color: #e55c00;
+            }
+
+            .left-section h1 {
+                font-size: 1.8rem;
+            }
+
+            .left-section h1 i {
+                font-size: 1.5rem;
+            }
+
+            .left-section p {
+                font-size: .9rem;
+            }
+
+            .button,
+            .submit-button {
+                font-size: 0.9rem;
+                padding: 0.8rem 1.3rem;
+            }
+
+            .button {
+                border-radius: 3px;
+            }
+
+            .phone-text strong {
+                font-size: 1rem;
+            }
+        }
+        
+
+
+        
     </style>
 </head>
 
 <body>
-    
+
 
     <header class="navbar">
         <div class="container">
@@ -2762,8 +3233,11 @@ background-repeat: no-repeat;
         <a href="quote.html" class="quote-btn">Appointment</a>
     </div>
 
+
+
+<!--
     <section class="slideshow-section">
-        <!-- Slide 1 -->
+
         <div class="slide active" style="background-image: url('Images/cables-red-light-background.jpg');">
             <div class="slide-content">
                 <h2>We are the current specialists!!</h2>
@@ -2771,7 +3245,7 @@ background-repeat: no-repeat;
             </div>
         </div>
 
-        <!-- Slide 2 -->
+
         <div class="slide" style="background-image: url('Images/happyClients1.jpg');">
             <div class="slide-content">
                 <h2>Best Services For Our Families</h2>
@@ -2779,7 +3253,7 @@ background-repeat: no-repeat;
             </div>
         </div>
 
-        <!-- Slide 3 with background overlay -->
+
         <div class="slide" style="background-image: url('Images/mainslide-01.jpg');">
             <div class="slide-content">
                 <h2>Nothing Is Impossible For Us</h2>
@@ -2788,13 +3262,63 @@ background-repeat: no-repeat;
             </div>
         </div>
 
-        <!-- Slide indicators -->
+
         <div class="slide-controls">
             <button class="active"></button>
-            <button ></button>
+            <button></button>
             <button></button>
         </div>
     </section>
+-->
+
+
+    <!--HOMEPAGE-->
+
+        <section class="hero">
+            <div class="ooverlay"></div>
+            <div class="ccontent">
+                <div class="left-section">
+                    <h1>
+                        FERMI;<br /><span >Professional</span> <br />
+                        <span class="typingg-static"><i class="fas fa-bolt"></i></span>
+                        <span class="typing-text-animation" id="typingg"></span>
+                    </h1>
+                    <p>Quality service, trusted expertise, and solutions that make a
+                        difference.</p>
+                    <div class="ccta-group">
+                        <a href="#" class="button">Eplore services <i class="fas fa-arrow-right"></i></a>
+                        <div class="phone">
+                            <span class="phone-icon"><i class="fas fa-phone-alt"></i></span>
+                            <div class="phone-text">
+                                <p>Make a call</p>
+                                <strong>+256 750622060</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="form-section">
+                    <form class="appointment-form">
+                        <h2>Schedule an appointment</h2>
+                        <label>Name <span>*</span></label>
+                        <input type="text" required />
+        
+                        <label>Email <span>*</span></label>
+                        <input type="email" required />
+        
+                        <label>Phone <span>*</span></label>
+                        <input type="tel" required />
+        
+                        <label>Date <span>*</span></label>
+                        <input type="date" required />
+        
+                        <button type="submit" class="submit-button">
+                            Schedule Appointment <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
 
 
     <section class="about-section">
@@ -2826,8 +3350,10 @@ background-repeat: no-repeat;
 
 
     <!-- Tabs -->
-        <p style="color: #D97633FF; text-align: center;font-size: 1.3rem;">OUR SERVICES</p>
-        <h1 class="services-header" style="color: #000; text-align: center; width: 100%;display: flex; justify-content: center; align-items: center; margin: 0 auto; margin-bottom: 15px;padding: 0 10px;">We are the Professional
+    <p style="color: #D97633FF; text-align: center;font-size: 1.3rem;">OUR SERVICES</p>
+    <h1 class="services-header"
+        style="color: #000; text-align: center; width: 100%;display: flex; justify-content: center; align-items: center; margin: 0 auto; margin-bottom: 15px;padding: 0 10px;">
+        We are the Professional
         Security & Electrical Service Provider</h1>
     <div class="tabs">
         <div class="tab active" data-tab="domestic">Domestic Services</div>
@@ -2842,11 +3368,13 @@ background-repeat: no-repeat;
             <div class="content-left">
                 <div class="content-header">
                     <h2>Domestic Services</h2>
-                    <p style="text-align: left;">We do domestic household security & electrical services, ensuring your families are in the
+                    <p style="text-align: left;">We do domestic household security & electrical services, ensuring your
+                        families are in the
                         perfect state and safe from hazards such as fire outbreaks, short-circuits, and high room
                         temperatures.
                     </p>
-                    <p style="text-align: left;">Our expert technicians handle installations, repairs, and regular checkups to keep your home
+                    <p style="text-align: left;">Our expert technicians handle installations, repairs, and regular
+                        checkups to keep your home
                         safe.</p>
                 </div>
                 <div class="features-grid">
@@ -2971,10 +3499,12 @@ background-repeat: no-repeat;
             <!-- Right -->
             <div class="commercial-content">
                 <h2>Commercial Services</h2>
-                <p style="text-align: left;">Compared to domestic electrical repair work, commercial electrical installations require far more
+                <p style="text-align: left;">Compared to domestic electrical repair work, commercial electrical
+                    installations require far more
                     specialized
                     labor.</p>
-                <p style="text-align: left;">These tasks have a direct impact on the production system since they can save electrical costs and
+                <p style="text-align: left;">These tasks have a direct impact on the production system since they can
+                    save electrical costs and
                     increased
                     equipment longevity. Our services focuses:</p>
 
@@ -3161,134 +3691,134 @@ background-repeat: no-repeat;
 
 
     <!-- FQAS -->
-        <section class="faq-section">
-            <!-- Left side image -->
-            <div class="faq-image">
-                <img src="Images/Router.jpg" alt="Electrical Work">
-                <img class="overlay-img" src="Images/GPS-TRACKER.jpg" alt="Overlay">
-            </div>
-        
-            <!-- Right side content -->
-            <div class="faq-content">
-                <h4>FAQ’S</h4>
-                <h2>Frequently Asked Questions</h2>
-                <p>Some of the most asked questions here asked by our valuable Customers...</p>
-        
-                <!-- FAQ Items -->
-                <div class="faq-item">
-                    <div class="faq-question">Are your security systems compliant with data protection regulations?</div>
-                    <div class="faq-answer">
-                        Yes, all our security solutions are designed with privacy-by-design principles and comply with
-                        relevant data protection
-                        laws, including secure data storage and access controls.
-                    </div>
-                </div>
-        
-                <div class="faq-item">
-                    <div class="faq-question">Do you provide energy efficiency assessments with your electrical
-                        installations?</div>
-                    <div class="faq-answer">
-                        We include energy audits in all our electrical projects, recommending LED lighting, smart controls,
-                        and energy-efficient
-                        equipment that can reduce your power consumption by up to 40%.
-                    </div>
-                </div>
-        
-                <div class="faq-item">
-                    <div class="faq-question">How do you ensure cybersecurity in your network installations?</div>
-                    <div class="faq-answer">
-                        Our IT infrastructure includes enterprise-grade firewalls, encrypted connections,
-                        regular security patches, and employee training protocols to protect against cyber threats.
-                    </div>
-                </div>
-        
-                <div class="faq-item">
-                    <div class="faq-question">What types of security systems do you install?</div>
-                    <div class="faq-answer">
-                        We provide a wide range of solutions including CCTV cameras, alarm systems, biometric access
-                        controls, and perimeter
-                        security systems tailored to your needs.
-                    </div>
-                </div>
-        
-                <div class="faq-item">
-                    <div class="faq-question">Do you offer both residential and commercial electrical services?</div>
-                    <div class="faq-answer">
-                        Yes, we handle electrical installations, repairs, and maintenance for homes, offices, factories, and
-                        other commercial
-                        establishments.
-                    </div>
-                </div>
-        
-                <div class="faq-item">
-                    <div class="faq-question">What IT support services do you provide?</div>
-                    <div class="faq-answer">
-                        We offer network setup, server management, cybersecurity solutions, and ongoing technical
-                        support for businesses.
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section class="faq-section">
+        <!-- Left side image -->
+        <div class="faq-image">
+            <img src="Images/Router.jpg" alt="Electrical Work">
+            <img class="overlay-img" src="Images/GPS-TRACKER.jpg" alt="Overlay">
+        </div>
 
+        <!-- Right side content -->
+        <div class="faq-content">
+            <h4>FAQ’S</h4>
+            <h2>Frequently Asked Questions</h2>
+            <p>Some of the most asked questions here asked by our valuable Customers...</p>
 
-
-<!--prof end-->
-
-<section class="testimonials-section">
-    <!-- Left side text -->
-    <div class="testimonials-text">
-        <h3>TESTIMONIALS</h3>
-        <h2>What Our Client Say<br> About FERMI.</h2>
-    </div>
-
-    <!-- Right side slider -->
-    <div class="slider-container">
-        <div class="slider-track" id="slider-track">
-            <!-- Slide 1 -->
-            <div class="testimonial-card active">
-                <div class="quote">❝</div>
-                <p class="testimonial-text">“I’m really thankful. My office has been networked. It’s a blessing,
-                    They were
-                    very responsive and fast”</p>
-                <div class="testimonial-user">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
-                    <div>
-                        <h4>Rafael Kevin</h4>
-                        <p>Shop Owner</p>
-                    </div>
+            <!-- FAQ Items -->
+            <div class="faq-item">
+                <div class="faq-question">Are your security systems compliant with data protection regulations?</div>
+                <div class="faq-answer">
+                    Yes, all our security solutions are designed with privacy-by-design principles and comply with
+                    relevant data protection
+                    laws, including secure data storage and access controls.
                 </div>
             </div>
 
-            <!-- Slide 2 -->
-            <div class="testimonial-card">
-                <div class="quote">❝</div>
-                <p class="testimonial-text">“The service was excellent and professional. I’m impressed with how
-                    quick they worked!”</p>
-                <div class="testimonial-user">
-                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
-                    <div>
-                        <h4>Sophia Martinez</h4>
-                        <p>Business Woman</p>
-                    </div>
+            <div class="faq-item">
+                <div class="faq-question">Do you provide energy efficiency assessments with your electrical
+                    installations?</div>
+                <div class="faq-answer">
+                    We include energy audits in all our electrical projects, recommending LED lighting, smart controls,
+                    and energy-efficient
+                    equipment that can reduce your power consumption by up to 40%.
                 </div>
             </div>
 
-            <!-- Slide 3 -->
-            <div class="testimonial-card">
-                <div class="quote">❝</div>
-                <p class="testimonial-text">“They installed my CCTV cameras perfectly, and the support team was
-                    super helpful.”</p>
-                <div class="testimonial-user">
-                    <img src="https://randomuser.me/api/portraits/men/14.jpg" alt="">
-                    <div>
-                        <h4>John Smith</h4>
-                        <p>Manager</p>
+            <div class="faq-item">
+                <div class="faq-question">How do you ensure cybersecurity in your network installations?</div>
+                <div class="faq-answer">
+                    Our IT infrastructure includes enterprise-grade firewalls, encrypted connections,
+                    regular security patches, and employee training protocols to protect against cyber threats.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What types of security systems do you install?</div>
+                <div class="faq-answer">
+                    We provide a wide range of solutions including CCTV cameras, alarm systems, biometric access
+                    controls, and perimeter
+                    security systems tailored to your needs.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Do you offer both residential and commercial electrical services?</div>
+                <div class="faq-answer">
+                    Yes, we handle electrical installations, repairs, and maintenance for homes, offices, factories, and
+                    other commercial
+                    establishments.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What IT support services do you provide?</div>
+                <div class="faq-answer">
+                    We offer network setup, server management, cybersecurity solutions, and ongoing technical
+                    support for businesses.
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!--prof end-->
+
+    <section class="testimonials-section">
+        <!-- Left side text -->
+        <div class="testimonials-text">
+            <h3>TESTIMONIALS</h3>
+            <h2>What Our Client Say<br> About FERMI.</h2>
+        </div>
+
+        <!-- Right side slider -->
+        <div class="slider-container">
+            <div class="slider-track" id="slider-track">
+                <!-- Slide 1 -->
+                <div class="testimonial-card active">
+                    <div class="quote">❝</div>
+                    <p class="testimonial-text">“I’m really thankful. My office has been networked. It’s a blessing,
+                        They were
+                        very responsive and fast”</p>
+                    <div class="testimonial-user">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+                        <div>
+                            <h4>Rafael Otim</h4>
+                            <p>Shop Owner</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="testimonial-card">
+                    <div class="quote">❝</div>
+                    <p class="testimonial-text">“The service was excellent and professional. I’m impressed with how
+                        quick they worked!”</p>
+                    <div class="testimonial-user">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+                        <div>
+                            <h4>Sophia Martha</h4>
+                            <p>Business Woman</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="testimonial-card">
+                    <div class="quote">❝</div>
+                    <p class="testimonial-text">“They installed my CCTV cameras perfectly, and the support team was
+                        super helpful.”</p>
+                    <div class="testimonial-user">
+                        <img src="https://randomuser.me/api/portraits/men/14.jpg" alt="">
+                        <div>
+                            <h4>John Rogers</h4>
+                            <p>Manager</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
     <section class="projects-section1">
@@ -3483,22 +4013,22 @@ background-repeat: no-repeat;
     <script src="script.js"></script>
     <script>
 
-        
-            
 
 
 
-//FAQS
-    const faqs = document.querySelectorAll(".faq-item");
 
-    faqs.forEach((faq) => {
-        faq.querySelector(".faq-question").addEventListener("click", () => {
-            // Close all
-            faqs.forEach(item => item.classList.remove("active"));
-            // Open clicked one
-            faq.classList.add("active");
+
+        //FAQS
+        const faqs = document.querySelectorAll(".faq-item");
+
+        faqs.forEach((faq) => {
+            faq.querySelector(".faq-question").addEventListener("click", () => {
+                // Close all
+                faqs.forEach(item => item.classList.remove("active"));
+                // Open clicked one
+                faq.classList.add("active");
+            });
         });
-    });
 
 
 
@@ -4064,8 +4594,10 @@ background-repeat: no-repeat;
             });
         });
 
-    </script>
 
+
+    </script>
+<script src="script.js"></script>
 </body>
 
 </html>
