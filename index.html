@@ -137,8 +137,8 @@
 }
 
 .nav-links a:hover {
-    color: #003366;
-    background-color: rgba(0, 51, 102, 0.1);
+    color: #000;
+    background-color:#ff6600 ;
 }
 
 /* Highlight Button */
@@ -221,7 +221,7 @@
     padding: 15px 0;
     width: 80%;
     text-align: center;
-    border-bottom: 1px solid rgba(0, 51, 102, 0.1);
+    
 }
 
 .mobile-menu a.quote-btn {
@@ -262,7 +262,7 @@
     padding: 8px 0; /* reduced padding */
     width: 100%;
     text-align: left; /* left align text */
-    border-bottom: 1px solid rgba(0, 51, 102, 0.1);
+   
     transition: all 0.3s ease;
 }
 
@@ -316,6 +316,15 @@
      .mobile-menu{
         padding: 15% 5% 2% 5%;
     }
+}
+@media(max-width:992px){
+    .mobile-menu{
+        padding: 15% 5% 2% 5%;
+    }
+    .mobile-menu {
+    height: auto !important;   /* cancels full screen height */
+    min-height: 50vh; 
+}
 }
 
 /* Small Screens */
