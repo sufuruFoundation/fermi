@@ -36,7 +36,7 @@
         /* Typing Feature */
         #typing-feature {
             text-align: center;
-            padding: 3rem 1rem 2rem;
+            padding:  2rem;
         }
 
         #typing-icon {
@@ -68,10 +68,294 @@
                 border-color: transparent;
             }
         }
+/* ===============================
+   Base Styling
+================================= */
+.navbar {
+    width: 100%;
+    padding: 15px 0;
+    position: relative;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+}
+
+.logo span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ff6600;
+}
+
+#logo {
+    font-weight: 400;
+    font-size: 1rem;
+    color: #444;
+}
+
+/* ===============================
+   Navigation Links
+================================= */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #444;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.nav-links a:hover {
+    color: #003366;
+    background-color: rgba(0, 51, 102, 0.1);
+}
+
+/* Highlight Button */
+.quote-btn {
+    background-color: #ff6600;
+    color: #fff !important;
+    padding: 10px 20px !important;
+    transition: background 0.3s ease;
+}
+
+.quote-btn:hover {
+    background-color: #ff802b !important;
+}
+
+/* ===============================
+   Hamburger Toggle
+================================= */
+.menu-toggle {
+    display: none; /* hidden by default */
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 1.8rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1);
+}
+
+.menu-toggle i {
+    font-size: 1.8rem;
+}
+
+/* ===============================
+   Mobile Menu (Overlay Style)
+================================= */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding-top: 20%;
+    background-color: rgba(255, 255, 255, 0.97);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu.active {
+    transform: translateY(0);
+}
+
+.mobile-menu a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 15px 0;
+    width: 80%;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 51, 102, 0.1);
+}
+
+.mobile-menu a.quote-btn {
+    margin-top: 10px;
+    background-color: #ff6600;
+    color: #fff !important;
+    padding: 10px 0 !important;
+    width: 60%;
+}
+/* ===============================
+   Mobile Menu (Overlay Style)
+================================= */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 50vh; /* cover half the screen */
+    background-color:#fff;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* align to left */
+    padding: 13% 5% 0 5%; /* reduce padding */
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out;
+}
+
+.mobile-menu.active {
+    transform: translateY(0);
+}
+
+.mobile-menu a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 8px 0; /* reduced padding */
+    width: 100%;
+    text-align: left; /* left align text */
+    border-bottom: 1px solid rgba(0, 51, 102, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.mobile-menu a:hover {
+    background-color: #ff6600;
+    color: black;
+}
+
+/* Highlight Button in Mobile Menu */
+.mobile-menu a.quote-btn {
+    margin-top: 15px;
+    background-color: #ff6600;
+    color: #fff !important;
+    padding: 10px 0 !important;
+    width: 50%;
+    text-align: center;
+}
+
+/* ===============================
+   Responsive Breakpoints
+================================= */
+
+/* Tablets & Mobile */
+@media (max-width: 992px) {
+    .navbar{
+        position: fixed;
+    }
+    .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex; /* show hamburger */
+    }
+
+    .logo span {
+        font-size: 1rem;
+    }
+
+    #logo {
+        display: none;
+    }
+}
+
+/* Small Screens */
+@media (max-width: 576px) {
+    .mobile-menu {
+    height: auto !important;   /* cancels full screen height */
+    min-height: 40vh;          /* keeps half screen */
+}
+    .logo img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .logo span {
+        font-size: 0.9rem;
+    }
+
+    .mobile-menu a {
+        font-size: 0.95rem;
+         
+    }
+    .mobile-menu{
+        padding: 20% 5% 0 5%;
+    }
+}
+
+/* Large Screens */
+@media (min-width: 1024px) {
+    .mobile-menu {
+        display: none !important;
+    }
+}
+
+/* Fixed header for desktop/laptop */
+@media (min-width: 993px) {
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    /* Prevent overlap */
+    body {
+        padding-top: 80px; /* adjust based on navbar height */
+    }
+}
+.mobile-menu {
+    height: auto !important;   /* cancels full screen height */
+    min-height: 50vh;          /* keeps half screen */
+}
+@media (max-width: 375px) {
+    .mobile-menu{
+        padding: 25% 5% 0 5%;
+    }
+}
 
 
 
-        /* Responsive */
+
+        /* Responsive 
         @media (max-width: 768px) {
             .nav-links {
                 position: absolute;
@@ -106,10 +390,6 @@
                 font-size: 1.5rem;
             }
         }
-
-
-        /*country wide*/
-
 
         .navbar {
             
@@ -153,7 +433,7 @@
             font-size: 1rem;
         }
 
-        /* Navigation Links */
+    
         .nav-links {
             display: flex;
             gap: 20px;
@@ -186,7 +466,7 @@
             background-color: #ff802b !important;
         }
 
-        /* Mobile Menu Toggle */
+        
         .menu-toggle {
             display: none;
             background: none;
@@ -210,7 +490,7 @@
             font-size: 1.8rem;
         }
 
-        /* Mobile Menu Overlay */
+        
         .mobile-menu {
             position: absolute;
             top: 0;
@@ -299,7 +579,7 @@
                 object-fit: cover;
 
             }
-        }
+        }*/
         
         
 
@@ -1098,14 +1378,10 @@
         /*FOOTER SECTION*/
         footer {
             background-image:
-                linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .9)),
-                /* gradient overlay */
-                url('Images/footer.jpg');
-            /* image */
+                linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .9));
             background-size: cover;
-            /* make image cover the container */
+            
             background-position: center;
-            /* center the image */
             background-repeat: no-repeat;
 
             color: #fff;
@@ -3202,7 +3478,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  
   overflow: hidden; /* hide slides outside viewport */
 }
 
@@ -3210,7 +3486,7 @@
 .ooverlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.5);
   z-index: 1;
 }
 
@@ -3334,9 +3610,10 @@
 
               <!-- Background slider -->
   <div class="sliderr">
-    <div class="slidee" style="background-image: url('Images/mainslide-01.jpg');"></div>
-    <div class="slidee" style="background-image: url('Images/happyClients1.jpg');"></div>
-    <div class="slidee" style="background-image: url('Images/mainslide-02.jpg');"></div>
+    <div class="slidee" style="background-image: url('Images/back4.jpg') ;"></div>
+    <div class="slidee" style="background-image: url('Images/ai.jpg');"></div>
+    <div class="slidee" style="background-image: url('Images/back1.jpg');"></div>
+   
   </div>
 
             <div class="ccontent">
@@ -4094,6 +4371,16 @@
         });
 
 
+   
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4110,21 +4397,7 @@
                 document.getElementById(tab.dataset.tab).classList.add('active');
             });
         });
-        document.addEventListener('DOMContentLoaded', function () {
-
-            const toggleBtn = document.querySelector(".toggle-btn");
-            const serviceForm = document.querySelector(".service-form");
-
-            toggleBtn.addEventListener("click", function () {
-                if (serviceForm.style.display === "none" || serviceForm.style.display === "") {
-                    serviceForm.style.display = "flex";
-                    toggleBtn.textContent = "⬆ Hide Service Form";
-                } else {
-                    serviceForm.style.display = "none";
-                    toggleBtn.textContent = "⬇ Request Service Today";
-                }
-            });
-        });
+        
         document.addEventListener('DOMContentLoaded', function () {
             const menuToggle = document.getElementById('menuToggle');
             const mobileMenu = document.getElementById('mobileMenu');
