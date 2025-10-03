@@ -288,6 +288,7 @@
 
 /* Tablets & Mobile */
 @media (max-width: 992px) {
+    
     .mobile-menu {
     height: auto !important;   /* cancels full screen height */
     min-height: 45vh; 
@@ -329,7 +330,10 @@
 
 /* Small Screens */
 @media (max-width: 576px) {
-            
+            .navbar{
+                height: 70px;
+                padding: 10px ;
+            }
     .ccontent {
          padding-top: 100px; /* adjust based on your navbar height */
     }
@@ -360,6 +364,17 @@
     .mobile-menu {
         display: none !important;
     }
+    
+}
+
+@media (max-width: 1024px) {
+    .mobile-menu {
+        display: none !important;
+    }
+    #logo {
+        display: none;
+    }
+    
 }
 
 /* Fixed header for desktop/laptop */
@@ -384,6 +399,8 @@
         padding: 25% 2% 5% 5%;
     }
 }
+
+
 
 
 
@@ -3572,8 +3589,7 @@
         <div class="container">
             <div class="logo">
                 <img src="Images/fermi.png" alt="logo" />
-                <span style="font-weight: bold; font-size: 1.5rem;">Fermi⚡ <span id="logo">Electricals & IT
-                        Solutions</span></span>
+                <span style="font-weight: bold; font-size: 1.5rem;">Fermi⚡ <span id="logo">Electricals & ITSolutions</span></span>
             </div>
             <nav id="nav-links" class="nav-links">
                 <a href="index.html">Home</a>
