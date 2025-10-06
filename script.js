@@ -1,5 +1,20 @@
-//HOMEPAGE
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//HOMEPAGE
         const words = ["Security Services", "Electrical Services", "IT Solutions"];
         let i = 0;
         let timer;
@@ -36,10 +51,7 @@
             type();
         });
 
-        document.querySelector(".appointment-form").addEventListener("submit", function (e) {
-            e.preventDefault();
-            alert("Appointment scheduled successfully!");
-        });
+        
 
 
         document.addEventListener('DOMContentLoaded', function () {

@@ -3270,6 +3270,28 @@
             }
         }
 
+.submit-button:hover:not(:disabled) {
+    background-color: #e87121;
+}
+
+.submit-button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+
+
+.fa-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+ 
+
        
         @media screen and (max-width: 768px) {
             .ccontent {
@@ -3517,7 +3539,22 @@
             .phone-text strong {
                 font-size: 1rem;
             }
+            .error{
+                color: red;
+                margin-bottom: 8px;
+                text-align: left;
+                font-size: 1rem;
+            }
+            .success-message {
+            margin-top: 10px;
+            color: green;
+            font-weight: bold;
+            text-align: center;
+             }
         }
+
+
+        
 
         /* Keyframes for 3 images */
 
@@ -3574,9 +3611,7 @@
   100% { transform: translateX(0%); }
 }
 
-
-
-        
+       
     </style>
 </head>
 
@@ -3595,7 +3630,7 @@
                 <a href="services.html">Services</a>
                 <a href="projects.html">Projects</a>
                 <a href="contact.html">Contact</a>
-                <a href="quote.html" class="quote-btn">Get Quote</a>
+                <a href="quote.html" class="quote-btn">Appointment</a>
             </nav>
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
                 <i class="fas fa-bars"></i>
@@ -3646,23 +3681,29 @@
                 </div>
         
                 <div class="form-section">
-                    <form class="appointment-form">
+                    <form class="appointment-form" id="appointmentForm">
+                        
                         <h2>Schedule an appointment</h2>
                         <label>Name <span>*</span></label>
-                        <input type="text" required />
+                        <input type="text" name="name" id="name" placeholder="Name" required />
+                        <small id="nameError" class="error"></small>
         
                         <label>Email <span>*</span></label>
-                        <input type="email" required />
+                        <input type="email" name="email" id="email" placeholder="Email" required />
+                        <small id="emailError" class="error"></small>
         
-                        <label>Phone <span>*</span></label>
-                        <input type="tel" required />
+                        <label>Phone Number <span>*</span></label>
+                        <input type="tel" name="phone" id="phone" required placeholder="Phone" />
+                        <small id="phoneError" class="error"></small>
         
                         <label>Date <span>*</span></label>
-                        <input type="date" required />
+                        <input type="date" name="date" id="date" required  placeholder="Select Date"/>
+                        <small id="dateError" class="error"></small>
         
                         <button type="submit" class="submit-button">
                             Schedule Appointment <i class="fas fa-arrow-right"></i>
                         </button>
+                        <p class="success-message" id="successMessage"></p>
                     </form>
                 </div>
             </div>
@@ -4359,6 +4400,7 @@
 
 
     <script src="script.js"></script>
+    <script src="form.js"></script>
     <script>
 
 
