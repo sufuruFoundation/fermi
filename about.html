@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us • Fermi Electrical & IT Solutions</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <style>
+           * {
+            margin: 0;
+            text-decoration: none;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        }
+
+        body {
+            font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+         
+        }
+        /* ===============================
+   Base Styling
+================================= */
+.navbar {
+    width: 100%;
+    padding: 15px 0;
+    position: relative;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+}
+
+.logo span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ff6600;
+}
+
+#logo {
+    font-weight: 400;
+    font-size: 1rem;
+    color: #444;
+}
+
+/* ===============================
+   Navigation Links
+================================= */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #444;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.nav-links a:hover {
+    color: #000;
+    background-color:#ff6600 ;
+}
+
+/* Highlight Button */
+.quote-btn {
+    background-color: #ff6600;
+    color: #fff !important;
+    padding: 10px 20px !important;
+    transition: background 0.3s ease;
+}
+
+.quote-btn:hover {
+    background-color: #ff802b !important;
+}
+
+/* ===============================
+   Hamburger Toggle
+================================= */
+.menu-toggle {
+    display: none; /* hidden by default */
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 1.8rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    
+    align-items: center;
+    justify-content: center;
+    background: #fff;          /* subtle button background */
+    border: 1px solid #ddd;    /* light border */        /* rounded corners */
+    width: 45px;
+    height: 45px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* soft shadow */
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1);
+}
+
+.menu-toggle i {
+    font-size: 1.8rem;
+}
+
+/* ===============================
+   Mobile Menu (Overlay Style)
+================================= */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding-top: 20%;
+    background-color: #fff;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu.active {
+    transform: translateY(0);
+}
+
+.mobile-menu a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 15px 0;
+    width: 80%;
+    text-align: center;
+    
+}
+
+.mobile-menu a.quote-btn {
+    margin-top: 10px;
+    background-color: #ff6600;
+    color: #fff !important;
+    padding: 10px 0 !important;
+    width: 60%;
+}
+/* ===============================
+   Mobile Menu (Overlay Style)
+================================= */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 50vh; /* cover half the screen */
+    background-color:#fff;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* align to left */
+    padding: 13% 5% 2% 5%; /* reduce padding */
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out;
+}
+
+.mobile-menu.active {
+    transform: translateY(0);
+}
+
+.mobile-menu a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 8px 0; /* reduced padding */
+    width: 100%;
+    text-align: left; /* left align text */
+   
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.mobile-menu a:hover {
+    background-color: #ff6600;
+    color: black;
+}
+
+/* Highlight Button in Mobile Menu */
+.mobile-menu a.quote-btn {
+    margin-top: 15px;
+    background-color: #ff6600;
+    color: #fff !important;
+    padding: 10px 0 !important;
+    width: 50%;
+    text-align: center;
+}
+
+/* ===============================
+   Responsive Breakpoints
+================================= */
+
+/* Tablets & Mobile */
+@media (max-width: 992px) {
+    
+    .mobile-menu {
+    height: auto !important;   /* cancels full screen height */
+    min-height: 45vh; 
+}
+    .ccontent {
+         padding-top: 120px; /* adjust based on your navbar height */
+    }
+    .navbar{
+        position: fixed;
+    }
+    .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex; /* show hamburger */
+    }
+
+    .logo span {
+        font-size: 1rem;
+    }
+
+    #logo {
+        display: none;
+    }
+     .mobile-menu{
+        padding: 15% 5% 2% 5%;
+    }
+}
+@media(max-width:992px){
+    .mobile-menu{
+        padding: 15% 5% 2% 5%;
+    }
+    .mobile-menu {
+    height: auto !important;   /* cancels full screen height */
+    min-height: 50vh; 
+}
+}
+
+/* Small Screens */
+@media (max-width: 576px) {
+            .navbar{
+                height: 70px;
+                padding: 10px ;
+            }
+    .ccontent {
+         padding-top: 100px; /* adjust based on your navbar height */
+    }
+    .mobile-menu {
+    height: auto !important;   /* cancels full screen height */
+    min-height: 45vh;          /* keeps half screen */
+}
+    .logo img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .logo span {
+        font-size: 0.9rem;
+    }
+
+    .mobile-menu a {
+        font-size: 0.95rem;
+         
+    }
+    .mobile-menu{
+        padding: 20% 3% 5% 5%;
+    }
+}
+
+/* Large Screens */
+@media (min-width: 1024px) {
+    .mobile-menu {
+        display: none !important;
+    }
+    
+}
+@media (min-width: 1023px) {
+    #logo{
+        display: none;
+    }
+
+    
+}
+
+
+/* Fixed header for desktop/laptop */
+@media (min-width: 993px) {
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+   
+
+    /* Prevent overlap */
+    body {
+        padding-top: 80px; /* adjust based on navbar height */
+    }
+}
+
+@media (max-width: 375px) {
+    .mobile-menu{
+        padding: 25% 2% 5% 5%;
+    }
+}
+
+
+
+ /*FOOTER SECTION*/
+        footer {
+            background-image:
+                linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .75)),url('Images/cables-red-light-background.jpg');
+            background-size: cover;
+            
+            background-position: center;
+            background-repeat: no-repeat;
+
+            color: #fff;
+            padding: 50px 20px 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 35px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-box {
+            opacity: 0;
+            transform: translateY(40px);
+            text-align: left;
+        }
+
+        .footer-box.animate {
+            animation: fadeUp 1s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .footer-box h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+            border-left: 2px solid #ff6600;
+            padding-left: 8px;
+        }
+
+        .footer-box p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .footer-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-box ul li {
+            margin: 8px 0;
+        }
+
+        .footer-box ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 14px;
+        }
+
+        .footer-box ul li a:hover {
+            color: #ff6600;
+        }
+
+        .contact-info p {
+            font-size: 14px;
+            margin: 8px 0;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 14px;
+            color: #ddd;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .footer-bottom.animate {
+            animation: fadeUp 1s ease forwards;
+            animation-delay: 0.5s;
+        }
+
+        /* Responsive */
+        @media(max-width:992px) {
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width:600px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        /* Back-to-Top Button */
+        #backToTop {
+            position: fixed;
+            bottom: 40px;
+            right: 30px;
+            z-index: 9999;
+            background: #ff6600;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 22px;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            animation: vibrate 0.5s linear infinite;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+
+
+        @keyframes vibrate {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            20% {
+                transform: translate(-1px, 1px) rotate(-2deg);
+            }
+
+            40% {
+                transform: translate(-1px, -1px) rotate(2deg);
+            }
+
+            60% {
+                transform: translate(1px, 1px) rotate(1deg);
+            }
+
+            80% {
+                transform: translate(1px, -1px) rotate(-1deg);
+            }
+
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* ============ ABOUT PAGE (namespaced) ============ */
+    .fermiAbout_wrap { overflow-x: hidden; }
+    .fermiAbout_container { width:min(1200px, 92%); margin:auto; }
+    .fermiAbout_sectionTitle { font-size: clamp(1.6rem, 2.8vw, 2.2rem); font-weight:800; color:#000; margin-bottom: .75rem; }
+    .fermiAbout_sectionLead { color:#334155; max-width: 70ch; }
+
+    /* HERO */
+    .fermiAbout_hero {
+      position: relative; isolation:isolate; min-height: 68vh; display:grid; place-items:center; text-align:center; color:#fff; overflow:hidden;
+      background: #0b2a52;
+    }
+    .fermiAbout_hero::before{
+      content:""; position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.65)),
+                  url('Images/technicians.jpg') top/cover no-repeat;
+      z-index:-1;
+      transform: scale(1.05);
+    }
+    .fermiAbout_heroInner{ padding: 6rem 1rem 4rem; }
+    .fermiAbout_badge{ display:inline-block; color:#ff6600; font-weight:500; padding:.4rem .9rem; margin-bottom:1rem; }
+    .fermiAbout_heroTitle{ font-size: clamp(2rem, 6vw, 3.2rem); font-weight:900; letter-spacing:.2px; }
+    .fermiAbout_rotate{ display:inline-block; border-right:3px solid #ff6600; padding-right:6px; white-space:nowrap; }
+    .fermiAbout_heroSub{ margin: 1rem auto 1.5rem; max-width: 70ch; color:#fff; }
+    .fermiAbout_ctaRow{ display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap; }
+    .fermiAbout_btn{
+      display:inline-flex; align-items:center; gap:.5rem; padding:.78rem 1.15rem; border-radius:5px; font-weight:500; transition:transform .2s, box-shadow .2s, background .2s;
+    }
+    .fermiAbout_btn--primary{ background:#ff6600; color:#fff; }
+    .fermiAbout_btn--ghost{ border:2px solid #e5e7eb; color:#fff; }
+    .fermiAbout_btn:focus-visible{ outline:3px solid #ff6600; outline-offset:2px; }
+    .fermiAbout_btn:hover{  box-shadow:0 10px 20px rgba(0,0,0,.2); background-color: white; border: 1px solid #ff6600; color: #ff6600; }
+
+    /* WHO WE ARE */
+    .fermiAbout_twoCol{ display:grid; grid-template-columns: 1.05fr .95fr; gap:40px; align-items:center; padding:64px 0; }
+    @media (max-width: 900px){ .fermiAbout_twoCol{ grid-template-columns: 1fr; } }
+    .fermiAbout_card {
+      background:#ffffff; padding:28px; box-shadow: 0 12px 30px rgba(2,6,23,.08);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .fermiAbout_card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(2,6,23,.12); }
+    .fermiAbout_points{ display:grid; gap:14px; margin-top:16px; }
+    .fermiAbout_points li{ list-style:none; display:flex; align-items:flex-start; gap:.6rem; }
+    .fermiAbout_points i{ color:#ff6600; margin-top:2px; }
+
+    .fermiAbout_stack{ position:relative; aspect-ratio: 4/3;  overflow:hidden; }
+    .fermiAbout_stack img{ width:100%; height:100%; object-fit:cover; }
+    .fermiAbout_chip{
+      position:absolute; bottom:12px; left:12px; background:rgba(15,23,42,.86); color:#fff; padding:.5rem .75rem; border-radius:2px; font-weight:800; backdrop-filter: blur(6px);
+    }
+
+    /* STATS */
+    .fermiAbout_stats{ background:#111827; color:#fff; padding: 46px 0; }
+    .fermiAbout_statsGrid{ display:grid; grid-template-columns: repeat(4, 1fr); gap:22px; }
+    @media (max-width: 900px){ .fermiAbout_statsGrid{ grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 520px){ .fermiAbout_statsGrid{ grid-template-columns: 1fr 1fr; } }
+    .fermiAbout_statBox{ background:#111827;  border-radius:16px; padding:20px; text-align:center; }
+    .fermiAbout_statIcon{ font-size: 30px; margin-bottom:6px; color:#ff6600; }
+    .fermiAbout_statNum{ font-size: clamp(1.5rem, 4.5vw, 2.2rem); font-weight:900; }
+    .fermiAbout_statLbl{ opacity:.9; }
+
+    /* VALUES */
+    .fermiAbout_values{ padding:64px 0; }
+    .fermiAbout_pills{ display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 24px; }
+    .fermiAbout_pill{ padding:.5rem .85rem; border-radius:999px; background:#e8e6e5; color:#000; font-weight:800; }
+    .fermiAbout_valueGrid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; }
+    @media (max-width: 980px){ .fermiAbout_valueGrid{ grid-template-columns: 1fr; } }
+    .fermiAbout_valueCard{ background:#fff; border:1px solid #e2e8f0; border-radius:16px; padding:20px; display:grid; grid-template-columns: 56px 1fr; gap:12px; align-items:start; }
+    .fermiAbout_valueCard i{ font-size:28px; color:#ff6600; }
+
+    
+    
+    
+    
+
+
+
+      /*OUR ADVANTAGES*/
+              .advantages-section {
+            text-align: center;
+            padding: 80px 20px;
+            background: #f9f9f9;
+        }
+
+        .advantages-section h3 {
+            color: #ff6600;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .advantages-section h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .advantages-section p.subtext {
+            color: #666;
+            font-size: 16px;
+            max-width: 700px;
+            margin: 0 auto 50px auto;
+            line-height: 1.6;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: #fff;
+
+            padding: 30px 25px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+
+        .feature-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .feature-card i {
+            font-size: 28px;
+            color: #ff6600;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .feature-card h4 {
+            font-size: 27px;
+            font-weight: 700;
+            margin: 0;
+            color: #1a1a1a;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Optional dotted overlay background */
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            width: 60px;
+            height: 60px;
+            background-image: radial-gradient(#ddd 1px, transparent 1px);
+            background-size: 8px 8px;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .advantages-section h2 {
+                font-size: 28px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+
+            .feature-header {
+                justify-content: center;
+            }
+        }
+
+
+
+
+
+
+
+        .members-section-unique {
+            text-align: center;
+            padding: 40px 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .members-title-unique {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .members-subtitle-unique {
+            color:#111;
+            max-width: 600px;
+            margin: 0 auto 60px;
+            line-height: 1.6;
+        }
+
+        /* --- CAROUSEL CONTAINER --- */
+        .carousel-container-unique {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+        }
+
+        .carousel-track-unique {
+            display: flex;
+            transition: transform 0.6s ease;
+        }
+
+        .member-card-unique {
+            flex: 0 0 100%;
+            box-sizing: border-box;
+            background: #fff;
+            padding: 30px 20px;
+            border-radius: 20px;
+            max-width: 320px;
+            margin: 0 auto;
+           
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+
+        .member-card-unique.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .member-photo-unique {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+        }
+
+        .member-photo-unique img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-name-unique {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .member-role-unique {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* --- DOT NAVIGATION --- */
+        .carousel-dots-unique {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 25px;
+        }
+
+        .dot-unique {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #bbb;
+            transition: background 0.3s;
+        }
+
+        .dot-unique.active {
+            background: #ff6600;
+        }
+
+        /* --- TABLET & DESKTOP (3 static images, no dots) --- */
+        @media (min-width: 768px) {
+            .carousel-container-unique {
+                overflow: visible;
+            }
+
+            .carousel-track-unique {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                
+                gap: 15px;
+                justify-items: center;
+                transform: none !important;
+
+            }
+
+            .member-card-unique {
+                flex: none;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+
+            .carousel-dots-unique {
+                display: none;
+            }
+            .member-card-unique{
+                min-width: 230px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .member-photo-unique {
+                width: 200px;
+                height: 200px;
+                
+            }
+
+        }
+
+        /* --- MOBILE STYLING --- */
+        @media (max-width: 767px) {
+            .member-photo-unique {
+                width: 270px;
+                height: 270px;
+                
+            }
+
+            .members-title-unique {
+                font-size: 2rem;
+            }
+            .member-card-unique{
+                min-width: 400px;
+                margin: 0 auto;
+                padding: 30px;
+            }
+        }
+
+                /* --- Section Wrapper --- */
+        .how-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            padding: 50px 30px;
+            flex-wrap: wrap;
+        }
+
+        /* --- Text Area --- */
+        .how-content {
+            flex: 1 1 450px;
+            max-width: 550px;
+        }
+
+        .how-subtitle {
+            color: var(--primary);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .how-title {
+            font-size: 2.6rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 35px;
+        }
+
+        .how-step {
+            margin-bottom: 25px;
+        }
+
+        .how-step h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .how-step h4 i {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-right: 10px;
+        }
+
+        .how-step p {
+            color: var(--light);
+            line-height: 1.7;
+            font-size: 1rem;
+            margin-left: 1.8rem;
+            text-align: left;
+        }
+
+        /* --- Button --- */
+        .appointment-btnn {
+            display: inline-block;
+            background: #ff6600;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 16px 38px;
+            margin-top: 20px;
+            transition: 0.3s ease;
+            
+        }
+
+        .appointment-btnn:hover {
+            background: #ea580c;
+        }
+
+        /* --- Image --- */
+        .how-image {
+            flex: 1 1 400px;
+            text-align: left;
+        }
+
+        .how-image img {
+            width: 100%;
+            max-width: 550px;
+           
+            display: block;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 1024px) {
+            .how-title {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .how-section {
+                flex-direction: column;
+                text-align: left;
+            }
+
+            .how-step p {
+                margin-left: 0;
+                text-align: left;
+            }
+
+            .how-image img {
+                max-width: 100%;
+                margin-top: 10px;
+            }
+            .how-step h4{
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .how-title {
+                font-size: 1.8rem;
+            }
+
+            .appointment-btn {
+                padding: 14px 30px;
+                margin-left: 10px;
+
+            }
+            .how-image {
+            
+            text-align: left;
+        }
+            
+        }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header / Navbar (yours, improved) ===== -->
+  
+<header class="navbar">
+  <div class="container">
+    <div class="logo">
+      <img src="Images/logo2.jpg" alt="logo" />
+      <span style="font-weight: bold; font-size: 1.5rem;">Fermi⚡ <span id="logo">Electricals &
+          ITSolutions</span></span>
+    </div>
+    <nav id="nav-links" class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+      <a href="quote.html" class="quote-btn">Appointment</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact</a>
+  <a href="quote.html" class="quote-btn">Appointment</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- ===== Main About Page ===== -->
+  <main class="fermiAbout_wrap" id="main-content">
+
+    <!-- HERO -->
+    <section class="fermiAbout_hero" aria-label="About Fermi">
+      <div class="fermiAbout_heroInner fermiAbout_container">
+        <span class="fermiAbout_badge" style="color: #fff;">About Fermi</span>
+        <h1 class="fermiAbout_heroTitle">
+          Powering <span class="fermiAbout_rotate" id="fermiAbout_rotating">Reliable Grids</span> with Smart IT
+        </h1>
+        <p class="fermiAbout_heroSub">
+          We design, install, and maintain security, electrical systems and enterprise networks that scale—safely, efficiently, and sustainably—across Uganda.
+        </p>
+        <div class="fermiAbout_ctaRow" role="group" aria-label="About actions">
+          <a href="projects.html" class="fermiAbout_btn fermiAbout_btn--primary"><i class='bx bxs-bolt'></i> Our Projects</a>
+          <a href="contact.html" class="fermiAbout_btn fermiAbout_btn--ghost"><i class='bx bxs-message-detail'></i> Talk to Us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO WE ARE -->
+    <section class="fermiAbout_container fermiAbout_twoCol fermiAbout_reveal" id="about-who">
+      <div class="fermiAbout_card" aria-labelledby="about-title">
+        <h2 class="fermiAbout_sectionTitle" id="about-title">Who We Are</h2>
+        <p class="fermiAbout_sectionLead">
+          Fermi S ecurity, Electrical & IT Solutions is a multidisciplinary team delivering end-to-end power, security and network infrastructure. 
+        </p>
+        <ul class="fermiAbout_points" aria-label="Key capabilities">
+          <li><i class='bx bxs-check-shield'></i> Certified installations </li>
+          <li><i class='bx bxs-network-chart'></i> WAN/LAN, Wi-Fi structured cabling.</li>
+          <li><i class='bx bxs-battery-charging'></i> Backup power: UPS, solar-hybrid, generator integration.</li>
+          <li><i class='bx bxs-building-house'></i> Commercial/industrial wiring, panels, elevators & escalators interfaces.</li>
+          <li><i class='bx bxs-lock-alt'></i> Access control, CCTV, fire detection & IoT telemetry.</li>
+        </ul>
+      </div>
+      <figure class="fermiAbout_stack" aria-label="Team at work">
+        <img loading="lazy" src="Images/about_us.png" alt="Technicians working on a control panel">
+        <figcaption class="fermiAbout_chip"><i class='bx bxs-award'></i> 5+ Years • 200+ installs</figcaption>
+      </figure>
+    </section>
+
+    <!-- STATS -->
+    <section class="fermiAbout_stats" aria-label="Impact stats">
+      <div class="fermiAbout_container fermiAbout_statsGrid">
+        <div class="fermiAbout_statBox fermiAbout_reveal">
+          <div class="fermiAbout_statIcon"><i class='bx bxs-hard-hat'></i></div>
+          <div class="fermiAbout_statNum" data-count="90">0</div>
+          <div class="fermiAbout_statLbl">Projects Delivered</div>
+        </div>
+        <div class="fermiAbout_statBox fermiAbout_reveal">
+          <div class="fermiAbout_statIcon"><i class='bx bxs-timer'></i></div>
+          <div class="fermiAbout_statNum" data-count="99.6">0</div>
+          <div class="fermiAbout_statLbl">Uptime SLA (%)</div>
+        </div>
+        <div class="fermiAbout_statBox fermiAbout_reveal">
+          <div class="fermiAbout_statIcon"><i class='bx bxs-battery'></i></div>
+          <div class="fermiAbout_statNum" data-count="120">0</div>
+          <div class="fermiAbout_statLbl">MW Installed</div>
+        </div>
+        <div class="fermiAbout_statBox fermiAbout_reveal">
+          <div class="fermiAbout_statIcon"><i class='bx bxs-user-check'></i></div>
+          <div class="fermiAbout_statNum" data-count="100">0</div>
+          <div class="fermiAbout_statLbl">Clients Served</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="fermiAbout_container fermiAbout_values fermiAbout_reveal">
+      <h2 class="fermiAbout_sectionTitle">Mission, Vision & Values</h2>
+      <p class="fermiAbout_sectionLead">We exist to make critical infrastructure simple, safe, and sustainable for businesses and communities.</p>
+      <div class="fermiAbout_pills" role="list">
+        <span class="fermiAbout_pill">Safety First</span>
+        <span class="fermiAbout_pill">Engineering Rigor</span>
+        <span class="fermiAbout_pill">Customer Obsession</span>
+        <span class="fermiAbout_pill">Sustainability</span>
+        <span class="fermiAbout_pill">Integrity</span>
+      </div>
+
+      <div class="fermiAbout_valueGrid" role="list">
+        <article class="fermiAbout_valueCard" role="listitem">
+          <i class='bx bxs-bulb'></i>
+          <div>
+            <strong>Mission</strong>
+            <p>Design and maintain reliable security, electrical and IT systems that reduce downtime and total cost of ownership.</p>
+          </div>
+        </article>
+        <article class="fermiAbout_valueCard" role="listitem">
+          <i class='bx bxs-rocket'></i>
+          <div>
+            <strong>Vision</strong>
+            <p>Be East Africa’s most trusted partner for integrated power and digital infrastructure.</p>
+          </div>
+        </article>
+        <article class="fermiAbout_valueCard" role="listitem">
+          <i class='bx bxs-leaf'></i>
+          <div>
+            <strong>Values</strong>
+            <p>We engineer for people and planet—prioritizing safety, transparency, and measurable performance.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+
+
+<!--HOW IT WORKS-->
+<section class="how-section">
+  <!-- LEFT CONTENT -->
+  <div class="how-content">
+    <p class="how-subtitle" style="text-align: left; color: #ff6600;">How It’s Work</p>
+    <h2 class="how-title" style="text-align: left;">You are just a few clicks away...</h2>
+
+    <div class="how-step">
+      <h4 style="font-weight: 800;"><i class="fa-solid fa-bolt" style="color:#ff6600 ;"></i>Select Your Service</h4>
+      <p>Please select the option that best suits your problem. On the description box describe your issue in full
+        detail.</p> <br>
+      <p>The more information you put down, we will be able to provide better service and technician for the job</p>
+    </div>
+
+    <a href="#" class="appointment-btnn" style="align-items: flex-start; ">Appointment</a>
+  </div>
+
+  <!-- RIGHT IMAGE -->
+  <div class="how-image">
+    <img src="Images/tester.jpg" alt="Technician working on socket" />
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+<section class="members-section-unique">
+  <h2 class="members-title-unique">Our Professional Members</h2>
+  <p class="members-subtitle-unique">
+    Meet some of our skilled professionals who bring expertise, innovation, and dedication to every project.
+  </p>
+
+  <div class="carousel-container-unique">
+    <div class="carousel-track-unique">
+      <div class="member-card-unique">
+        <div class="member-photo-unique">
+          <img src="Images/ceoWinter.jpg" alt="Robert Fox" />
+        </div>
+        <h3 class="member-name-unique">Winter Emodiai</h3>
+        <p class="member-role-unique">CEO. Fermi</p>
+      </div>
+
+      <div class="member-card-unique">
+        <div class="member-photo-unique">
+          <img src="Images/winter2.jpg" alt="Brooklyn Simmons" />
+        </div>
+        <h3 class="member-name-unique">Brian Simmon</h3>
+        <p class="member-role-unique">Project Manager</p>
+      </div>
+
+      <div class="member-card-unique">
+        <div class="member-photo-unique">
+          <img src="Images/WINTERR.jpg" alt="Wade Warren" />
+        </div>
+        <h3 class="member-name-unique">Harold Peter</h3>
+        <p class="member-role-unique">Electrical Engineer</p>
+      </div>
+    </div>
+
+    <!-- Dots for Mobile -->
+    <div class="carousel-dots-unique"></div>
+  </div>
+</section>
+
+<!--OUR ADVANTAGES-->
+<section class="advantages-section">
+  <h3>Our Advantages</h3>
+  <h2>Reasons You Should Call Us</h2>
+  <p class="subtext">
+    Fermi Electrical & IT Solutions is your single source for high-quality power and network services —
+    including design/build, engineering, and maintenance.
+  </p>
+
+  <div class="features-grid">
+
+    <div class="feature-card">
+      <div class="feature-header">
+        <i class="fa-solid fa-clock-rotate-left"></i>
+        <h4>24/7 Emergency Services</h4>
+      </div>
+      <p>24/7 emergency technicians that you can trust for quick, reliable, and safe responses.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-header">
+        <i class="fa-solid fa-calculator"></i>
+        <h4>Our Free Estimates</h4>
+      </div>
+      <p>We offer detailed free estimates for security, electrical installations or system upgrades.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-header">
+        <i class="fa-solid fa-tags"></i>
+        <h4>Low Price Guarantee</h4>
+      </div>
+      <p>We strive to offer the most competitive prices in the market — guaranteed.</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-box">
+          <h3>About Us</h3>
+          <p>We provide top-notch Security,Electrical & IT solutions with years of experience delivering reliable
+            and
+            innovative services.</p>
+        </div>
+        <div class="footer-box">
+          <h3>Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-box">
+          <h3>Our Services</h3>
+          <ul>
+    
+            <li><a href="services.html">WLAN/LAN installation</a></li>
+            <li><a href="services.html">Air Conditioning</a></li>
+            <li><a href="services.html">Automatic Gates & Electric Fences</a></li>
+            <li><a href="services.html">Fire Alarms & Motion Detectors</a></li>
+            <li><a href="services.html">Access Control</a></li>
+            <li><a href="services.html">POS & Tracking Solutions</a></li>
+          </ul>
+        </div>
+        <div class="footer-box contact-info">
+          <h3>Contact Us</h3>
+          <p><i class="fa-solid fa-phone"></i> +256760271098</p>
+          <p><i class="fa-solid fa-phone"></i> +256754130885</p>
+          <p><i class="fa-solid fa-envelope"></i> fermielectrictechtech@gmail.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2025 Fermi Electrical & IT Solutions. All Rights Reserved.
+      </div>
+    </footer>
+    
+    <!-- Back-to-Top Button -->
+    <button id="backToTop" title="Back to Top"><i class="fa-solid fa-bolt"></i></button>
+  
+  </main>
+
+  
+
+    <script src="script.js"></script>
+  <script>
+   
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const menuIcon = menuToggle.querySelector('i');
+
+      menuToggle.addEventListener('click', function () {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+        mobileMenu.classList.toggle('active');
+
+        // Change icon based on menu state
+        if (mobileMenu.classList.contains('active')) {
+          menuIcon.classList.replace('fa-bars', 'fa-times');
+        } else {
+          menuIcon.classList.replace('fa-times', 'fa-bars');
+        }
+
+        // Toggle body scroll when menu is open
+        document.body.style.overflow = isExpanded ? 'auto' : 'hidden';
+      });
+
+      // Close menu when clicking on a link
+      const menuLinks = mobileMenu.querySelectorAll('a');
+      menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuIcon.classList.replace('fa-times', 'fa-bars');
+          document.body.style.overflow = 'auto';
+        });
+      });
+    });
+
+    //footer
+    // Footer animation on scroll
+    document.addEventListener('DOMContentLoaded', function () {
+      // Animate footer on scroll
+      const footerBoxes = document.querySelectorAll('.footer-box');
+      const footerBottom = document.querySelector('.footer-bottom');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+          }
+        });
+      }, { threshold: 0.2 });
+      footerBoxes.forEach(box => observer.observe(box));
+      observer.observe(footerBottom);
+
+      // Back-to-Top button
+      const backToTop = document.getElementById('backToTop');
+
+      window.addEventListener('scroll', () => {
+        backToTop.style.display = (window.scrollY > 200) ? 'flex' : 'none';
+      });
+
+      // Accelerating scroll to top
+      backToTop.addEventListener('click', () => {
+        const start = window.scrollY;
+        let startTime = null;
+
+        function easeInQuad(t) { return t * t; }
+
+        function scrollStep(timestamp) {
+          if (!startTime) startTime = timestamp;
+          const elapsed = timestamp - startTime;
+          const duration = 1000; // total duration in ms
+          const progress = Math.min(elapsed / duration, 1);
+          const distance = start * (1 - easeInQuad(progress));
+          window.scrollTo(0, distance);
+          if (progress < 1) requestAnimationFrame(scrollStep);
+        }
+
+        requestAnimationFrame(scrollStep);
+      });
+    });
+
+    
+    /* Rotating hero words */
+    (function(){
+      const el = document.getElementById('fermiAbout_rotating');
+      const words = ["Reliable Grids","Secure Networks","Efficient Energy","Smart Buildings"];
+      let i = 0;
+      setInterval(()=>{ i=(i+1)%words.length; el.textContent = words[i]; }, 2200);
+    })();
+
+    /* Intersection Observer: reveal + counters */
+    (function(){
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            entry.target.classList.add('isVisible');
+            io.unobserve(entry.target);
+          }
+        });
+      },{ threshold: .12 });
+
+      document.querySelectorAll('.fermiAbout_reveal').forEach(el=> io.observe(el));
+
+      // counters
+      const nums = document.querySelectorAll('.fermiAbout_statNum');
+      const io2 = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            const el = entry.target;
+            const target = parseFloat(el.getAttribute('data-count')) || 0;
+            const isPercent = el.nextElementSibling?.textContent.includes('SLA');
+            animateCount(el, target, 1200, isPercent);
+            io2.unobserve(el);
+          }
+        });
+      },{ threshold:.6 });
+      nums.forEach(n=> io2.observe(n));
+
+      function animateCount(el, target, duration, percent){
+        const start = performance.now();
+        const dec = (target%1!==0) ? 1 : 0;
+        function tick(now){
+          const p = Math.min((now-start)/duration, 1);
+          const val = (target * p);
+          el.textContent = percent ? (val.toFixed(1)) : (dec? val.toFixed(1) : Math.round(val));
+          if(p<1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+    })();
+
+    
+
+    //MEMBER PROFILE
+     // Entrance animation when visible
+      const cards = document.querySelectorAll(".member-card-unique");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+      cards.forEach((card) => observer.observe(card));
+
+      // Carousel logic (mobile only)
+      const track = document.querySelector(".carousel-track-unique");
+      const slides = Array.from(track.children);
+      const dotsContainer = document.querySelector(".carousel-dots-unique");
+
+      let currentIndex = 0;
+
+      // Create dots dynamically
+      slides.forEach((_, index) => {
+        const dot = document.createElement("div");
+        dot.classList.add("dot-unique");
+        if (index === 0) dot.classList.add("active");
+        dot.addEventListener("click", () => {
+          currentIndex = index;
+          updateCarousel();
+        });
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = Array.from(dotsContainer.children);
+
+      function updateCarousel() {
+        const width = slides[0].getBoundingClientRect().width;
+        track.style.transform = `translateX(-${currentIndex * width}px)`;
+
+        dots.forEach((dot, i) => {
+          dot.classList.toggle("active", i === currentIndex);
+        });
+      }
+
+      // Handle resize - disable carousel for larger screens
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+          track.style.transform = "none";
+        } else {
+          updateCarousel();
+        }
+      });
+
+      // Swipe (touch) support for mobile
+      let startX = 0;
+      let endX = 0;
+
+      track.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+      });
+
+      track.addEventListener("touchend", (e) => {
+        endX = e.changedTouches[0].clientX;
+        if (startX - endX > 50) {
+          currentIndex = (currentIndex + 1) % slides.length;
+          updateCarousel();
+        } else if (endX - startX > 50) {
+          currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+          updateCarousel();
+        }
+      });
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /* FAQ accordion */
+    (function(){
+      document.querySelectorAll('.fermiAbout_accItem').forEach(item=>{
+        const btn = item.querySelector('.fermiAbout_accBtn');
+        btn.addEventListener('click', ()=>{
+          const open = item.getAttribute('data-open') === 'true';
+          document.querySelectorAll('.fermiAbout_accItem').forEach(i=>{
+            i.setAttribute('data-open','false');
+            i.querySelector('.fermiAbout_accBtn').setAttribute('aria-expanded','false');
+          });
+          if(!open){ item.setAttribute('data-open','true'); btn.setAttribute('aria-expanded','true'); }
+        });
+      });
+    })();
+
+    /* Poll (upgraded): single vote, write-in, localStorage, percentages) */
+    (function(){
+      const KEY = 'fermiAbout_poll_v2';
+      const VOTED_KEY = 'fermiAbout_poll_voted';
+      const state = JSON.parse(localStorage.getItem(KEY) || '{"power":0,"network":0,"security":0,"solar":0}');
+      let hasOther = !!state.other;
+      const voted = localStorage.getItem(VOTED_KEY) === '1';
+
+      const choices = document.querySelectorAll('.fermiAbout_choice');
+      const otherInput = document.getElementById('fermiAbout_otherInput');
+      const otherBtn = document.getElementById('fermiAbout_otherBtn');
+      const voteNote = document.getElementById('fermiAbout_voteNote');
+
+      const bars = {
+        power: document.querySelector('[data-bar="power"]'),
+        network: document.querySelector('[data-bar="network"]'),
+        security: document.querySelector('[data-bar="security"]'),
+        solar: document.querySelector('[data-bar="solar"]'),
+        other: document.querySelector('[data-bar="other"]')
+      };
+      const pcts = {
+        power: document.querySelector('[data-pct="power"]'),
+        network: document.querySelector('[data-pct="network"]'),
+        security: document.querySelector('[data-pct="security"]'),
+        solar: document.querySelector('[data-pct="solar"]'),
+        other: document.querySelector('[data-pct="other"]')
+      };
+
+      function ensureOtherRow(){
+        const row = document.getElementById('fermiAbout_otherRow');
+        const label = document.getElementById('fermiAbout_otherLabel');
+        if (!hasOther && state.other && state.other > 0){
+          hasOther = true;
+          row.style.display = '';
+          label.textContent = 'Other';
+        } else if (hasOther) {
+          row.style.display = '';
+        }
+      }
+
+      function totalVotes(){
+        return Object.values(state).reduce((a,b)=> a + (b||0), 0);
+      }
+
+      function render(){
+        ensureOtherRow();
+        const total = totalVotes() || 1;
+        Object.keys(state).forEach(k=>{
+          if (!bars[k]) return;
+          const pct = Math.round((state[k]/total)*100);
+          bars[k].style.width = pct + '%';
+          bars[k].setAttribute('aria-valuenow', pct);
+          bars[k].setAttribute('aria-valuemin', 0);
+          bars[k].setAttribute('aria-valuemax', 100);
+          pcts[k].textContent = pct + '%';
+          bars[k].title = pct + '%';
+        });
+
+        if (voted) {
+          choices.forEach(b=> b.setAttribute('disabled','true'));
+          otherBtn.setAttribute('disabled','true');
+          otherInput.setAttribute('disabled','true');
+          voteNote.textContent = 'Thanks! Your vote has been recorded.';
+        } else {
+          voteNote.textContent = '';
+        }
+      }
+
+      function save(){ localStorage.setItem(KEY, JSON.stringify(state)); }
+
+      function cast(key){
+        if (localStorage.getItem(VOTED_KEY) === '1') return;
+        state[key] = (state[key]||0) + 1;
+        save();
+        localStorage.setItem(VOTED_KEY, '1');
+        render();
+      }
+
+      choices.forEach(btn=>{
+        btn.addEventListener('click', ()=> cast(btn.getAttribute('data-key')));
+      });
+
+      otherBtn.addEventListener('click', ()=>{
+        if (localStorage.getItem(VOTED_KEY) === '1') return;
+        const val = (otherInput.value || '').trim();
+        if (!val) { otherInput.focus(); return; }
+        state.other = (state.other||0) + 1;
+        save();
+        localStorage.setItem(VOTED_KEY, '1');
+        hasOther = true;
+        render();
+      });
+
+      // Init
+      render();
+    })();
+  </script>
+</body>
+</html>

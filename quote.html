@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request a Quote - Contact Us</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      background-color: #003366;
+      color: white;
+      padding: 15px 0;
+      position: relative;
+      z-index: 1000;
+      background: linear-gradient(to right, white, rgb(199, 223, 232));
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    .nav-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 60px;
+      width: 60px;
+      object-fit: contain;
+    }
+
+    .logo span {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #003366;
+    }
+
+    #logo {
+      font-weight: 400;
+      font-size: 1rem;
+    }
+
+    /* Navigation Links */
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #003366;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      padding: 8px 12px;
+      border-radius: 4px;
+    }
+
+    .nav-links a:hover {
+      color: #003366;
+      background-color: rgba(0, 51, 102, 0.1);
+    }
+
+    .quote-btn {
+      background-color: #003366;
+      color: white !important;
+      padding: 10px 20px !important;
+      border-radius: 30px !important;
+    }
+
+    .quote-btn:hover {
+      background-color: #002244 !important;
+    }
+
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #003366;
+      font-size: 1.8rem;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+    }
+
+    .menu-toggle:hover {
+      transform: scale(1.1);
+    }
+
+    .menu-toggle i {
+      font-size: 1.8rem;
+    }
+
+    /* Mobile Menu Overlay */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding-top: 80px;
+      background-color: rgba(255, 255, 255, 0.98);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transform: translateY(-100%);
+      transition: transform 1s ease-in-out;
+    }
+
+    .mobile-menu.active {
+      transform: translateY(0);
+    }
+
+    .mobile-menu a {
+      color: #003366;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 500;
+      padding: 15px 0;
+      width: 80%;
+      text-align: center;
+      border-bottom: 1px solid rgba(0, 51, 102, 0.1);
+    }
+
+    .mobile-menu a.quote-btn {
+      margin-top: 20px;
+      background-color: #003366;
+      color: white !important;
+      padding: 12px 0 !important;
+      border-radius: 30px;
+      width: 80%;
+    }
+
+    /* Main Content Container */
+    .main-container {
+      max-width: 1000px;
+      width: 100%;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      margin: 20px 0;
+    }
+
+    .header {
+      background: #2d5b7c;
+      color: white;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .info-section {
+      flex: 1;
+      min-width: 300px;
+      background: #f8f9fa;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .info-icon {
+      width: 50px;
+      height: 50px;
+      background: #2d5b7c;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 15px;
+      color: white;
+      font-size: 20px;
+    }
+
+    .info-text h3 {
+      color: #2d5b7c;
+      margin-bottom: 5px;
+    }
+
+    .form-section {
+      flex: 1;
+      min-width: 300px;
+      padding: 30px;
+    }
+
+    .quote-section {
+      width: 100%;
+    }
+
+    .form-title {
+      color: #2d5b7c;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    #quoteForm {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #quoteForm label {
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    #quoteForm input,
+    #quoteForm select,
+    #quoteForm textarea {
+      padding: 14px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: border-color 0.3s;
+    }
+
+    #quoteForm input:focus,
+    #quoteForm select:focus,
+    #quoteForm textarea:focus {
+      border-color: #2d5b7c;
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(45, 91, 124, 0.2);
+    }
+
+    #quoteForm textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    button[type="submit"] {
+      background: #2d5b7c;
+      color: white;
+      border: none;
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background: #1e4461;
+    }
+
+    .whatsapp-icon {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 15px 25px;
+      background: #4CAF50;
+      color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transform: translateX(100%);
+      transition: transform 0.3s ease-out;
+      z-index: 1000;
+    }
+
+    .notification.show {
+      transform: translateX(0);
+    }
+
+    /* Footer Styles */
+    .fermi-footer {
+      background-color: #1a2639;
+      padding: 1.5rem 1rem;
+      color: #d1dae6;
+      font-size: 1rem;
+      text-align: center;
+      width: 100%;
+      margin-top: 30px;
+    }
+
+    .fermi-footer-bottom p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    #backToTopBtn {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      background-color: #ffb400;
+      color: #1a2639;
+      border: none;
+      border-radius: 50%;
+      width: 2.6rem;
+      height: 2.6rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+      z-index: 999;
+    }
+
+    #backToTopBtn.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    #backToTopBtn:hover {
+      background-color: #ffa500;
+      transform: translateY(-3px);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .nav-links {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .logo span {
+        font-size: 1rem;
+      }
+
+      #logo {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        flex-direction: column;
+      }
+
+      .info-section,
+      .form-section {
+        width: 100%;
+      }
+
+      .header h1 {
+        font-size: 24px;
+      }
+
+      .header p {
+        font-size: 14px;
+      }
+
+      .info-text h3 {
+        font-size: 16px;
+      }
+
+      .info-text p {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .logo img {
+        height: 50px;
+        width: 50px;
+      }
+
+      .logo span {
+        font-size: 0.9rem;
+      }
+
+      .info-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+      }
+
+      .info-section,
+      .form-section {
+        padding: 20px;
+      }
+
+      button[type="submit"] {
+        padding: 12px;
+        font-size: 16px;
+      }
+    }
+
+    @media (min-width: 993px) {
+      .mobile-menu {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="images/logo2.jpg" alt="logo" />
+        <span style="font-weight: bold; font-size: 1.2rem;">Fermi <span id="logo">Electricals & IT
+            Solutions</span></span>
+      </div>
+      <nav id="nav-links" class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+        <a href="quote.html" class="quote-btn">Get Quote</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+    <a href="quote.html" class="quote-btn">Get Quote</a>
+  </div>
+
+  <div class="main-container">
+    <div class="header">
+      <h1>Request a Free Quote</h1>
+      <p>Fill out the form below and we'll contact you via WhatsApp shortly</p>
+    </div>
+
+    <div class="content">
+      <div class="info-section">
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <div class="info-text">
+            <h3>Electrical Services</h3>
+            <p>Residential & Commercial solutions</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-network-wired"></i>
+          </div>
+          <div class="info-text">
+            <h3>IT Networking</h3>
+            <p>Setup and maintenance</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div class="info-text">
+            <h3>Security Systems</h3>
+            <p>Installation and monitoring</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <div class="info-text">
+            <h3>WhatsApp Delivery</h3>
+            <p>We'll contact you directly on WhatsApp</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="quote-section">
+          <h2 class="form-title">Get In Touch</h2>
+          <form id="quoteForm">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="service">Service Type *</label>
+            <select id="service" name="service" required>
+              <option value="">-- Select Service --</option>
+              <option value="residential">Residential Electrical</option>
+              <option value="commercial">Commercial Electrical</option>
+              <option value="network">IT Networking & Setup</option>
+              <option value="security">Security Systems</option>
+            </select>
+
+            <label for="details">Project Details *</label>
+            <textarea id="details" name="details" rows="5" placeholder="Describe your project..." required></textarea>
+
+            <button type="submit">
+              <i class="fab fa-whatsapp whatsapp-icon"></i> Send via WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="notification" id="notification">
+    Message sent successfully! Redirecting to WhatsApp...
+  </div>
+
+  <!--footer-->
+  <footer class="fermi-footer" role="contentinfo" aria-label="Footer">
+    <div class="fermi-footer-bottom">
+      <button id="backToTopBtn" aria-label="Back to top" title="Back to top">&uarr;</button>
+      <p>&copy; 2025 Fermi Electricals &amp; IT Solutions. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('quoteForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Get form values
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const service = document.getElementById('service').value;
+      const details = document.getElementById('details').value;
+
+      // Format the message
+      const message = `New Quote Request:%0A%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AService: ${service}%0AProject Details: ${details}`;
+
+      // Replace with your actual WhatsApp number (with country code, without + or 0)
+      const whatsappNumber = '+256701705888';
+
+      // Create WhatsApp URL
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+      // Show notification
+      const notification = document.getElementById('notification');
+      notification.classList.add('show');
+
+      // Redirect to WhatsApp after a brief delay
+      setTimeout(() => {
+        window.open(whatsappUrl, '_blank');
+
+        // Reset form
+        document.getElementById('quoteForm').reset();
+
+        // Hide notification after another delay
+        setTimeout(() => {
+          notification.classList.remove('show');
+        }, 3000);
+      }, 2000);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const menuIcon = menuToggle.querySelector('i');
+
+      menuToggle.addEventListener('click', function () {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+        mobileMenu.classList.toggle('active');
+
+        // Change icon based on menu state
+        if (mobileMenu.classList.contains('active')) {
+          menuIcon.classList.replace('fa-bars', 'fa-times');
+        } else {
+          menuIcon.classList.replace('fa-times', 'fa-bars');
+        }
+
+        // Toggle body scroll when menu is open
+        document.body.style.overflow = isExpanded ? 'auto' : 'hidden';
+      });
+
+      // Close menu when clicking on a link
+      const menuLinks = mobileMenu.querySelectorAll('a');
+      menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuIcon.classList.replace('fa-times', 'fa-bars');
+          document.body.style.overflow = 'auto';
+        });
+      });
+    });
+
+    // Back to top button functionality
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) backToTopBtn.classList.add('show');
+      else backToTopBtn.classList.remove('show');
+    });
+    backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
+</body>
+
+</html>

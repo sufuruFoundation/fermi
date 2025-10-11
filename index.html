@@ -37,13 +37,13 @@
         /* Typing Feature */
         #typing-feature {
             text-align: center;
-            padding:  2rem;
+            padding:  0 2rem;
         }
 
         #typing-icon {
-            font-size: 4rem;
+            font-size: 3.5rem;
             color: #ff6600;
-            margin-bottom: 1rem;
+            margin-bottom: .2rem;
         }
 
         #typing-text {
@@ -954,7 +954,7 @@
             gap: 40px;
             flex-wrap: wrap;
             box-sizing: border-box;
-            min-height: 70vh;
+            min-height: 100vh;
         }
 
         /* Left text block */
@@ -1425,7 +1425,7 @@
         /*FOOTER SECTION*/
         footer {
             background-image:
-                linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .9));
+                linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .75)),url('Images/cables-red-light-background.jpg');
             background-size: cover;
             
             background-position: center;
@@ -3270,27 +3270,39 @@
             }
         }
 
-.submit-button:hover:not(:disabled) {
-    background-color: #e87121;
-}
+            .submit-button:hover:not(:disabled) {
+                background-color: #e87121;
+            }
 
-.submit-button:disabled {
-    background-color: #6c757d;
-    cursor: not-allowed;
-}
+            .submit-button:disabled {
+                background-color: #6c757d;
+                cursor: not-allowed;
+            }
 
 
 
-.fa-spinner {
-    animation: spin 1s linear infinite;
-}
+            .fa-spinner {
+                animation: spin 1s linear infinite;
+            }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
 
- 
+            .error{
+                color: red;
+                margin-bottom: 8px;
+                text-align: left;
+                font-size: 1rem;
+            }
+            .success-message {
+            margin-top: 10px;
+            color: green;
+            font-weight: bold;
+            text-align: center;
+             }
+            
 
        
         @media screen and (max-width: 768px) {
@@ -3539,18 +3551,7 @@
             .phone-text strong {
                 font-size: 1rem;
             }
-            .error{
-                color: red;
-                margin-bottom: 8px;
-                text-align: left;
-                font-size: 1rem;
-            }
-            .success-message {
-            margin-top: 10px;
-            color: green;
-            font-weight: bold;
-            text-align: center;
-             }
+            
         }
 
 
@@ -3621,7 +3622,7 @@
     <header class="navbar">
         <div class="container">
             <div class="logo">
-                <img src="Images/fermi.png" alt="logo" />
+                <img src="Images/logo2.jpg" alt="logo" />
                 <span style="font-weight: bold; font-size: 1.5rem;">Fermi⚡ <span id="logo">Electricals & ITSolutions</span></span>
             </div>
             <nav id="nav-links" class="nav-links">
@@ -3669,12 +3670,12 @@
                     <p>Quality service, trusted expertise, and solutions that make a
                         difference.</p>
                     <div class="ccta-group">
-                        <a href="#" class="button">Explore services <i class="fas fa-arrow-right"></i></a>
+                        <a href="services.html" class="button">Explore services <i class="fas fa-arrow-right"></i></a>
                         <div class="phone">
                             <span class="phone-icon"><i class="fas fa-phone-alt"></i></span>
                             <div class="phone-text">
                                 <p>Make a call</p>
-                                <strong>+256 750622060</strong>
+                                <strong>+256 760271098</strong>
                             </div>
                         </div>
                     </div>
@@ -3929,7 +3930,7 @@
     <div class="slider-container-services">
         <h2 style="text-align: center;color: #ff6600; font-size: 1.2rem;">24/7 Services – Safe and Efficient</h2>
         <h1
-            style="text-align: center; color: #000; font-size: 1.8rem; font-weight: bold; min-width: 300px; margin: 2rem 0;">
+            style="text-align: center; color: #000; font-size: 1.8rem; font-weight: bold; min-width: 300px; margin: 1rem 0;">
             We are a Full Service Electrical
             Contractor</h1>
         <div class="slider-track">
@@ -3937,56 +3938,56 @@
                 <div class="bulb"><img src="Images/autogate.png" alt="Automatic Gates"></div>
                 <h3 class="service-title">Automatic Gates & Electric Fences</h3>
                 <p class="service-text">Secure your premises with automatic gates and reliable electric fences.</p>
-                <a href="#" class="more-info">More info</a>
+                <a href="services.html" class="more-info">More info</a>
             </div>
             <div class="service-cards">
                 <div class="bulb"><img src="Images/cam.jpg" alt="CCTV"></div>
                 <h3 class="service-title">Surveillance & Detection</h3>
                 <p class="service-text">CCTV cameras, motion sensors, and walk-through metal detectors.</p>
-                <a href="#" class="more-info">More info</a>
+                <a href="services.html" class="more-info">More info</a>
             </div>
             <div class="service-cards">
                 <div class="bulb"><img src="Images/access.png" alt="Access Control"></div>
                 <h3 class="service-title">Access Control & Communication</h3>
                 <p class="service-text">Intercoms, smart alarms, and modern access control systems.</p>
-                <a href="#" class="more-info">More info</a>
+                <a href="services.html" class="more-info">More info</a>
             </div>
             <div class="service-cards">
                 <div class="bulb"><img src="Images/fire-alarm.png" alt="Fire Alarms"></div>
                 <h3 class="service-title">Fire Alarms & Motion Detectors</h3>
                 <p class="service-text">Protect lives with fire alarms and reliable detection devices.</p>
-                <a href="#" class="more-info">More info</a>
+                <a href="services.html" class="more-info">More info</a>
             </div>
             <div class="service-cards">
                 <div class="bulb"><img src="Images/pos.png" alt="POS Systems"></div>
                 <h3 class="service-title">POS & Tracking Solutions</h3>
                 <p class="service-text">Point of Sale systems, GPS trackers, and fuel monitoring systems.</p>
-                <a href="#" class="more-info">More info</a>
+                <a href="services.html" class="more-info">More info</a>
             </div>
             <div class="service-cards">
                 <div class="bulb"><img src="Images/wan.jpg" alt="Networking"></div>
                 <h3 class="service-title">WAN/LAN & Installations</h3>
                 <p class="service-text">Office/shop wiring, elevators, and escalator installations.</p>
-                <a href="#" class="more-info">More info</a>
+                <a href="services.html" class="more-info">More info</a>
             </div>
             <div class="service-cards">
                 <div class="bulb"><img src="Images/AC.png" alt="Air Conditioning"></div>
                 <h3 class="service-title">Air Conditioning</h3>
                 <p class="service-text">Professional installation of energy-efficient air conditioning systems.</p>
-                <a href="#" class="more-info">More info</a>
+                <a href="services.html" class="more-info">More info</a>
             </div>
             <div class="service-cards">
                 <div class="bulb"><img src="Images/water-heater-icon-design-free-vector.jpg" alt="Refrigeration"></div>
                 <h3 class="service-title">Refrigeration & Water Heaters</h3>
                 <p class="service-text">Reliable refrigeration systems and modern water heating solutions.</p>
-                <a href="#" class="more-info">More info</a>
+                <a href="services.html" class="more-info">More info</a>
             </div>
             <div class="service-cards">
                 <div class="bulb"><img src="Images/panelDesignpng.png" alt="Refrigeration"></div>
                 <h3 class="service-title">Electrical panel design & automation</h3>
                 <p class="service-text">We specialize in the design & automation of electrical panels tailored to meet
                     your specific needs.</p>
-                <a href="#" class="more-info">More info</a>
+                <a href="services.html" class="more-info">More info</a>
             </div>
         </div>
     </div>
@@ -4072,8 +4073,8 @@
                 Give us a call today to schedule a free service estimate!
             </p>
             <div class="buttonss">
-                <button class="btnn call"><i class="fas fa-phone-alt"></i> Give Us a Call</button>
-                <button class="btnn estimate"><i class="fas fa-bolt"></i> Free Estimate</button>
+                <button class="btnn call"><i class="fas fa-phone-alt"></i><a style="text-decoration: none; color: #fff;" href="tel:0760271098">Give Us a Call</a> </button>
+                <button class="btnn estimate"><i class="fas fa-bolt"></i> <a href="quote.html" style="text-decoration: none; color: #fff;" >Free Estimate</a> </button>
             </div>
         </div>
     </section>
@@ -4336,7 +4337,7 @@
 
         <div class="stat-box">
             <i class="fa-solid fa-users"></i>
-            <div class="stat-number" data-target="2600000">0</div>
+            <div class="stat-number" data-target="100">0</div>
             <div class="stat-label">Satisfied Clients</div>
         </div>
 
@@ -4365,28 +4366,29 @@
             <div class="footer-box">
                 <h3>Links</h3>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-box">
                 <h3>Our Services</h3>
                 <ul>
 
-                    <li><a href="#">WLAN/LAN installation</a></li>
-                    <li><a href="#">Air Conditioning</a></li>
-                    <li><a href="#">Automatic Gates & Electric Fences</a></li>
-                    <li><a href="#">Fire Alarms & Motion Detectors</a></li>
-                    <li><a href="#">Access Control</a></li>
-                    <li><a href="#">POS & Tracking Solutions</a></li>
+                    <li><a href="services.html">WLAN/LAN installation</a></li>
+                    <li><a href="services.html">Air Conditioning</a></li>
+                    <li><a href="services.html">Automatic Gates & Electric Fences</a></li>
+                    <li><a href="services.html">Fire Alarms & Motion Detectors</a></li>
+                    <li><a href="services.html">Access Control</a></li>
+                    <li><a href="services.html">POS & Tracking Solutions</a></li>
                 </ul>
             </div>
             <div class="footer-box contact-info">
                 <h3>Contact Us</h3>
                 <p><i class="fa-solid fa-phone"></i> +256760271098</p>
+                <p><i class="fa-solid fa-phone"></i> +256754130885</p>
                 <p><i class="fa-solid fa-envelope"></i> fermielectrictechtech@gmail.com</p>
             </div>
         </div>
@@ -4685,7 +4687,7 @@
             }
 
             // Auto scroll every 4000ms
-            setInterval(nextSlide, 4000);
+            setInterval(nextSlide, 7000);
 
 
         });
@@ -4742,7 +4744,7 @@
                 goToSlide(currentSlide);
             }
 
-            function startAutoScroll() { autoScrollInterval = setInterval(autoScroll, 2000); }
+            function startAutoScroll() { autoScrollInterval = setInterval(autoScroll, 5000); }
             function stopAutoScroll() { clearInterval(autoScrollInterval); }
 
             // Initialize
@@ -4763,6 +4765,9 @@
                     return (num / 1000000).toFixed(1) + "M";
                 } else if (num >= 1000) {
                     return (num / 1000).toFixed(1) + "K";
+                }
+                else if (num < 1000) {
+                    return (num);
                 }
                 return num;
             }

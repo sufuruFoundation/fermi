@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Auto scroll every 4000ms
-        setInterval(nextSlide, 4000);
+        setInterval(nextSlide, 7000);
         
 
 });

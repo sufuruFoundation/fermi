@@ -1,6 +1,4 @@
 
-
-
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('appointmentForm');
     const successMessage = document.getElementById('successMessage');
