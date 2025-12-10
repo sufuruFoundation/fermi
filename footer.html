@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer with Accelerating Back-to-Top</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #003366;
+            color: #fff;
+            padding: 50px 20px 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-box {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .footer-box.animate {
+            animation: fadeUp 1s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .footer-box h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+            border-left: 2px solid #f1c40f;
+            padding-left: 8px;
+        }
+
+        .footer-box p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .footer-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-box ul li {
+            margin: 8px 0;
+        }
+
+        .footer-box ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 14px;
+        }
+
+        .footer-box ul li a:hover {
+            color: #f1c40f;
+        }
+
+        .contact-info p {
+            font-size: 14px;
+            margin: 8px 0;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 14px;
+            color: #ddd;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .footer-bottom.animate {
+            animation: fadeUp 1s ease forwards;
+            animation-delay: 0.5s;
+        }
+
+        /* Responsive */
+        @media(max-width:992px) {
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width:600px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        /* Back-to-Top Button */
+        #backToTop {
+            position: fixed;
+            bottom: 40px;
+            right: 30px;
+            z-index: 9999;
+            background: #f1c40f;
+            color: #003366;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 22px;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            animation: vibrate 0.5s linear infinite;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        #backToTop:hover {
+            background: #fff;
+            transform: scale(1.2);
+        }
+
+        @keyframes vibrate {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            20% {
+                transform: translate(-1px, 1px) rotate(-2deg);
+            }
+
+            40% {
+                transform: translate(-1px, -1px) rotate(2deg);
+            }
+
+            60% {
+                transform: translate(1px, 1px) rotate(1deg);
+            }
+
+            80% {
+                transform: translate(1px, -1px) rotate(-1deg);
+            }
+
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-box">
+                <h3>About Us</h3>
+                <p>We provide top-notch Electrical & IT solutions with years of experience delivering reliable and
+                    innovative services.</p>
+            </div>
+            <div class="footer-box">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-box">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#">Air Conditioning</a></li>
+                    <li><a href="#">Automatic Gates & Electric Fences</a></li>
+                    <li><a href="#">Fire Alarms & Motion Detectors</a></li>
+                    <li><a href="#">Access Control</a></li>
+                    <li><a href="#">POS & Tracking Solutions</a></li>
+                </ul>
+            </div>
+            <div class="footer-box contact-info">
+                <h3>Contact Us</h3>
+                <p><i class="fa-solid fa-phone"></i> +256760271098</p>
+                <p><i class="fa-solid fa-envelope"></i> fermielectrictechtech@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Fermi Electrical & IT Solutions. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- Back-to-Top Button -->
+    <button id="backToTop" title="Back to Top"><i class="fa-solid fa-bolt"></i></button>
+
+    <script>
+        // Animate footer on scroll
+        const footerBoxes = document.querySelectorAll('.footer-box');
+        const footerBottom = document.querySelector('.footer-bottom');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.2 });
+        footerBoxes.forEach(box => observer.observe(box));
+        observer.observe(footerBottom);
+
+        // Back-to-Top button
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            backToTop.style.display = (window.scrollY > 200) ? 'flex' : 'none';
+        });
+
+        // Accelerating scroll to top
+        backToTop.addEventListener('click', () => {
+            const start = window.scrollY;
+            let startTime = null;
+
+            function easeInQuad(t) { return t * t; }
+
+            function scrollStep(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const elapsed = timestamp - startTime;
+                const duration = 1000; // total duration in ms
+                const progress = Math.min(elapsed / duration, 1);
+                const distance = start * (1 - easeInQuad(progress));
+                window.scrollTo(0, distance);
+                if (progress < 1) requestAnimationFrame(scrollStep);
+            }
+
+            requestAnimationFrame(scrollStep);
+        });
+    </script>
+
+</body>
+
+</html>

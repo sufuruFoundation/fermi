@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Accordion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+            /* prevent horizontal scroll */
+        }
+
+        .faq-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 50px 20px;
+            gap: 40px;
+        }
+
+        .faq-image {
+            position: relative;
+            flex: 1 1 350px;
+            max-width: 500px;
+        }
+
+        .faq-image img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            display: block;
+            border-radius: 10px;
+        }
+
+        /* Small overlay image */
+        .faq-image .overlay-img {
+            position: absolute;
+            bottom: -15px;
+            right: -15px;
+            width: 30%;
+            max-width: 120px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .faq-content {
+            flex: 1 1 350px;
+            min-width: 280px;
+        }
+
+        .faq-content h4 {
+            color: #ff6600;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .faq-content h2 {
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        .faq-content>p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        /* FAQ Accordion */
+        .faq-item {
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            background: #fff;
+            color: #333;
+            font-weight: bold;
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        /* Active Question */
+        .faq-item.active .faq-question {
+            background: #f4631b;
+            color: #fff;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            background: #fff;
+            padding: 0 20px;
+            color: #333;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 15px 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .faq-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .faq-image {
+                display: none;
+                /* hide both images on smaller screens */
+            }
+
+            .faq-content h2 {
+                font-size: 26px;
+            }
+
+            .faq-question {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="faq-section">
+        <!-- Left side image -->
+        <div class="faq-image">
+            <img src="Images/Router.jpg" alt="Electrical Work">
+            <img class="overlay-img" src="Images/GPS-TRACKER.jpg" alt="Overlay">
+        </div>
+
+        <!-- Right side content -->
+        <div class="faq-content">
+            <h4>FAQ’S</h4>
+            <h2>Frequently Asked Questions</h2>
+            <p>Some of the most asked questions here asked by our valuable Customers...</p>
+
+            <!-- FAQ Items -->
+            <div class="faq-item">
+                <div class="faq-question">Are your security systems compliant with data protection regulations?</div>
+                <div class="faq-answer">
+                    Yes, all our security solutions are designed with privacy-by-design principles and comply with
+                    relevant data protection
+                    laws, including secure data storage and access controls.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Do you provide energy efficiency assessments with your electrical
+                    installations?</div>
+                <div class="faq-answer">
+                    We include energy audits in all our electrical projects, recommending LED lighting, smart controls,
+                    and energy-efficient
+                    equipment that can reduce your power consumption by up to 40%.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How do you ensure cybersecurity in your network installations?</div>
+                <div class="faq-answer">
+                    Our IT infrastructure includes enterprise-grade firewalls, encrypted connections,
+                    regular security patches, and employee training protocols to protect against cyber threats.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What types of security systems do you install?</div>
+                <div class="faq-answer">
+                    We provide a wide range of solutions including CCTV cameras, alarm systems, biometric access
+                    controls, and perimeter
+                    security systems tailored to your needs.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Do you offer both residential and commercial electrical services?</div>
+                <div class="faq-answer">
+                    Yes, we handle electrical installations, repairs, and maintenance for homes, offices, factories, and
+                    other commercial
+                    establishments.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What IT support services do you provide?</div>
+                <div class="faq-answer">
+                    We offer network setup, server management, cybersecurity solutions, and ongoing technical
+                    support for businesses.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const faqs = document.querySelectorAll(".faq-item");
+
+        faqs.forEach((faq) => {
+            faq.querySelector(".faq-question").addEventListener("click", () => {
+                // Close all
+                faqs.forEach(item => item.classList.remove("active"));
+                // Open clicked one
+                faq.classList.add("active");
+            });
+        });
+    </script>
+
+</body>
+
+</html>
