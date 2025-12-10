@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reasons You Should Call Us - Fermi Electrical & IT Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ff6600;
+            --text-dark: #1a1a1a;
+            --text-muted: #666;
+            --bg-light: #ffffff;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background: #fff;
+            color: var(--text-dark);
+        }
+
+        .advantages-section {
+            text-align: center;
+            padding: 80px 20px;
+            background: #f9f9f9;
+        }
+
+        .advantages-section h3 {
+            color: #ff6600;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .advantages-section h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .advantages-section p.subtext {
+            color: #666;
+            font-size: 16px;
+            max-width: 700px;
+            margin: 0 auto 50px auto;
+            line-height: 1.6;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: #fff;
+
+            padding: 30px 25px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+
+        .feature-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .feature-card i {
+            font-size: 28px;
+            color: #ff6600;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .feature-card h4 {
+            font-size: 27px;
+            font-weight: 700;
+            margin: 0;
+            color: #1a1a1a;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Optional dotted overlay background */
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            width: 60px;
+            height: 60px;
+            background-image: radial-gradient(#ddd 1px, transparent 1px);
+            background-size: 8px 8px;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        @media (min-width: 768px) {
+            .advantages-section h2 {
+                font-size: 28px;
+            }
+
+            .features-grid {   
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            }
+            .feature-card {
+            background: #fff;
+            padding: 20px 10px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+            .feature-header {
+                justify-content: center;
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            .advantages-section h2 {
+                font-size: 28px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+
+            .feature-header {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="advantages-section">
+        <h3>Our Advantages</h3>
+        <h2>Reasons You Should Call Us</h2>
+        <p class="subtext">
+            Fermi Electrical & IT Solutions is your single source for high-quality power and network services —
+            including design/build, engineering, and maintenance.
+        </p>
+
+        <div class="features-grid">
+
+            <div class="feature-card">
+                <div class="feature-header">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <h4>24/7 Emergency Services</h4>
+                </div>
+                <p>24/7 emergency electricians you can trust for quick, reliable, and safe responses.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-header">
+                    <i class="fa-solid fa-calculator"></i>
+                    <h4>Free Estimates</h4>
+                </div>
+                <p>We offer detailed free estimates for electrical installations or system upgrades.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-header">
+                    <i class="fa-solid fa-tags"></i>
+                    <h4>Low Price Guarantee</h4>
+                </div>
+                <p>We strive to offer the most competitive prices in the market — guaranteed.</p>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

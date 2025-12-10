@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects • Fermi Electrical & IT Solutions</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+<!-- Font Awesome CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* ---------- Base Reset ---------- */
+    *,*::before,*::after{box-sizing:border-box;
+      
+    }
+    *{
+            font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+    }
+    html,body{margin:0;padding:0;
+            font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+    }
+    img{max-width:100%;display:block}
+    a{text-decoration:none}
+    button{cursor:pointer}
+
+    body{
+      font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      color:#0f172a; background:#fff; line-height:1.6;
+    }
+
+    /* ============ YOUR HEADER (kept) ============ */
+   
+    /* ===== PAGE SHELL ===== */
+    .fermiProj_container{width:min(1200px,92%);margin:auto}
+    .fermiProj_sectionTitle{font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:800;color:#0b2a52;margin-bottom:.5rem}
+
+    /* ===== HERO ===== */
+    .fermiProj_hero{
+      position:relative; isolation:isolate; min-height:58vh; display:grid; place-items:center; text-align:center; color:#fff; overflow:hidden; background:#0b2a52;
+    }
+    .fermiProj_hero::before{
+      content:""; position:absolute; inset:0;
+      background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.6)),
+        url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+      z-index:-1; transform:scale(1.05)
+    }
+    .fermiProj_heroInner{padding:5.2rem 1rem 3.2rem}
+    .fermiProj_badge{display:inline-block;background:#facc15;color:#111827;font-weight:800;padding:.4rem .9rem;border-radius:999px;margin-bottom:1rem}
+    .fermiProj_title{font-size:clamp(2rem,6vw,3.1rem);font-weight:900;letter-spacing:.2px}
+    .fermiProj_rotate{display:inline-block;border-right:3px solid #f59e0b;padding-right:6px;white-space:nowrap}
+    .fermiProj_sub{max-width:70ch;margin:1rem auto 0;color:#e5e7eb}
+
+    /* ===== CONTROLS ===== */
+    .fermiProj_controls{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;padding:22px 0}
+    @media (max-width:900px){.fermiProj_controls{grid-template-columns:1fr;}}
+    .fermiProj_search{position:relative}
+    .fermiProj_search input{
+      width:100%;padding:.78rem 2.6rem .78rem .9rem;border:1px solid #cbd5e1;border-radius:12px;font-size:1rem
+    }
+    .fermiProj_search i{position:absolute;right:.75rem;top:50%;transform:translateY(-50%);font-size:1.2rem;color:#64748b}
+    .fermiProj_filters{display:flex;flex-wrap:wrap;gap:8px}
+    .fermiProj_filter{padding:.5rem .85rem;border-radius:999px;border:1px solid #e2e8f0;background:#fff;font-weight:800}
+    .fermiProj_filter[aria-pressed="true"]{background:#0ea5e9;color:#fff;border-color:#0ea5e9}
+    .fermiProj_sort{
+      padding:.6rem .9rem;border:1px solid #cbd5e1;border-radius:12px;background:#fff;font-weight:700
+    }
+
+    /* ===== GRID ===== */
+    .fermiProj_grid{
+      display:grid;gap:16px;
+      grid-template-columns:repeat(3,1fr);
+    }
+    @media (max-width:1100px){.fermiProj_grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.fermiProj_grid{grid-template-columns:1fr}}
+
+    .fermiProj_card{
+      background:#fff;border:1px solid #e5e7eb;border-radius:16px;overflow:hidden;transition:transform .25s,box-shadow .25s;opacity:0;transform:translateY(18px)
+    }
+    .fermiProj_card.isVisible{opacity:1;transform:none}
+    .fermiProj_card:hover{transform:translateY(-4px);box-shadow:0 16px 30px rgba(2,6,23,.12)}
+    .fermiProj_thumb{aspect-ratio:16/10;overflow:hidden;background:#f1f5f9}
+    .fermiProj_thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .fermiProj_card:hover .fermiProj_thumb img{transform:scale(1.06)}
+    .fermiProj_body{padding:14px 14px 12px}
+    .fermiProj_row{display:flex;justify-content:space-between;align-items:start;gap:12px}
+    .fermiProj_titleSm{font-weight:800;font-size:1.05rem;color:#0b2a52}
+    .fermiProj_badges{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+    .fermiProj_badgePill{padding:.3rem .6rem;border-radius:999px;background:#eef2ff;color:#1e3a8a;font-weight:800;font-size:.8rem}
+    .fermiProj_meta{color:#475569;font-size:.9rem}
+    .fermiProj_actions{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+    .fermiProj_btn{padding:.55rem .85rem;border:1px solid #cbd5e1;border-radius:10px;background:#fff;font-weight:800;display:inline-flex;align-items:center;gap:6px}
+    .fermiProj_like{display:inline-flex;align-items:center;gap:6px;border:none;background:#fff}
+    .fermiProj_like i{font-size:1.3rem;transition:transform .2s}
+    .fermiProj_like[data-liked="true"] i{color:#ef4444}
+    .fermiProj_like[data-liked="true"] i.bxs-heart{transform:scale(1.1)}
+    .fermiProj_likeCount{font-weight:800;color:#0b2a52}
+
+    /* ===== MODAL ===== */
+    .fermiProj_modalBackdrop{
+      position:fixed;inset:0;background:rgba(2,6,23,.5);display:none;align-items:center;justify-content:center;padding:20px;z-index:1200
+    }
+    .fermiProj_modal{background:#fff;border-radius:18px;max-width:1000px;width:100%;overflow:hidden;box-shadow:0 30px 60px rgba(2,6,23,.35);max-height:90vh;display:grid;grid-template-columns:1fr 1fr}
+    @media (max-width:900px){.fermiProj_modal{grid-template-columns:1fr;max-height:92vh}}
+    .fermiProj_modalLeft{background:#0b2a52}
+    .fermiProj_gallery{position:relative}
+    .fermiProj_gallery img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover}
+    .fermiProj_gNav{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:0 6px}
+    .fermiProj_gBtn{background:rgba(0,0,0,.4);border:none;color:#fff;width:36px;height:36px;border-radius:50%}
+    .fermiProj_modalRight{padding:16px}
+    .fermiProj_modalClose{position:absolute;top:10px;right:10px;background:#fff;border:none;border-radius:50%;width:36px;height:36px;display:grid;place-items:center;box-shadow:0 6px 16px rgba(2,6,23,.25)}
+    .fermiProj_modalHead{display:flex;justify-content:space-between;align-items:start;gap:12px}
+    .fermiProj_modalHead h3{margin:0}
+    .fermiProj_modalDesc{color:#334155;margin:10px 0}
+    .fermiProj_modalGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    @media (max-width:520px){.fermiProj_modalGrid{grid-template-columns:1fr}}
+    .fermiProj_kv{background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:10px}
+    .fermiProj_modalActions{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+
+    /* ===== LOAD MORE ===== */
+    .fermiProj_loadMoreWrap{display:grid;place-items:center;padding:24px 0}
+    .fermiProj_loadMore{padding:.7rem 1.1rem;border:1px solid #cbd5e1;border-radius:12px;background:#fff;font-weight:800}
+
+    /* ===== FOOTER (yours) ===== */
+    .fermi-footer{background-color:#1a2639;padding:1.5rem 1rem;color:#d1dae6;font-size:1rem;text-align:center}
+    .fermi-footer-bottom p{margin:0;font-size:.95rem}
+    #backToTopBtn{
+      position:fixed;bottom:1rem;right:1rem;background:#ffb400;color:#1a2639;border:none;border-radius:50%;
+      width:2.6rem;height:2.6rem;font-size:1.2rem;box-shadow:0 2px 4px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:all .3s
+    }
+    #backToTopBtn.show{opacity:1;pointer-events:auto}
+    #backToTopBtn:hover{background:#ffa500;transform:translateY(-3px)}
+     .navbar {
+            background-color: #003366;
+            color: white;
+            padding: 15px 0;
+            position: relative;
+            z-index: 1000;
+            background: linear-gradient(to right, white, rgb(199, 223, 232));
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: 60px;
+            object-fit: contain;
+        }
+
+        .logo span {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #003366;
+        }
+
+        #logo {
+            font-weight: 400;
+            font-size: 1rem;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #003366;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        .nav-links a:hover {
+            color: #003366;
+            background-color: rgba(0, 51, 102, 0.1);
+        }
+
+        .quote-btn {
+            background-color: #003366;
+            color: white !important;
+            padding: 8px 20px !important;
+            border-radius: 30px !important;
+        }
+
+        .quote-btn:hover {
+            background-color: #002244 !important;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #003366;
+            font-size: 1.8rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .menu-toggle i {
+            font-size: 1.8rem;
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80%;
+            padding-top: 20%;
+            background-color: rgba(255, 255, 255, 0.95);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: translateY(-100%);
+            transition: transform 1s ease-in-out;
+        }
+
+        .mobile-menu.active {
+            transform: translateY(0);
+        }
+
+        .mobile-menu a {
+            color: #003366;
+            text-decoration: none;
+            font-size: .9rem;
+            padding: 15px 0;
+            width: 80%;
+            font-weight: 500;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 51, 102, 0.1);
+        }
+
+        .mobile-menu a.quote-btn {
+            margin-top: 20px;
+            background-color: #003366;
+            color: white !important;
+            padding: 12px 0 !important;
+            border-radius: 30px;
+            width: 30%;
+        }
+
+        /* Responsive Styles */
+        @media (min-width: 992px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .logo span {
+                font-size: 1rem;
+            }
+
+            #logo,#logo4{
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo img {
+                height: 50px;
+                width: 50px;
+            }
+
+            .logo span {
+                font-size: 0.9rem;
+            }
+            #logo4{
+              display: none;
+            }
+        }
+        @media(min-width:1024px){
+          .mobile-menu {
+            display: none;
+          }
+        }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header (exact) ===== -->
+<header class="navbar">
+  <div class="container">
+    <div class="logo">
+      <img src="images/logo2.jpg" alt="logo" />
+      <span style="font-weight: bold; font-size: 1.2rem;">Fermi <span id="logo4" style="color: gray; font-size: 1rem;">Electricals & IT Solutions</span></span>
+    </div>
+    <nav id="nav-links" class="nav-links"  >
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+      <a href="quote.html" class="quote-btn">Get Quote</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" >
+      <i class="fas fa-bars" ></i>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu" >
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact</a>
+  <a href="quote.html" class="quote-btn">Get Quote</a>
+</div>
+
+  <!-- ===== HERO ===== -->
+  <section class="fermiProj_hero" aria-label="Projects">
+    <div class="fermiProj_heroInner fermiProj_container">
+      <span class="fermiProj_badge">Our Work</span>
+      <h1 class="fermiProj_title">
+        Electrical Builds & <span class="fermiProj_rotate" id="fermiProj_rotate">Smart Networks</span>
+      </h1>
+      <p class="fermiProj_sub">
+        From commercial power distribution to enterprise-grade networks and security—explore a selection of projects delivered with safety, performance, and uptime in mind.
+      </p>
+    </div>
+  </section>
+
+  
+<section class="fermiProj_container" aria-label="Project filters">
+  <div class="fermiProj_controls">
+    <div class="fermiProj_search">
+      <input id="fermiProj_searchInput" type="search" placeholder="Search projects by type, client, or location…" aria-label="Search projects">
+      <i class='bx bx-search'></i>
+    </div>
+
+    <div class="fermiProj_filters" role="group" aria-label="Categories">
+      <button class="fermiProj_filter" data-filter="all" aria-pressed="true">All Solutions</button>
+      <button class="fermiProj_filter" data-filter="Electrical">Electrical Systems</button>
+      <button class="fermiProj_filter" data-filter="IT">IT Infrastructure</button>
+      <button class="fermiProj_filter" data-filter="Solar">Solar Installations</button>
+      <button class="fermiProj_filter" data-filter="Security">Security Systems</button>
+      <button class="fermiProj_filter" data-filter="Networking">Networking Solutions</button>
+    </div>
+
+    <select id="fermiProj_sort" class="fermiProj_sort" aria-label="Sort projects">
+      <option value="new">Newest</option>
+      <option value="popular">Most Liked</option>
+      <option value="az">A → Z</option>
+    </select>
+  </div>
+</section>
+
+<!-- ===== GRID ===== -->
+<section class="fermiProj_container" aria-label="Project gallery">
+  <h2 class="fermiProj_sectionTitle">Our Featured Projects</h2>
+  <div id="fermiProj_grid" class="fermiProj_grid" role="list"></div>
+
+  <div class="fermiProj_loadMoreWrap">
+    <button id="fermiProj_loadMore" class="fermiProj_loadMore">View More Projects</button>
+  </div>
+</section>
+
+<!-- ===== MODAL ===== -->
+<div id="fermiProj_modalBackdrop" class="fermiProj_modalBackdrop" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="fermiProj_modal" role="document">
+    <button class="fermiProj_modalClose" id="fermiProj_modalClose" aria-label="Close">
+      <i class='bx bx-x'></i>
+    </button>
+    <div class="fermiProj_modalLeft">
+      <div class="fermiProj_gallery">
+        <img id="fermiProj_modalImg" alt="">
+        <div class="fermiProj_gNav">
+          <button id="fermiProj_prev" class="fermiProj_gBtn" aria-label="Previous"><i class='bx bx-chevron-left' ></i></button>
+          <button id="fermiProj_next" class="fermiProj_gBtn" aria-label="Next"><i class='bx bx-chevron-right' ></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="fermiProj_modalRight">
+      <div class="fermiProj_modalHead">
+        <div>
+          <h3 id="fermiProj_modalTitle"></h3>
+          <div class="fermiProj_badges" id="fermiProj_modalBadges"></div>
+        </div>
+        <button id="fermiProj_modalLike" class="fermiProj_like" aria-pressed="false" data-liked="false">
+          <i class='bx bxs-heart'></i>
+          <span class="fermiProj_likeCount" id="fermiProj_modalLikeCount">0</span>
+        </button>
+      </div>
+      <p class="fermiProj_modalDesc" id="fermiProj_modalDesc"></p>
+      <div class="fermiProj_modalGrid" id="fermiProj_modalMeta"></div>
+      <div class="fermiProj_modalActions">
+        <a id="fermiProj_modalContact" class="fermiProj_btn" href="contact.html"><i class='bx bxs-message-detail'></i> Request Similar Solution</a>
+        <a id="fermiProj_modalQuote" class="fermiProj_btn" href="quote.html"><i class='bx bxs-bolt'></i> Get Custom Quote</a>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- ===== Footer (exact) ===== -->
+  <footer class="fermi-footer" role="contentinfo" aria-label="Footer">
+    <div class="fermi-footer-bottom">
+      <button id="backToTopBtn" aria-label="Back to top" title="Back to top">&uarr;</button>
+      <p>&copy; 2025 Fermi Electricals &amp; IT Solutions. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    /* Header: mobile menu toggle (exact behavior) */
+      document.addEventListener('DOMContentLoaded', function () {
+          const menuToggle = document.getElementById('menuToggle');
+          const mobileMenu = document.getElementById('mobileMenu');
+          const menuIcon = menuToggle.querySelector('i');
+
+          menuToggle.addEventListener('click', function () {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('active');
+
+            // Change icon based on menu state
+            if (mobileMenu.classList.contains('active')) {
+              menuIcon.classList.replace('fa-bars', 'fa-times');
+            } else {
+              menuIcon.classList.replace('fa-times', 'fa-bars');
+            }
+
+            // Toggle body scroll when menu is open
+            document.body.style.overflow = isExpanded ? 'auto' : 'hidden';
+          });
+
+          // Close menu when clicking on a link
+          const menuLinks = mobileMenu.querySelectorAll('a');
+          menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+              mobileMenu.classList.remove('active');
+              menuToggle.setAttribute('aria-expanded', 'false');
+              menuIcon.classList.replace('fa-times', 'fa-bars');
+              document.body.style.overflow = 'auto';
+            });
+          });
+        });
+    /* Back to top */
+    const backBtn = document.getElementById('backToTopBtn');
+    function toggleBackBtn(){ if (window.scrollY>280) backBtn.classList.add('show'); else backBtn.classList.remove('show'); }
+    window.addEventListener('scroll', toggleBackBtn); toggleBackBtn();
+    backBtn.addEventListener('click', ()=> window.scrollTo({top:0,behavior:'smooth'}));
+
+    /* Hero rotating words */
+    (function(){
+      const el = document.getElementById('fermiProj_rotate');
+      const words = ["Smart Networks","Secure Premises","Reliable Power","Efficient Energy"];
+      let i=0; setInterval(()=>{ i=(i+1)%words.length; el.textContent = words[i]; }, 2200);
+    })();
+
+    /* ---- Data (swap with real content anytime) ---- */
+    const FERMI_PROJECTS = [
+        {
+          id: "p-solar-industrial",
+          title: "Industrial Solar PV & Battery Hybrid",
+          categories: ["Solar", "Electrical"],
+          likes: 48,
+          date: "2025-05-02",
+          cover: "images/solar.jpg",
+          gallery: [
+            "images/solar-installation.jpg",
+            "images/sollar-install.jpg",
+           
+          ],
+          desc: "5MWp grid-tied and battery hybrid solar plant powering light manufacturing with real-time monitoring and demand-response optimization.",
+          meta: { Client: "AgroSteel Ltd", Location: "Jinja", "Capacity": "5 MWp", "Savings": "35%" }
+        },
+        {
+          id: "p-fire-alarm",
+          title: "Fire & Alarm Detection System",
+          categories: ["Security", "Electrical"],
+          likes: 34,
+          date: "2025-01-18",
+          cover: "images/fire-alarm.jpg",
+          gallery: [
+            "images/fire-alarm.jpg",
+            "images/Alarm Installation.jpeg"
+          ],
+          desc: "Installation of smoke detectors, heat sensors, control panels, and fire alarm network integration across multi-story office buildings.",
+          meta: { Client: "Capital Towers", Location: "Kampala", "Devices": "250+", "Compliance": "NFPA 72" }
+        },
+        {
+          id: "p-gps-tracking",
+          title: "Fleet GPS Tracking & Telematics",
+          categories: ["IT", "Networking"],
+          likes: 41,
+          date: "2025-03-10",
+          cover: "https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=1400&auto=format&fit=crop",
+          gallery: [
+            "images/gps-new.jpg",
+            "images/gps-tracker3.jpg"
+          ],
+          desc: "GPS devices, telematics dashboards, and geofencing alerts for 300+ fleet vehicles nationwide.",
+          meta: { Client: "TransLogistics", Location: "Across Uganda", "Fleet": "300+", "Coverage": "24/7" }
+        },
+        {
+          id: "p-elevators-escalators",
+          title: "Elevators & Escalator Installations",
+          categories: ["Electrical", "Mechanical"],
+          likes: 29,
+          date: "2024-12-15",
+          cover: "images/elevators.jpg",
+          gallery: [
+            "images/escalator.jpg",
+     
+          ],
+          desc: "Supply, installation, and maintenance of elevators and escalators for malls, hospitals, and commercial towers.",
+          meta: { Client: "MetroMall", Location: "Kampala", "Elevators": "12", "Escalators": "8" }
+        },
+        {
+          id: "p-auto-gates",
+          title: "Automatic Gates & Access Control",
+          categories: ["Security", "IT"],
+          likes: 37,
+          date: "2025-02-25",
+          cover: "images/automatic-gates.jpg",
+          gallery: [
+            "images/fermi-gates.jpg",
+            "images/fermi-gates2.jpg"
+          ],
+          desc: "Motorized sliding gates, RFID & biometric access systems with remote monitoring and UPS backup.",
+          meta: { Client: "Residence", Location: "Ntinda", "Gates": "5", "Access": "RFID + Fingerprint" }
+        },
+        {
+          id: "p-smart-building",
+          title: "Smart Building Electrical & IT Integration",
+          categories: ["Electrical", "IT"],
+          likes: 55,
+          date: "2025-04-05",
+          cover: "images/smart-home.jpg",
+          gallery: [
+            "images/smart-building2.jpg",
+            "images/smart-building.jpg"
+          ],
+          desc: "Complete structured cabling, LAN/WAN backbone, CCTV, access control, and automated lighting for a modern HQ building.",
+          meta: { Client: "Fermi HQ", Location: "Kampala", "Ports": "850+", "Wi-Fi": "6E" }
+        }
+      ];
+
+
+    /* ---- State & helpers ---- */
+    const GRID    = document.getElementById('fermiProj_grid');
+    const SEARCH  = document.getElementById('fermiProj_searchInput');
+    const SORTSEL = document.getElementById('fermiProj_sort');
+    const FILTERS = [...document.querySelectorAll('.fermiProj_filter')];
+    const LOADBTN = document.getElementById('fermiProj_loadMore');
+
+    const LIKE_KEY = 'fermiProj_likes_v1';
+    const LIKE_STATE = JSON.parse(localStorage.getItem(LIKE_KEY) || '{}'); // { [id]: {count, liked:true/false} }
+
+    let activeFilter = 'all';
+    let query = '';
+    let sort = 'new';
+    let page = 1;
+    const PAGE_SIZE = 6;
+
+    function saveLikes(){ localStorage.setItem(LIKE_KEY, JSON.stringify(LIKE_STATE)); }
+
+    function getLikeData(p){
+      const data = LIKE_STATE[p.id] || { count: p.likes, liked: false };
+      return data;
+    }
+
+    function setLikeData(p, liked){
+      const cur = getLikeData(p);
+      const nextCount = Math.max(0, cur.count + (liked ? 1 : -1));
+      LIKE_STATE[p.id] = { count: nextCount, liked };
+      saveLikes();
+      return LIKE_STATE[p.id];
+    }
+
+    function formatDate(d){
+      const dt = new Date(d);
+      return dt.toLocaleDateString(undefined, {year:'numeric',month:'short',day:'2-digit'});
+    }
+
+    function filterSortData(){
+      const base = FERMI_PROJECTS.slice();
+      // apply likes state
+      base.forEach(p=>{
+        const st = LIKE_STATE[p.id];
+        if (st) p._likes = st.count; else p._likes = p.likes;
+      });
+
+      let rows = base.filter(p=>{
+        const inCat = activeFilter==='all' ? true : p.categories.includes(activeFilter);
+        const q = query.trim().toLowerCase();
+        const inText = !q || (
+          p.title.toLowerCase().includes(q) ||
+          p.desc.toLowerCase().includes(q) ||
+          Object.values(p.meta).join(' ').toLowerCase().includes(q)
+        );
+        return inCat && inText;
+      });
+
+      if (sort==='new') rows.sort((a,b)=> new Date(b.date) - new Date(a.date));
+      if (sort==='popular') rows.sort((a,b)=> (b._likes) - (a._likes));
+      if (sort==='az') rows.sort((a,b)=> a.title.localeCompare(b.title));
+
+      return rows;
+    }
+
+    function paginate(rows){ return rows.slice(0, page*PAGE_SIZE); }
+
+    /* ---- Render ---- */
+    function projectCard(p){
+      const like = getLikeData(p);
+      const el = document.createElement('article');
+      el.className = 'fermiProj_card';
+      el.setAttribute('role','listitem');
+      el.innerHTML = `
+        <div class="fermiProj_thumb">
+          <img loading="lazy" src="${p.cover}" alt="${p.title}">
+        </div>
+        <div class="fermiProj_body">
+          <div class="fermiProj_row">
+            <div>
+              <div class="fermiProj_titleSm">${p.title}</div>
+              <div class="fermiProj_badges">
+                ${p.categories.map(c=>`<span class="fermiProj_badgePill">${c}</span>`).join('')}
+              </div>
+            </div>
+            <small class="fermiProj_meta">${formatDate(p.date)}</small>
+          </div>
+          <p class="fermiProj_meta">${p.desc}</p>
+          <div class="fermiProj_actions">
+            <button class="fermiProj_btn" data-view="${p.id}">
+              <i class='bx bxs-show'></i> View
+            </button>
+            <button class="fermiProj_like" data-like="${p.id}" aria-pressed="${like.liked}" data-liked="${like.liked}">
+              <i class='bx bxs-heart'></i>
+              <span class="fermiProj_likeCount" data-like-count="${p.id}">${like.count}</span>
+            </button>
+          </div>
+        </div>
+      `;
+      return el;
+    }
+
+    function render(){
+      const rows = paginate(filterSortData());
+      GRID.innerHTML = '';
+      rows.forEach(p => GRID.appendChild(projectCard(p)));
+      // reveal animations
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('isVisible'); io.unobserve(e.target); }});
+      },{threshold:.18});
+      GRID.querySelectorAll('.fermiProj_card').forEach(c=> io.observe(c));
+
+      // like handlers
+      GRID.querySelectorAll('[data-like]').forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          const id = btn.getAttribute('data-like');
+          const project = FERMI_PROJECTS.find(x=>x.id===id);
+          const currentlyLiked = (LIKE_STATE[id]?.liked) || false;
+          const next = setLikeData(project, !currentlyLiked);
+          // update card btn
+          btn.dataset.liked = String(next.liked);
+          btn.setAttribute('aria-pressed', String(next.liked));
+          const countEl = GRID.querySelector(`[data-like-count="${id}"]`);
+          if (countEl) countEl.textContent = next.count;
+          // if modal open for same project, sync it
+          if (Modal.open && Modal.project?.id===id){
+            Modal.likeBtn.dataset.liked = String(next.liked);
+            Modal.likeBtn.setAttribute('aria-pressed', String(next.liked));
+            Modal.likeCount.textContent = next.count;
+          }
+        });
+      });
+
+      // view handlers
+      GRID.querySelectorAll('[data-view]').forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          const id = btn.getAttribute('data-view');
+          const project = FERMI_PROJECTS.find(x=>x.id===id);
+          Modal.openProject(project);
+        });
+      });
+
+      // load more visibility
+      const full = filterSortData();
+      LOADBTN.style.display = (rows.length < full.length) ? '' : 'none';
+    }
+
+    // Controls
+    SEARCH.addEventListener('input', (e)=>{ query = e.target.value; page = 1; render(); });
+    SORTSEL.addEventListener('change', (e)=>{ sort = e.target.value; page = 1; render(); });
+    FILTERS.forEach(b=>{
+      b.addEventListener('click', ()=>{
+        FILTERS.forEach(x=> x.setAttribute('aria-pressed','false'));
+        b.setAttribute('aria-pressed','true');
+        activeFilter = b.dataset.filter;
+        page = 1; render();
+      });
+    });
+    LOADBTN.addEventListener('click', ()=>{ page += 1; render(); });
+
+    /* ---- Modal logic ---- */
+    const Modal = (function(){
+      const backdrop = document.getElementById('fermiProj_modalBackdrop');
+      const modalImg = document.getElementById('fermiProj_modalImg');
+      const modalTitle = document.getElementById('fermiProj_modalTitle');
+      const modalBadges = document.getElementById('fermiProj_modalBadges');
+      const modalDesc = document.getElementById('fermiProj_modalDesc');
+      const modalMeta = document.getElementById('fermiProj_modalMeta');
+      const closeBtn = document.getElementById('fermiProj_modalClose');
+      const prevBtn = document.getElementById('fermiProj_prev');
+      const nextBtn = document.getElementById('fermiProj_next');
+      const modalLike = document.getElementById('fermiProj_modalLike');
+      const modalLikeCount = document.getElementById('fermiProj_modalLikeCount');
+      let galleryIdx = 0;
+      let project = null;
+
+      function renderImage(){
+        if (!project) return;
+        modalImg.src = project.gallery[galleryIdx];
+        modalImg.alt = project.title + " image " + (galleryIdx+1);
+      }
+
+      function openProject(p){
+        project = p;
+        galleryIdx = 0;
+        const like = getLikeData(p);
+        modalTitle.textContent = p.title;
+        modalBadges.innerHTML = p.categories.map(c=>`<span class="fermiProj_badgePill">${c}</span>`).join('');
+        modalDesc.textContent = p.desc;
+        modalMeta.innerHTML = '';
+        Object.entries(p.meta).forEach(([k,v])=>{
+          const item = document.createElement('div');
+          item.className = 'fermiProj_kv';
+          item.innerHTML = `<strong>${k}</strong><div>${v}</div>`;
+          modalMeta.appendChild(item);
+        });
+        modalLike.dataset.liked = String(like.liked);
+        modalLike.setAttribute('aria-pressed', String(like.liked));
+        modalLikeCount.textContent = like.count;
+        renderImage();
+        backdrop.style.display = 'flex';
+        backdrop.setAttribute('aria-hidden','false');
+        open = true;
+        document.body.style.overflow = 'hidden';
+      }
+
+      function close(){
+        backdrop.style.display = 'none';
+        backdrop.setAttribute('aria-hidden','true');
+        document.body.style.overflow = '';
+        open = false;
+      }
+
+      closeBtn.addEventListener('click', close);
+      backdrop.addEventListener('click', (e)=>{ if(e.target===backdrop) close(); });
+      document.addEventListener('keydown', (e)=>{
+        if (backdrop.style.display==='flex'){
+          if (e.key==='Escape') close();
+          if (e.key==='ArrowLeft') prev();
+          if (e.key==='ArrowRight') next();
+        }
+      });
+
+      function prev(){ if(!project) return; galleryIdx = (galleryIdx - 1 + project.gallery.length) % project.gallery.length; renderImage(); }
+      function next(){ if(!project) return; galleryIdx = (galleryIdx + 1) % project.gallery.length; renderImage(); }
+      prevBtn.addEventListener('click', prev);
+      nextBtn.addEventListener('click', next);
+
+      modalLike.addEventListener('click', ()=>{
+        if (!project) return;
+        const curr = LIKE_STATE[project.id]?.liked || false;
+        const next = setLikeData(project, !curr);
+        modalLike.dataset.liked = String(next.liked);
+        modalLike.setAttribute('aria-pressed', String(next.liked));
+        modalLikeCount.textContent = next.count;
+        // Sync card if in view
+        const cardBtn = document.querySelector(`[data-like="${project.id}"]`);
+        const countEl = document.querySelector(`[data-like-count="${project.id}"]`);
+        if (cardBtn) {
+          cardBtn.dataset.liked = String(next.liked);
+          cardBtn.setAttribute('aria-pressed', String(next.liked));
+        }
+        if (countEl) countEl.textContent = next.count;
+      });
+
+      return { open:false, openProject, close, likeBtn: modalLike, likeCount: modalLikeCount, get project(){return project;} };
+    })();
+
+    /* Reveal on scroll for cards handled in render() */
+
+    /* Initialize */
+    render();
+
+  </script>
+</body>
+</html>

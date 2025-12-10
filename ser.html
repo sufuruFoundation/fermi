@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #0b57d0;
+            --primary-dark: #0b3b50;
+            --secondary: #445e71;
+            --light: #f8f9fa;
+            --muted: #536b7a;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
+    
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+    
+        .section {
+            padding: 60px 0;
+        }
+    
+        /* Typography */
+        h2,
+        h3 {
+            color: var(--primary-dark);
+            margin: 0 0 16px;
+        }
+    
+        h2 {
+            font-size: 2rem;
+            line-height: 1.2;
+        }
+    
+        .lead-muted {
+            color: var(--muted);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 700px;
+        }
+    
+        /* Heading Row */
+        .heading-row {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+    
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+    
+        .service-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .service-card:focus-within,
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+    
+        .service-media {
+            height: 180px;
+            overflow: hidden;
+        }
+    
+        .service-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+    
+        .service-card:hover .service-media img {
+            transform: scale(1.05);
+        }
+    
+        .service-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            padding: 16px 16px 0;
+            margin: 0;
+        }
+    
+        .service-desc {
+            color: var(--secondary);
+            padding: 0 16px;
+            margin: 8px 0 16px;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+    
+        .service-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 16px 16px;
+        }
+    
+        .pill {
+            background: #e3f2fd;
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+    
+        .service-meta a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+    
+        .service-meta a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+    
+        /* Expanded Section */
+        .expanded {
+            display: flex;
+            gap: 40px;
+            background: #f5f9ff;
+            border-radius: var(--radius);
+            padding: 30px;
+            margin-bottom: 60px;
+        }
+    
+        .expanded .text {
+            flex: 1;
+        }
+    
+        .expanded .visual {
+            flex: 1;
+            border-radius: var(--radius);
+            overflow: hidden;
+            max-height: 300px;
+        }
+    
+        .expanded .visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    
+        .expanded h3 {
+            font-size: 1.25rem;
+        }
+    
+        .expanded ul {
+            margin-top: 12px;
+            color: var(--secondary);
+            list-style: disc;
+            padding-left: 18px;
+        }
+    
+        .expanded li {
+            margin-bottom: 8px;
+        }
+    
+        /* Testimonials */
+        .testimonials {
+            display: flex;
+            gap: 30px;
+        }
+    
+        .testimonial-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+            flex: 2;
+        }
+    
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+    
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    
+        .testimonial-text {
+            margin-top: 16px;
+            color: var(--secondary);
+            line-height: 1.6;
+            padding-top: 16px;
+            border-top: 1px solid #eee;
+        }
+    
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+    
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+    
+        .btn-primary:hover {
+            background: #0a4eb8;
+            transform: translateY(-2px);
+        }
+    
+        .btn-outline {
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+    
+        .btn-outline:hover {
+            background: #e8f0fe;
+            transform: translateY(-2px);
+        }
+    
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            .expanded {
+                flex-direction: column;
+            }
+    
+            .expanded .visual {
+                max-height: 200px;
+            }
+        }
+    
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+    
+            .testimonials {
+                flex-direction: column;
+            }
+    
+            .section {
+                padding: 40px 0;
+            }
+        }
+    
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 1.75rem;
+            }
+    
+            .lead-muted {
+                font-size: 1rem;
+            }
+    
+            .service-media {
+                height: 150px;
+            }
+    
+            .service-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+    
+            .expanded {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="services" class="section container" aria-labelledby="services-heading">
+       
+    
+        <div class="heading-row">
+            <h2 id="services-heading">Our Professional Services</h2>
+            <p class="lead-muted">Complete, code-compliant electrical and IT services tailored for residential, commercial
+                and industrial clients. Choose the service category to learn more.</p>
+        </div>
+    
+        <div class="services-grid" aria-live="polite">
+            <!-- Service 1 -->
+            <article class="service-card" tabindex="0" aria-labelledby="svc1-title">
+                <div class="service-media"><img src="images/winter2.jpg" alt="Residential wiring and installations"
+                        loading="lazy"></div>
+                <div class="service-title" id="svc1-title">Residential Electrical Systems</div>
+                <p class="service-desc">Safe, efficient home wiring; lighting designs; energy audits; generators and battery
+                    backup; electrical fence and safety checks.</p>
+                <div class="service-meta">
+                    <span class="pill">Safety First</span>
+                    <a href="services/residential.html" aria-label="More about Residential services">Learn more →</a>
+                </div>
+            </article>
+    
+            <!-- Service 2 -->
+            <article class="service-card" tabindex="0" aria-labelledby="svc2-title">
+                <div class="service-media"><img src="images/electric.jpeg" alt="Commercial WAN LAN and elevators"
+                        loading="lazy"></div>
+                <div class="service-title" id="svc2-title">Commercial Electrical & IT</div>
+                <p class="service-desc">WAN/LAN design and installation, structured cabling, commercial power distribution,
+                    elevator & escalator electrical integration, emergency systems.</p>
+                <div class="service-meta">
+                    <span class="pill">WAN / LAN</span>
+                    <a href="services/commercial.html" aria-label="More about Commercial services">Learn more →</a>
+                </div>
+            </article>
+    
+            <!-- Service 3 -->
+            <article class="service-card" tabindex="0" aria-labelledby="svc3-title">
+                <div class="service-media"><img src="images/electrical3.jpeg" alt="Industrial automation" loading="lazy">
+                </div>
+                <div class="service-title" id="svc3-title">Industrial & Automation</div>
+                <p class="service-desc">Panel design, PLC integration, motor control centers, high-voltage safety audits and
+                    scheduled preventive maintenance for factories and plants.</p>
+                <div class="service-meta">
+                    <span class="pill">High-Voltage</span>
+                    <a href="services/industrial.html" aria-label="More about Industrial services">Learn more →</a>
+                </div>
+            </article>
+    
+            <!-- Service 4 -->
+            <article class="service-card" tabindex="0" aria-labelledby="svc4-title">
+                <div class="service-media"><img src="images/solar.jpg" alt="Solar installation" loading="lazy"></div>
+                <div class="service-title" id="svc4-title">Solar & Backup Systems</div>
+                <p class="service-desc">Solar site evaluation, system sizing, hybrid inverters, off-grid solutions and
+                    professionally coordinated battery backups & UPS installations.</p>
+                <div class="service-meta">
+                    <span class="pill">Energy Savings</span>
+                    <a href="services/solar.html" aria-label="More about Solar services">Learn more →</a>
+                </div>
+            </article>
+    
+            <!-- Service 5 -->
+            <article class="service-card" tabindex="0" aria-labelledby="svc5-title">
+                <div class="service-media"><img src="images/winter.jpg" alt="CCTV and access control" loading="lazy"></div>
+                <div class="service-title" id="svc5-title">Security & Access Control</div>
+                <p class="service-desc">CCTV networks, access control, IP-based surveillance, intruder alarms and
+                    integration with facility management systems for complete monitoring.</p>
+                <div class="service-meta">
+                    <span class="pill">IP CCTV</span>
+                    <a href="services/security.html" aria-label="More about Security services">Learn more →</a>
+                </div>
+            </article>
+    
+            <!-- Service 6 -->
+            <article class="service-card" tabindex="0" aria-labelledby="svc6-title">
+                <div class="service-media"><img src="images/technicians.jpg" alt="Maintenance and emergency response"
+                        loading="lazy"></div>
+                <div class="service-title" id="svc6-title">Maintenance & Emergency Response</div>
+                <p class="service-desc">24/7 emergency callout, preventive maintenance contracts, testing, commissioning and
+                    rapid troubleshooting to reduce downtime.</p>
+                <div class="service-meta">
+                    <span class="pill">24 / 7</span>
+                    <a href="services/maintenance.html" aria-label="More about Maintenance services">Learn more →</a>
+                </div>
+            </article>
+        </div>
+    
+        <!-- Expanded feature -->
+        <div class="expanded container" role="region" aria-label="Featured solution">
+            <div class="text">
+                <h3>Design & Turnkey Integration</h3>
+                <p>We manage full-project lifecycles: site survey, design, procurement, installation and handover. Our
+                    project managers coordinate multi-discipline teams and ensure regulatory compliance and on-time
+                    delivery.</p>
+                <ul>
+                    <li>End-to-end project management and documentation</li>
+                    <li>Regulation & code compliance (local & international)</li>
+                    <li>Testing, commissioning and training for client teams</li>
+                </ul>
+            </div>
+            <div class="visual" aria-hidden="true">
+                <img src="images/electrial.jpeg" alt="" loading="lazy">
+            </div>
+        </div>
+    
+        <!-- Testimonials + quick CTA -->
+        <div class="testimonials container" aria-label="Client testimonials and CTA">
+            <div class="testimonial-card">
+                <div style="display:flex;gap:12px;align-items:center">
+                    <div class="testimonial-avatar"><img src="images/IMG-20250805-WA0002.jpg" alt="Alex, plant supervisor"
+                            loading="lazy"></div>
+                    <div>
+                        <div style="font-weight:800;color:#0b3b50">Alex M. — Plant Supervisor</div>
+                        <div style="color:#536b7a;font-weight:700;font-size:0.95rem">"Rapid response and safe restoration of
+                            our production line. Highly professional team."</div>
+                    </div>
+                </div>
+                <div class="testimonial-text">Fermi's engineers arrived within an hour, diagnosed the fault and restored
+                    operations without incident — excellent communication throughout the process.</div>
+            </div>
+    
+            <aside style="display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+                <div
+                    style="background:#fff;padding:16px;border-radius:10px;box-shadow:0 12px 30px rgba(11,23,40,0.04);width:100%">
+                    <div style="font-weight:900;color:#0b57d0;font-size:1.15rem">Ready to start?</div>
+                    <p style="color:#536b7a;margin-top:8px">Request a site visit, ask for a quote or download our service
+                        brochure.</p>
+                    <div style="margin-top:12px;display:flex;gap:8px">
+                        <a class="btn btn-primary" href="quote.html"><i class="fa-solid fa-phone"></i> Request Quote</a>
+                        <a class="btn btn-outline" href="brochure.pdf" target="_blank" rel="noopener">Download Brochure</a>
+                    </div>
+                </div>
+                <div style="font-size:0.9rem;color:#536b7a">Prefer to talk? <a href="tel:+256750622060"
+                        style="font-weight:800;color:#0b57d0">+256 750 622 060</a></div>
+            </aside>
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Service card interaction
+            const serviceCards = document.querySelectorAll('.service-card');
+
+            serviceCards.forEach(card => {
+                // Add focus styles for keyboard navigation
+                card.addEventListener('focus', function () {
+                    this.style.outline = 'none';
+                    this.style.boxShadow = '0 0 0 3px rgba(11, 87, 208, 0.3)';
+                });
+
+                card.addEventListener('blur', function () {
+                    this.style.boxShadow = 'var(--shadow)';
+                });
+
+                // Click handler for mobile touch devices
+                card.addEventListener('click', function (e) {
+                    // Only trigger if the click wasn't on a link inside the card
+                    if (e.target.tagName !== 'A') {
+                        const link = this.querySelector('a');
+                        if (link) {
+                            link.click();
+                        }
+                    }
+                });
+            });
+
+            // Responsive adjustments that need JS
+            function handleResponsive() {
+                const expandedSection = document.querySelector('.expanded');
+                const testimonialsSection = document.querySelector('.testimonials');
+
+                if (window.innerWidth < 768) {
+                    // Additional mobile-specific adjustments if needed
+                }
+            }
+
+            // Run on load and resize
+            handleResponsive();
+            window.addEventListener('resize', handleResponsive);
+        });
+    </script>
+</body>
+</html>

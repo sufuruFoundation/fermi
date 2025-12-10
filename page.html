@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electrical Services</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            font-family: 'Poppins', sans-serif;
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.5),
+                    rgba(0, 0, 0, 0.5)),
+                url('Images/cables-red-light-background.jpg') no-repeat center center/cover;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 0;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            width: 100%;
+            max-width: 1200px;
+            z-index: 1;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .left-section {
+            color: white;
+            flex: 1 1 50%;
+            min-width: 300px;
+            text-align: left;
+        }
+
+        .left-section h1 {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .left-section p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 90%;
+        }
+
+        .cta-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background-color: #ff6600;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #e55c00;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 102, 0, 0.3);
+        }
+
+        .btn i {
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover i {
+            transform: translateX(3px);
+        }
+
+        .phone {
+            display: flex;
+            align-items: center;
+            color: white;
+            gap: 0.8rem;
+        }
+
+        .phone-icon {
+            font-size: 1.6rem;
+            color: #ff6600;
+        }
+
+        .phone-text p {
+            margin-bottom: 0.2rem;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .phone-text strong {
+            font-size: 1.2rem;
+        }
+
+        .form-section {
+            background: white;
+            padding: 2rem;
+            flex: 1 1 40%;
+            min-width: 280px;
+            max-width: 450px;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .appointment-form h2 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .appointment-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #444;
+        }
+
+        .appointment-form span {
+            color: #ff6600;
+        }
+
+        .appointment-form input {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            transition: border 0.3s ease;
+        }
+
+        .appointment-form input:focus {
+            outline: none;
+            border-color: #ff6600;
+            box-shadow: 0 0 0 2px rgba(255, 102, 0, 0.2);
+        }
+
+        .submit-btn {
+            background-color: #ff6600;
+            color: white;
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            background-color: #e55c00;
+        }
+
+        /* Typing Animation */
+        .typingg-static {
+            font-weight: bold;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            color: #ff6600;
+        }
+
+        .typing-text-animation {
+            font-weight: 600;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            color: #ffffff;
+            border-right: 2px solid #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: middle;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: #fff;
+            }
+        }
+
+        /* Mobile First Adjustments */
+        @media screen and (max-width: 768px) {
+            .content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .appointment-form {
+            width: 100%;
+            max-width: 400px;
+        }
+            .left-section {
+                flex: 1 1 100%;
+            }
+            .left-section h1 {
+                font-size: 2rem;
+            }
+
+            .left-section p {
+                max-width: 100%;
+            }
+
+            .cta-group {
+                justify-content: center;
+                display: flex;
+                flex-direction: column;
+                
+               
+            }
+
+            .phone {
+                justify-content: flex-start;
+            }
+
+            .form-section {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero{
+                padding: 1rem ;
+            }
+            .form-section {
+            background: white;
+            padding: 1rem;
+            flex: 1 1 100%;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            border-radius: 3px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .appointment-form {
+            width: 100%;
+            max-width: 400px;
+        }
+        .appointment-form h2 {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .appointment-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+            color: #444;
+            text-align: left;
+        }
+
+        .appointment-form span {
+            color: #ff6600;
+        }
+
+        .appointment-form input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: .5rem;
+            border: 1px solid #ddd;
+            border-radius: none;
+            font-family: 'Poppins', sans-serif;
+            transition: border 0.3s ease;
+        }
+
+        .appointment-form input:focus {
+            outline: none;
+            border-color: #ff6600;
+            box-shadow: 0 0 0 2px rgba(255, 102, 0, 0.2);
+        }
+
+        .submit-btn {
+            background-color: #ff6600;
+            color: white;
+            width: 100%;
+            padding: .7rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: .5rem;
+        }
+
+        .submit-btn:hover {
+            background-color: #e55c00;
+        }
+
+            .left-section h1 {
+                font-size: 1.8rem;
+            }
+            .left-section h1 i{
+                font-size: 1.5rem;
+            }
+
+            .left-section p {
+                font-size: .9rem;
+            }
+
+            .btn, .submit-btn {
+                font-size: 0.9rem;
+                padding: 0.8rem 1.3rem;
+            }
+            .btn{
+                border-radius: 3px;
+            }
+            .phone-text strong {
+                font-size: 1rem;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="left-section">
+                <h1>
+                    FERMI;<br /><span style="color: #ff6600;">Professional</span> <br />
+                    <span class="typingg-static"><i class="fas fa-bolt"></i></span>
+                    <span class="typing-text-animation" id="typingg"></span>
+                </h1>
+                <p>Quality service, trusted expertise, and solutions that make a
+                    difference.</p>
+                <div class="cta-group">
+                    <a href="#" class="btnnn">Explore services <i class="fas fa-arrow-right"></i></a>
+                    <div class="phone">
+                        <span class="phone-icon"><i class="fas fa-phone-alt"></i></span>
+                        <div class="phone-text">
+                            <p>Make a call</p>
+                            <strong>+256 750622060</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <form class="appointment-form">
+                    <h2>Schedule an appointment</h2>
+                    <label>Name <span>*</span></label>
+                    <input type="text" required />
+
+                    <label>Email <span>*</span></label>
+                    <input type="email" required />
+
+                    <label>Phone <span>*</span></label>
+                    <input type="tel" required />
+
+                    <label>Date <span>*</span></label>
+                    <input type="date" required />
+
+                    <button type="submit" class="submit-btn">
+                        Schedule Appointment <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const words = ["Security Services", "Electrical Services", "IT Solutions"];
+        let i = 0;
+        let timer;
+        let isDeleting = false;
+        let text = "";
+        const typingEl = document.getElementById("typingg");
+
+        function type() {
+            const currentWord = words[i % words.length];
+
+            if (isDeleting) {
+                text = currentWord.substring(0, text.length - 1);
+            } else {
+                text = currentWord.substring(0, text.length + 1);
+            }
+
+            typingEl.textContent = text;
+
+            let typingSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && text === currentWord) {
+                typingSpeed = 1500;
+                isDeleting = true;
+            } else if (isDeleting && text === "") {
+                isDeleting = false;
+                i++;
+                typingSpeed = 500;
+            }
+
+            timer = setTimeout(type, typingSpeed);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            type();
+        });
+
+        document.querySelector(".appointment-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            alert("Appointment scheduled successfully!");
+        });
+    </script>
+</body>
+
+</html>
